@@ -11,7 +11,7 @@ public class GridMovement : MonoBehaviour {
 	/// Move the player by the given amount
 	///</summary>
 	public string MoveBy(Vector3 amount){
-		// movement step is the hop
+		// movement step is the hop length
 		Vector2 finalPos = transform.position + (amount * movementStep);
 		RaycastHit2D hit;
 
