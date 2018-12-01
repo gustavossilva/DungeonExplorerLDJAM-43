@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class GridMovement : MonoBehaviour {
 
-	public void MoveBy(Vector3 portion){
-		Vector2 finalPos = transform.position + portion;
+	public LayerMask _layerMask;
+
+	///<summary>
+	/// Move the player by the given amount
+	///</summary>
+	public string MoveBy(Vector3 amount){
+		Vector2 finalPos = transform.position + amount;
+		RaycastHit2D hit;
 
 		// Verifica se ha algo
-		if(!HaParede(finalPos)){
+		if(!HasParede(finalPos, out hit)){
 			Move(finalPos);
+			return string.Empty;
 		}
+
+		return hit.transform.tag;
 	}
 
-	bool HaParede(Vector2 pos){
-		return false;
+	bool HasParede(Vector3 pos, out RaycastHit2D hit){
+		hit = Physics2D.Raycast(transform.position, (pos - transform.position).normalized, .5f, _layerMask);
+		return hit.collider != null;
 	}
 
 	void Move(Vector2 final){
