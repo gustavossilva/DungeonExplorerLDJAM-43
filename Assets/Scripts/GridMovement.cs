@@ -5,12 +5,14 @@ using UnityEngine;
 public class GridMovement : MonoBehaviour {
 
 	public LayerMask _layerMask;
+	public float movementStep = 1f;
 
 	///<summary>
 	/// Move the player by the given amount
 	///</summary>
 	public string MoveBy(Vector3 amount){
-		Vector2 finalPos = transform.position + amount;
+		// movement step is the hop
+		Vector2 finalPos = transform.position + (amount * movementStep);
 		RaycastHit2D hit;
 
 		// Verifica se ha algo
@@ -23,7 +25,7 @@ public class GridMovement : MonoBehaviour {
 	}
 
 	bool HasParede(Vector3 pos, out RaycastHit2D hit){
-		hit = Physics2D.Raycast(transform.position, (pos - transform.position).normalized, .5f, _layerMask);
+		hit = Physics2D.Raycast(transform.position, (pos - transform.position).normalized, movementStep + 0.01f, _layerMask);
 		return hit.collider != null;
 	}
 

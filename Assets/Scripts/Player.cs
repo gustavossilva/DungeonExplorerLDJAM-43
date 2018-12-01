@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(GridMovement))]
 public class Player : MonoBehaviour {
 
-	public float cooldown = 0.5f;
+	public float cooldown = 0.35f;
 	private float movementCooldown;
 	private GridMovement _gridMovement;
 	private string _obstacleTag;
