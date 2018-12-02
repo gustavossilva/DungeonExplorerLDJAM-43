@@ -199,9 +199,10 @@ GameObject:
   - component: {fileID: 106124464}
   - component: {fileID: 106124466}
   - component: {fileID: 106124465}
+  - component: {fileID: 106124467}
   m_Layer: 5
   m_Name: Bin
-  m_TagString: Untagged
+  m_TagString: Drop Place
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,6 +259,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 106124463}
   m_CullTransparentMesh: 0
+--- !u!114 &106124467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 106124463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302c62514bb63e042a1082933a228e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &158111996
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 0
 --- !u!1 &210076631
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 0
 --- !u!1 &574423436
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 1
 --- !u!1 &591433362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,6 +1190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 0
 --- !u!1 &716087991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 1
 --- !u!1 &771924337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,6 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 0
 --- !u!1 &811592092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,6 +1773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 0
 --- !u!1 &890264843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,6 +2121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 0
 --- !u!1 &1042299318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,6 +2240,7 @@ MonoBehaviour:
   - {fileID: 1790560090}
   - {fileID: 853803204}
   - {fileID: 559371526}
+  itemsQuantity: 0
 --- !u!4 &1043225283
 Transform:
   m_ObjectHideFlags: 0
@@ -2352,6 +2373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 0
 --- !u!1 &1212247906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,6 +2724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 1
 --- !u!1 &1552823951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2859,6 +2882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 1
 --- !u!1 &1582389236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,6 +2965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 1
 --- !u!1 &1640275935
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,6 +3268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  isCharSlot: 0
 --- !u!1 &1957856364
 GameObject:
   m_ObjectHideFlags: 0
