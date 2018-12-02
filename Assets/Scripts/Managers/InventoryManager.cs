@@ -19,7 +19,7 @@ public class InventoryManager : Singleton<InventoryManager> {
 	public Slot slotMainChar;
 	public Slot[] slots;
 
-	private const int maxItemsQuantity = 8;
+	private const int maxItemsQuantity = 6;
 	public int itemsQuantity = 0;
 
 	// Use this for initialization
@@ -39,6 +39,7 @@ public class InventoryManager : Singleton<InventoryManager> {
 				slots[i].itemUI = itemGO.GetComponent<ItemDisplay>();
 				slots[i].itemUI.effect = item._effect;
 				slots[i].itemUI.image.sprite = item._spriteUI;
+				slots[i].itemUI.description = item._description;
 				itemsQuantity++;
 				return true;
 			}

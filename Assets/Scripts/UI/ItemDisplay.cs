@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ItemDisplay : MonoBehaviour {
+public class ItemDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
 	UIDragAndRelease _dragAndDrop;
 	PointerOverUI _pointerOverUI;
@@ -12,9 +13,17 @@ public class ItemDisplay : MonoBehaviour {
 
 	private Transform _tempParent;
 	private Transform _currentParent;
+	private bool _isHovered;
+	private bool _clicked;
 
 	[HideInInspector] public Image image;
 	[HideInInspector] public Effect effect;
+	[HideInInspector] public string description;
+	private float timeHovering;
+	public float timeHover = 1.5f;
+	public GameObject descriptionImage;
+	private bool _messageShown = false;
+	private Text text;
 
 	// Use this for initialization
 	void Awake () {
@@ -23,6 +32,8 @@ public class ItemDisplay : MonoBehaviour {
 		_rectTranform = GetComponent<RectTransform>();
 		image = GetComponent<Image>();
 
+		text = descriptionImage.GetComponentInChildren<Text>();
+
 		_dragAndDrop.released += OnReleased;
 		_dragAndDrop.clicked += OnClicked;
 
@@ -30,7 +41,19 @@ public class ItemDisplay : MonoBehaviour {
 		_currentParent = transform.parent;
 	}
 
+
+	void Update(){
+		if(_isHovered && !_clicked){
+			timeHovering += Time.deltaTime;
+			if(timeHovering >= timeHover && !_messageShown){
+				ShowMessageInfo();
+			}
+		}
+	}
+
+
 	private bool OnReleased(){
+		_clicked = false;
 		DropPlace placeToDrop = _pointerOverUI.IsPointerOverDropPlace(Input.mousePosition);
 		transform.SetParent(_currentParent);
 		// If there is somewhere to drop the item
@@ -76,12 +99,39 @@ public class ItemDisplay : MonoBehaviour {
 	}
 
 	private bool OnClicked(){
+		_clicked = true;
 		transform.SetParent(_tempParent);
+		if(_messageShown){
+			HideMessageInfo();
+		}
 		return true;
+	}
+
+	private void ShowMessageInfo(){
+		_messageShown = true;
+		text.text = description;
+		descriptionImage.SetActive(true);
+	}
+
+	private void HideMessageInfo(){
+		_messageShown = false;
+		descriptionImage.SetActive(false);
 	}
 
 	void OnDestroy(){
 		_dragAndDrop.released -= OnReleased;
 		_dragAndDrop.clicked -= OnClicked;
 	}
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+		_isHovered = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+		HideMessageInfo();
+		_isHovered = false;
+		timeHovering = 0f;
+    }
 }

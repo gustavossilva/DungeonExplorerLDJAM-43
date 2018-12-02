@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class UndestroyableCanvas : Singleton<UndestroyableCanvas> {
 
@@ -13,6 +14,9 @@ public class UndestroyableCanvas : Singleton<UndestroyableCanvas> {
 	}
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+
+		GetComponent<PointerOverUI>()._eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+
 		// Disable the inventory canvas when you are in combat
 		if(scene.name == "Combat")
 			gameObject.SetActive(false);

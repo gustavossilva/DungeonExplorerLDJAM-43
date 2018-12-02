@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteInGame: {fileID: 21300010, guid: bf541ba7810cafd43af665d35d1dc29e, type: 3}
   _spriteUI: {fileID: 21300110, guid: 6effb0022735ead45acf361ef8832074, type: 3}
+  _description: Reduce Healer and Paladin cooldowns
   _effect: 3
