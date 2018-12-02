@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour {
 
@@ -12,22 +13,20 @@ public class Item : MonoBehaviour {
 
 	private Transform _tempParent;
 	private Transform _currentParent;
+	public Image image;
 
 	// Use this for initialization
 	void Awake () {
 		_pointerOverUI = GameObject.Find("Canvas").GetComponent<PointerOverUI>();
 		_dragAndDrop = GetComponent<UIDragAndRelease>();
 		_rectTranform = GetComponent<RectTransform>();
+		image = GetComponent<Image>();
+
 		_dragAndDrop.released += OnReleased;
 		_dragAndDrop.clicked += OnClicked;
 
 		_tempParent = GameObject.Find("Canvas").transform;
 		_currentParent = transform.parent;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
 	private bool OnReleased(){
@@ -38,26 +37,38 @@ public class Item : MonoBehaviour {
 			
 			// If it is a slot...
 			if(placeToDrop is Slot){
-				Slot slot = (Slot)placeToDrop;
-				if(slot.IsEmpty()){
+				Slot newSlot = (Slot)placeToDrop;
+				if(newSlot.IsEmpty()){
 
 					Slot previousSlot = transform.parent.GetComponent<Slot>();
 					previousSlot.item = null;
 
+					if(!previousSlot.isCharSlot)
+						InventoryManager.Instance.itemsQuantity--;
+
+					if(!newSlot.isCharSlot)
+						InventoryManager.Instance.itemsQuantity++;
+
 					// Move this gameobject to be the child of the slot
-					transform.SetParent(slot.transform);
+					transform.SetParent(newSlot.transform);
 					_currentParent = transform.parent;
 					_rectTranform.offsetMax = Vector2.one * -2f;
 					_rectTranform.offsetMin = Vector2.one * 2f;
 					// Assign the item variable as this item
-					slot.item = this;
+					newSlot.item = this;
 					return true;
 				}
 			}
-			// TODO
-			// else if(placeToDrop is Bin){
+			else if(placeToDrop is Bin){
+				Bin bin = (Bin)placeToDrop;
+				Slot previousSlot = transform.parent.GetComponent<Slot>();
+				previousSlot.item = null;
 
-			// }
+				if(!previousSlot.isCharSlot)
+					InventoryManager.Instance.itemsQuantity--;
+				
+				bin.ThrowAway(gameObject);
+			}
 		}
 
 		return false;

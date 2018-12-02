@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Slot : DropPlace {
-	[HideInInspector] public Item item;
+	public Item item;
+
+	public bool isCharSlot;
 
 	public bool IsEmpty(){
 		return item == null;
