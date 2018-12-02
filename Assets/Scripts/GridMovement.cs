@@ -6,6 +6,7 @@ public class GridMovement : MonoBehaviour {
 
 	public LayerMask _layerMask;
 	public float movementStep = 1f;
+	public bool coroutineIsRunning = false;
 
 	public event System.Action hasAnimation;
 	///<summary>
@@ -18,7 +19,8 @@ public class GridMovement : MonoBehaviour {
 
 		// Verifica se ha algo
 		if(!HasParede(finalPos, out hit)){
-			Move(finalPos);
+			if(!coroutineIsRunning)
+				StartCoroutine(Move(finalPos));
 			return string.Empty;
 		}
 
@@ -30,11 +32,23 @@ public class GridMovement : MonoBehaviour {
 		return hit.collider != null;
 	}
 
-	void Move(Vector2 final){
+	IEnumerator Move(Vector2 final){
+		coroutineIsRunning = true;
 		// TODO: Do animation
 		if(hasAnimation != null)
 			hasAnimation(); 
+		
 		// Change transform position
+		while(!MathUtil.IsApproximate(transform.position, final, .1f)){
+			// transform.position = Vector3.Lerp(transform.position, final, Time.deltaTime * 5f);
+			transform.position = Vector3.MoveTowards(transform.position, final, 5f * Time.deltaTime);
+			yield return null;
+		}
+
 		transform.position = final;
+
+		coroutineIsRunning = false;
+
+
 	}
 }
