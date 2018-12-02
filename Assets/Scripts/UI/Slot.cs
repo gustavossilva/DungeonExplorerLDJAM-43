@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Slot : DropPlace {
-	public Item item;
+	public ItemDisplay itemUI;
 
 	public bool isCharSlot;
 
 	public bool IsEmpty(){
-		return item == null;
+		return itemUI == null;
 	}
 }

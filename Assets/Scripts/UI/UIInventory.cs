@@ -9,8 +9,6 @@ public class UIInventory : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		InventoryManager inventoryManager = GameObject.Find("Inventory Manager").GetComponent<InventoryManager>();
-		
 		_anim = GetComponent<Animator>();
 		_openInventoryButton.onClick.AddListener(Open);
 		_closeInventoryButton.onClick.AddListener(Close);

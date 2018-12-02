@@ -1,6 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum Character{
+	BARBARIAN,
+	CLERIC,
+	PALADIN,
+	RANGER,
+	WIZARD
+}
 
 public class InventoryManager : Singleton<InventoryManager> {
 	
@@ -16,33 +23,31 @@ public class InventoryManager : Singleton<InventoryManager> {
 	public int itemsQuantity = 0;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(Input.GetMouseButtonDown(1)){
-			ItemCollected();
-		}
+	protected override void Awake () {
+		base.IsPersistentBetweenScenes = true;
+		base.Awake();
 	}
 
-	public void ItemCollected(){
-		if(itemsQuantity <= maxItemsQuantity){
-			// Find the next available slot
-			for (int i = 0; i < slots.Length; i++){
-				if(slots[i].transform.childCount == 0){
-					GameObject itemGO = Instantiate(prefab, slots[i].transform);
-					slots[i].item = itemGO.GetComponent<Item>();
-					// slots[i].item.image = ...
-					itemsQuantity++;
-					return;
-				}
+	public bool ItemCollected(Item item){
+		if(itemsQuantity >= maxItemsQuantity)
+			return false;
+
+		// Find the next available slot
+		for (int i = 0; i < slots.Length; i++){
+			if(slots[i].transform.childCount == 0){
+				GameObject itemGO = Instantiate(prefab, slots[i].transform);
+				slots[i].itemUI = itemGO.GetComponent<ItemDisplay>();
+				slots[i].itemUI.effect = item._effect;
+				slots[i].itemUI.image.sprite = item._spriteUI;
+				itemsQuantity++;
+				return true;
 			}
 		}
+		
+		return false;
 	}
 
-	public void ChangeHealth(){
+	public void ChangeHealth(Character character){
 		// Change the health text
 	}
 }

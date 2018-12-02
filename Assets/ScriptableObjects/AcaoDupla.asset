@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16d25291e480af4b9b874468469b73d, type: 3}
+  m_Name: AcaoDupla
+  m_EditorClassIdentifier: 
+  _spriteInGame: {fileID: 21300010, guid: bf541ba7810cafd43af665d35d1dc29e, type: 3}
+  _spriteUI: {fileID: 21300110, guid: 6effb0022735ead45acf361ef8832074, type: 3}
+  _effect: 1

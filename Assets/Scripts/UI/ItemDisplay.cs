@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Item : MonoBehaviour {
+public class ItemDisplay : MonoBehaviour {
 
 	UIDragAndRelease _dragAndDrop;
 	PointerOverUI _pointerOverUI;
-
 	RectTransform _rectTranform;
 
 
 	private Transform _tempParent;
 	private Transform _currentParent;
-	public Image image;
+
+	[HideInInspector] public Image image;
+	[HideInInspector] public Effect effect;
 
 	// Use this for initialization
 	void Awake () {
@@ -41,7 +42,7 @@ public class Item : MonoBehaviour {
 				if(newSlot.IsEmpty()){
 
 					Slot previousSlot = transform.parent.GetComponent<Slot>();
-					previousSlot.item = null;
+					previousSlot.itemUI = null;
 
 					if(!previousSlot.isCharSlot)
 						InventoryManager.Instance.itemsQuantity--;
@@ -55,14 +56,14 @@ public class Item : MonoBehaviour {
 					_rectTranform.offsetMax = Vector2.one * -2f;
 					_rectTranform.offsetMin = Vector2.one * 2f;
 					// Assign the item variable as this item
-					newSlot.item = this;
+					newSlot.itemUI = this;
 					return true;
 				}
 			}
 			else if(placeToDrop is Bin){
 				Bin bin = (Bin)placeToDrop;
 				Slot previousSlot = transform.parent.GetComponent<Slot>();
-				previousSlot.item = null;
+				previousSlot.itemUI = null;
 
 				if(!previousSlot.isCharSlot)
 					InventoryManager.Instance.itemsQuantity--;
@@ -77,5 +78,10 @@ public class Item : MonoBehaviour {
 	private bool OnClicked(){
 		transform.SetParent(_tempParent);
 		return true;
+	}
+
+	void OnDestroy(){
+		_dragAndDrop.released -= OnReleased;
+		_dragAndDrop.clicked -= OnClicked;
 	}
 }
