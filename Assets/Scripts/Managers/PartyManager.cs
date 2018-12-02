@@ -4,22 +4,35 @@ using UnityEngine;
 
 public class PartyManager : Singleton<PartyManager> {
 
-	public GameObject party;
-	public int playersNumber = 4;
-	public List<GameObject> partyMembers = new List<GameObject>();
 	
+	//0 - Barbarian 1 - Paladin 2 - Ranger 3 - Cleric 4 - Wizard
+	public bool[] heroesAlive = new bool[5];
+	public CharacterStats[] charStats = new CharacterStats[5];
+
+	public Transform positionPreBattle;
 	protected override void Awake() {
-		IsPersistentBetweenScenes = false;
+		IsPersistentBetweenScenes = true;
 		base.Awake();
 	}
 	
 	// Use this for initialization
 	void Start () {
-
+		for(int i=0;i<5;i++)
+		{
+			heroesAlive[i] = true;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void StartBattle(Transform oldPos){
+		positionPreBattle = oldPos;
+	}
+
+	public void EndBattle(GameObject party){
+		party.transform.position = positionPreBattle.position;
+	}
+
+	public void KillHero(int index)
+	{
+		heroesAlive[index] = false;
 	}
 }
