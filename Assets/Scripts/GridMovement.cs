@@ -30,7 +30,7 @@ public class GridMovement : MonoBehaviour {
 	}
 
 	void Move(Vector2 final){
-		// Do animation
+		// TODO: Do animation
 		
 		// Change transform position
 		transform.position = final;
