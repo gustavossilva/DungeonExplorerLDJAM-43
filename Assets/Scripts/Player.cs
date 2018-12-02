@@ -9,6 +9,7 @@ public class Player : Singleton<Player> {
 	private float movementCooldown;
 	private GridMovement _gridMovement;
 	private string _obstacleTag;
+	public bool canMove;
 
 	public event System.Action moved;
 
@@ -21,10 +22,14 @@ public class Player : Singleton<Player> {
 	void Start () {
 		_gridMovement = GetComponent<GridMovement>();
 		movementCooldown = cooldown;
+		canMove = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(!canMove)
+			return;
+
 		movementCooldown -= Time.deltaTime;
 		
 		// Only resets cooldown if the player could successfuly perform the movement
@@ -72,7 +77,9 @@ public class Player : Singleton<Player> {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if(other.CompareTag("Enemy")){
+			canMove = false;
 			// Start combat scene here
+			
 		}
 	}
 }
