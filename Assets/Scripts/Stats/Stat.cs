@@ -6,9 +6,13 @@ using UnityEngine;
 public class Stat {
 
 	[SerializeField]
-	private float baseValue;
+	public float baseValue;
 
 	private List<float> modifiers = new List<float>();
+
+	public float numberOfModifiers {
+		get { return modifiers.Count; }
+	}
 
 	public float GetValue () 
 	{
@@ -30,6 +34,15 @@ public class Stat {
 		if(modifier != 0)
 		{
 			modifiers.Remove(modifier);
+		}
+	}
+
+	public void RemoveAtIndex(int index)
+	{
+		if(index < numberOfModifiers){
+			modifiers.RemoveAt(index);
+		}else{
+			Debug.Log("Error!!!!! there is not enough modifiers to be removed");
 		}
 	}
 

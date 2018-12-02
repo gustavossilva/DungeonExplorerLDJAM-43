@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteInGame: {fileID: 21300002, guid: 2c72d87030fa3164e9d85450749d51da, type: 3}
   _spriteUI: {fileID: 21300032, guid: 5c4f1fa01d076b0448a9438531d30a91, type: 3}
-  _description: Increase damage
+  _description: Increase damage for all your squad members
   _effect: 4

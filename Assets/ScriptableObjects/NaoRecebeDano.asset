@@ -9,9 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c16d25291e480af4b9b874468469b73d, type: 3}
-  m_Name: AcaoDupla
+  m_Name: NaoRecebeDano
   m_EditorClassIdentifier: 
   _spriteInGame: {fileID: 21300010, guid: bf541ba7810cafd43af665d35d1dc29e, type: 3}
   _spriteUI: {fileID: 21300110, guid: 6effb0022735ead45acf361ef8832074, type: 3}
-  _description: A squad member can play twice
+  _description: 50% chance of NOT receiving damage when you lose a minigame
   _effect: 1

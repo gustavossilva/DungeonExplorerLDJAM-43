@@ -7,7 +7,6 @@ public class CharacterStats : MonoBehaviour {
 	public float currentHealth { get; private set; }
 	public Stat damage;
 	public Stat armor;
-	public Stat timeToAttack;
 
 	private void Awake() 
 	{
