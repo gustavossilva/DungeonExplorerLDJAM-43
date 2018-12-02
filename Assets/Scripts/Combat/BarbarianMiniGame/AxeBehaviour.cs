@@ -20,6 +20,7 @@ public class AxeBehaviour : MonoBehaviour {
 			PaladinManager.Instance.missAxe = true;
 			gameObject.SetActive(false);
 		}
+		transform.Rotate(new Vector3(0,0,-200*Time.deltaTime));
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {

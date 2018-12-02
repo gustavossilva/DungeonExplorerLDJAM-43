@@ -3,49 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ClericMovement : MonoBehaviour {
+	public Transform left,right;
+	public float pullForce;
+	public float clickForce;
 
-	public Transform finalPos;
-	private Rigidbody2D rbody;
-	public float speed = 3;
-	public float jumpForce = 2;
+	public string direction;
 
-	private bool isGrounded = true;
-	public Transform feetPos;
-	public float checkRadius;
-	public LayerMask whatIsGrounded;
-	private bool gameOver = false;
+	private bool isHealing;
 
-	// Use this for initialization
-	void Start () {
-		rbody = GetComponent<Rigidbody2D>();
+	private void Start() {
+		direction = "Right";
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(transform.position.x >= finalPos.position.x)
+
+	private void Update() {
+		switch (direction)
 		{
-			Debug.Log("Healing");
-			return;
+			case "Right":
+				transform.position = Vector2.MoveTowards(transform.position, right.position, pullForce * Time.deltaTime);
+				break;
+			case "Left":
+				transform.position = Vector2.MoveTowards(transform.position, left.position, pullForce * Time.deltaTime);
+				break;
+			default:
+				Debug.Log("Bug");
+				break;
 		}
-		if(gameOver)
+		if(Input.GetMouseButtonDown(1))
 		{
-			return;
+			transform.position = Vector2.MoveTowards(transform.position, right.position, clickForce * Time.deltaTime);	
 		}
-		isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGrounded);
-		rbody.velocity = new Vector2(1 * speed,rbody.velocity.y);
-		if(isGrounded && Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(0))
 		{
-			rbody.velocity = Vector2.up * jumpForce;
+			transform.position = Vector2.MoveTowards(transform.position, left.position, clickForce * Time.deltaTime);
+		}
+		if((transform.position.x - left.position.x) < 4){
+			direction = "Left";
+		}
+		else{
+			direction = "Right";
+		}
+		if(isHealing)
+		{
+			ClericManager.Instance.AddHealthBar(10*Time.deltaTime);
+		}
+		else
+		{
+			ClericManager.Instance.RemoveHealthBar(6*Time.deltaTime);
 		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
-		if(other.CompareTag("Enemy"))
+		if(other.CompareTag("GameController"))
 		{
-			speed = 0;
-			gameOver = true;
-			Debug.Log("Hit player");
-			gameObject.SetActive(false);
+			isHealing = true;
 		}
+	}
+	
+	
+	private void OnTriggerStay2D(Collider2D other) {
+		if(other.CompareTag("GameController"))
+		{
+			isHealing = true;
+		}		
+	}
+
+	private void OnTriggerExit2D(Collider2D other) 
+	{
+		if(other.CompareTag("GameController"))
+			isHealing = false;	
 	}
 }
