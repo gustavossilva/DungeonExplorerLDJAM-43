@@ -118,8 +118,8 @@ public class UIDragAndRelease : MonoBehaviour {
 		// If it has not been cosumed, reposition it. Otherwise, reset its position and scale it up
 		if (!hasBeenConsumed)
 			_repositionCoroutine = StartCoroutine (GoBackToInitialPosition ());
-		else
-			StartCoroutine (ReapperAndScale ());
+		// else
+		// 	StartCoroutine (ReapperAndScale ());
 
 		// Allows further input interactions when the player releases the gameobject. 
 		// (PS.: the interactions also depends on WHERE and WHEN the player clicks on the gameobject again)
@@ -144,15 +144,15 @@ public class UIDragAndRelease : MonoBehaviour {
 	/// <summary>
 	/// Reset this gameobject position and scale it up to its original delta size
 	/// </summary>
-	private IEnumerator ReapperAndScale () {
-		_rectTransform.anchoredPosition = _initialPosition;
-		_rectTransform.sizeDelta = Vector2.zero;
+	// private IEnumerator ReapperAndScale () {
+	// 	_rectTransform.anchoredPosition = _initialPosition;
+	// 	_rectTransform.sizeDelta = Vector2.zero;
 
-		while (!MathUtil.IsApproximate (_rectTransform.sizeDelta, _initialDelta)) {
-			_rectTransform.sizeDelta = Vector2.Lerp (_rectTransform.sizeDelta, _initialDelta, 8f * Time.deltaTime);
-			yield return null;
-		}
-	}
+	// 	while (!MathUtil.IsApproximate (_rectTransform.sizeDelta, _initialDelta)) {
+	// 		_rectTransform.sizeDelta = Vector2.Lerp (_rectTransform.sizeDelta, _initialDelta, 8f * Time.deltaTime);
+	// 		yield return null;
+	// 	}
+	// }
 
 	private void RegisterEventTriggerType (EventTriggerType type, Action method) {
 		EventTrigger.Entry entry = new EventTrigger.Entry ();
