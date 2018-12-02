@@ -1,0 +1,83 @@
+
+Ranger.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+capa
+  rotate: false
+  xy: 408, 127
+  size: 101, 127
+  orig: 144, 159
+  offset: 16, 15
+  index: -1
+lamarina
+  rotate: false
+  xy: 2, 53
+  size: 107, 201
+  orig: 107, 201
+  offset: 0, 0
+  index: -1
+ranger boca
+  rotate: false
+  xy: 150, 66
+  size: 40, 11
+  orig: 68, 50
+  offset: 15, 18
+  index: -1
+ranger body
+  rotate: true
+  xy: 248, 151
+  size: 103, 158
+  orig: 142, 187
+  offset: 20, 13
+  index: -1
+ranger direita
+  rotate: false
+  xy: 111, 2
+  size: 37, 75
+  orig: 73, 108
+  offset: 16, 17
+  index: -1
+ranger esquerda
+  rotate: true
+  xy: 2, 3
+  size: 48, 70
+  orig: 77, 102
+  offset: 14, 15
+  index: -1
+ranger head
+  rotate: false
+  xy: 111, 119
+  size: 135, 135
+  orig: 169, 164
+  offset: 17, 17
+  index: -1
+ranger olhos
+  rotate: false
+  xy: 362, 128
+  size: 37, 21
+  orig: 68, 49
+  offset: 16, 14
+  index: -1
+ranger sobr
+  rotate: false
+  xy: 248, 121
+  size: 45, 5
+  orig: 68, 29
+  offset: 11, 12
+  index: -1
+ranger-18-18
+  rotate: true
+  xy: 111, 79
+  size: 38, 132
+  orig: 38, 133
+  offset: 0, 0
+  index: -1
+ranger-19
+  rotate: false
+  xy: 248, 128
+  size: 112, 21
+  orig: 112, 21
+  offset: 0, 0
+  index: -1

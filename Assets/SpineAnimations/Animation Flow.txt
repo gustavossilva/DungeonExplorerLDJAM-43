@@ -1,0 +1,7 @@
+Flow para os personagens
+
+Iddle e jump podem ser ativados juntos 
+
+Iddle fica em loop > Jump 
+
+em combate o Iddle deve ser desativado para ativar  Attack/death/hit
