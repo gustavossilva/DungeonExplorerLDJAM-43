@@ -1,0 +1,76 @@
+
+Paladin.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+escudo
+  rotate: false
+  xy: 2, 33
+  size: 162, 216
+  orig: 162, 216
+  offset: 0, 0
+  index: -1
+lamarina
+  rotate: false
+  xy: 166, 48
+  size: 107, 201
+  orig: 107, 201
+  offset: 0, 0
+  index: -1
+paladin bigode
+  rotate: false
+  xy: 2, 9
+  size: 113, 22
+  orig: 150, 67
+  offset: 20, 19
+  index: -1
+paladin body
+  rotate: true
+  xy: 275, 4
+  size: 113, 155
+  orig: 153, 186
+  offset: 23, 14
+  index: -1
+paladin direita
+  rotate: true
+  xy: 174, 8
+  size: 38, 78
+  orig: 77, 111
+  offset: 17, 14
+  index: -1
+paladin esquerda
+  rotate: false
+  xy: 432, 37
+  size: 52, 80
+  orig: 85, 113
+  offset: 16, 18
+  index: -1
+paladin head-10
+  rotate: true
+  xy: 275, 119
+  size: 130, 161
+  orig: 166, 196
+  offset: 18, 15
+  index: -1
+paladin nariz
+  rotate: true
+  xy: 160, 15
+  size: 16, 12
+  orig: 47, 46
+  offset: 16, 14
+  index: -1
+paladin olho
+  rotate: false
+  xy: 117, 8
+  size: 41, 23
+  orig: 87, 58
+  offset: 20, 17
+  index: -1
+paladin sobr
+  rotate: false
+  xy: 2, 2
+  size: 49, 5
+  orig: 89, 44
+  offset: 21, 20
+  index: -1

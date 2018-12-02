@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4097689420806294}
   - component: {fileID: 212797029614644038}
   - component: {fileID: 114268806674923484}
-  - component: {fileID: 114455598225349726}
+  - component: {fileID: 114452423462499602}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -57,7 +57,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   movementStep: 1
---- !u!114 &114455598225349726
+--- !u!114 &114452423462499602
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,11 +65,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1435004088246888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 311d8404cc88e2743919712354c0f01c, type: 3}
+  m_Script: {fileID: 11500000, guid: c5705426340c05040b2d10624b9000bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 1
-  _monsterType: 0
 --- !u!212 &212797029614644038
 SpriteRenderer:
   m_ObjectHideFlags: 1

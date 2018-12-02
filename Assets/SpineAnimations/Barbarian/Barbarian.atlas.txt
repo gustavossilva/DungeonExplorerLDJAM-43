@@ -1,0 +1,76 @@
+
+Barbarian.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+barbarian Body
+  rotate: true
+  xy: 289, 9
+  size: 107, 156
+  orig: 131, 177
+  offset: 13, 11
+  index: -1
+barbarian eye
+  rotate: false
+  xy: 2, 2
+  size: 37, 21
+  orig: 63, 42
+  offset: 14, 10
+  index: -1
+barbarian head
+  rotate: false
+  xy: 289, 118
+  size: 141, 135
+  orig: 163, 159
+  offset: 12, 13
+  index: -1
+barbarian mouth
+  rotate: true
+  xy: 507, 241
+  size: 12, 2
+  orig: 42, 34
+  offset: 14, 15
+  index: -1
+barbarian- right hand
+  rotate: false
+  xy: 432, 170
+  size: 73, 83
+  orig: 97, 108
+  offset: 14, 10
+  index: -1
+barbarian- sobrancelha
+  rotate: false
+  xy: 432, 125
+  size: 46, 4
+  orig: 69, 37
+  offset: 12, 18
+  index: -1
+barbarian-Scar
+  rotate: false
+  xy: 180, 16
+  size: 35, 34
+  orig: 63, 62
+  offset: 13, 12
+  index: -1
+barbarian-left hand
+  rotate: true
+  xy: 432, 131
+  size: 37, 74
+  orig: 68, 100
+  offset: 14, 13
+  index: -1
+lamarina
+  rotate: false
+  xy: 180, 52
+  size: 107, 201
+  orig: 107, 201
+  offset: 0, 0
+  index: -1
+machado
+  rotate: false
+  xy: 2, 25
+  size: 176, 228
+  orig: 176, 228
+  offset: 0, 0
+  index: -1
