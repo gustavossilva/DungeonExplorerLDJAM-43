@@ -48,7 +48,7 @@ public class PointerOverUI : MonoBehaviour {
 		return false;
 	}
 
-	public Slot IsPointerOverSlot(Vector3 mousePosition){
+	public DropPlace IsPointerOverDropPlace(Vector3 mousePosition){
 		// Clear the raycast result array
 		_results.Clear ();
 
@@ -60,9 +60,8 @@ public class PointerOverUI : MonoBehaviour {
 
 		//Percorre a lista de resultados e teste se algum dos objetos em _results é o slot, caso seja, retorna-o
 		for (int i = 0; i < _results.Count; i++) {
-			if (_results[i].gameObject.tag == "Slot"){
-				print(_results[i].gameObject.name);
-				return _results[i].gameObject.GetComponent<Slot>();
+			if (_results[i].gameObject.tag == "Drop Place"){
+				return _results[i].gameObject.GetComponent<DropPlace>();
 			}
 		}
 
