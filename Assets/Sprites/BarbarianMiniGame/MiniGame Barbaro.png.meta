@@ -1,7 +1,9 @@
 fileFormatVersion: 2
 guid: 2f41a728ae3bf4a4d8a5a4cde74fce66
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: MiniGame Barbaro_0
+    21300002: MiniGame Barbaro_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -104,7 +106,47 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MiniGame Barbaro_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 8
+        width: 410
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8612185bb21ad594a8b1b6b0ec0f7c84
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiniGame Barbaro_1
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 0
+        width: 354
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9f1eff878417b43aa451b715014e73
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
