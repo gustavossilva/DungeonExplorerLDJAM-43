@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(GridMovement))]
-public class Player : MonoBehaviour {
+public class Player : Singleton<Player> {
 
 	public float cooldown = 0.35f;
 	private float movementCooldown;
 	private GridMovement _gridMovement;
 	private string _obstacleTag;
+
+	public event System.Action moved;
+
+	protected override void  Awake(){
+		base.IsPersistentBetweenScenes = false;
+		base.Awake();
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -55,8 +62,11 @@ public class Player : MonoBehaviour {
 		_obstacleTag = _gridMovement.MoveBy(direction);
 		
 		// Verifies if the players got in contact with an enemy
-		if(string.IsNullOrEmpty(_obstacleTag))
+		if(string.IsNullOrEmpty(_obstacleTag)){
 			movementCooldown = cooldown;
+			if(moved != null)
+				moved();
+		}
 		else if(string.Equals(_obstacleTag, "Enemy")){
 			// Starts new scene here!
 			Debug.Log("Fight Scene");
