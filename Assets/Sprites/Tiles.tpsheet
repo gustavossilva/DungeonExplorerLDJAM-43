@@ -1,0 +1,22 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:46c6c136afca1113e8f63f6ecd50895f:3e68bbf917ae8711a402dc1627bb9fc8:a383634934879c94dae134e00b3635cc$
+#
+:format=40300
+:texture=Tiles.png
+:size=256x512
+:pivotpoints=enabled
+:borders=disabled
+
+chão 2;128;384;128;128; 0.5;0.5; 0;0;0;0
+chão 3;0;256;128;128; 0.5;0.5; 0;0;0;0
+chão 4;128;256;128;128; 0.5;0.5; 0;0;0;0
+chão;0;128;128;128; 0.5;0.5; 0;0;0;0
+parede;0;0;128;128; 0.5;0.5; 0;0;0;0
+portal fechado;128;128;128;128; 0.5;0.5; 0;0;0;0
+portal;128;0;128;128; 0.5;0.5; 0;0;0;0
+Tile topo da parede;0;384;128;128; 0.5;0.5; 0;0;0;0
