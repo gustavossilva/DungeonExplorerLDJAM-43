@@ -5,6 +5,7 @@ using UnityEngine;
 public class SightMovement : MonoBehaviour {
 
 	public Transform posController;
+	public float speed = 5f;
 	private Vector2 initialPos;
 	private bool generateNewPos = false;
 	private bool canShoot = false;
@@ -20,7 +21,7 @@ public class SightMovement : MonoBehaviour {
 			posController.position = newPos;
 			generateNewPos = true;
 		}
-		transform.position = Vector2.MoveTowards(transform.position,newPos, 2 * Time.deltaTime);
+		transform.position = Vector2.MoveTowards(transform.position,newPos, speed * Time.deltaTime);
 		if(Input.GetMouseButtonDown(0))
 		{
 			if(canShoot)
