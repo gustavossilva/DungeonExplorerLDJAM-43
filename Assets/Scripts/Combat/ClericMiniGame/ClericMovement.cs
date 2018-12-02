@@ -36,7 +36,8 @@ public class ClericMovement : MonoBehaviour {
 		{
 			transform.position = Vector2.MoveTowards(transform.position, left.position, clickForce * Time.deltaTime);
 		}
-		if((transform.position.x - left.position.x) < 4){
+		Debug.Log(transform.position.x - left.position.x);
+		if((transform.position.x - left.position.x) < 3.9){
 			direction = "Left";
 		}
 		else{
