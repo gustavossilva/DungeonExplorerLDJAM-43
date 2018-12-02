@@ -67,9 +67,12 @@ public class Player : Singleton<Player> {
 			if(moved != null)
 				moved();
 		}
-		else if(string.Equals(_obstacleTag, "Enemy")){
-			// Starts new scene here!
-			Debug.Log("Fight Scene");
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.CompareTag("Enemy")){
+			// Start combat scene here
 		}
 	}
 }
