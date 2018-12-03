@@ -58,6 +58,13 @@ public class PointerOverUI : MonoBehaviour {
 		// Raycast from the pointer position and stores the result into the list
 		_eventSystem.RaycastAll (_eventDataCurrentPosition, _results);
 
+		//Percorre a lista de resultados e teste se algum dos objetos em _results é Image, caso seja, item deve retornar
+		for (int i = 0; i < _results.Count; i++) {
+			if (_results[i].gameObject.name == "Image"){
+				return null;
+			}
+		}
+
 		//Percorre a lista de resultados e teste se algum dos objetos em _results é o slot, caso seja, retorna-o
 		for (int i = 0; i < _results.Count; i++) {
 			if (_results[i].gameObject.tag == "Drop Place"){
