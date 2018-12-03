@@ -1,153 +1,153 @@
 
 Raven Lich.png
-size: 1024,512
+size: 2048,1024
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Raven Direita
   rotate: false
-  xy: 646, 225
-  size: 83, 119
+  xy: 1247, 604
+  size: 137, 162
   orig: 137, 162
-  offset: 23, 20
+  offset: 0, 0
   index: -1
 Raven Head
-  rotate: true
-  xy: 735, 284
-  size: 74, 124
+  rotate: false
+  xy: 1110, 599
+  size: 135, 167
   orig: 135, 167
-  offset: 34, 13
+  offset: 0, 0
   index: -1
 Raven Pluma D
   rotate: true
-  xy: 503, 346
-  size: 164, 230
+  xy: 1348, 805
+  size: 214, 271
   orig: 214, 271
-  offset: 26, 19
+  offset: 0, 0
   index: -1
 Raven body
   rotate: false
-  xy: 268, 37
-  size: 110, 146
+  xy: 225, 2
+  size: 167, 198
   orig: 167, 198
-  offset: 29, 23
+  offset: 0, 0
   index: -1
 Raven esquerda
-  rotate: true
-  xy: 566, 145
-  size: 89, 59
+  rotate: false
+  xy: 1386, 687
+  size: 132, 116
   orig: 132, 116
-  offset: 22, 24
+  offset: 0, 0
   index: -1
 Raven eye
-  rotate: true
-  xy: 268, 207
-  size: 14, 22
+  rotate: false
+  xy: 370, 498
+  size: 69, 70
   orig: 69, 70
-  offset: 24, 23
+  offset: 0, 0
   index: -1
 Raven pluma A
-  rotate: false
-  xy: 292, 185
-  size: 171, 115
+  rotate: true
+  xy: 1870, 804
+  size: 215, 155
   orig: 215, 155
-  offset: 25, 20
+  offset: 0, 0
   index: -1
 Raven pluma b
   rotate: true
-  xy: 2, 28
-  size: 193, 264
+  xy: 1035, 768
+  size: 251, 311
   orig: 251, 311
-  offset: 24, 21
+  offset: 0, 0
   index: -1
 Raven pluma c
-  rotate: false
-  xy: 879, 371
-  size: 128, 139
+  rotate: true
+  xy: 2, 13
+  size: 187, 221
   orig: 187, 221
-  offset: 20, 45
+  offset: 0, 0
   index: -1
 Raven poncho
   rotate: false
-  xy: 735, 360
-  size: 142, 150
+  xy: 925, 534
+  size: 183, 194
   orig: 183, 194
-  offset: 21, 19
+  offset: 0, 0
   index: -1
 Raven pé direito
-  rotate: true
-  xy: 731, 210
-  size: 72, 118
+  rotate: false
+  xy: 734, 329
+  size: 146, 171
   orig: 146, 171
-  offset: 29, 20
+  offset: 0, 0
   index: -1
 Raven pé esquerda
   rotate: false
-  xy: 380, 37
-  size: 91, 146
+  xy: 586, 306
+  size: 146, 183
   orig: 146, 183
-  offset: 29, 16
+  offset: 0, 0
   index: -1
 bola energia png/bola de enrgia 10-01
-  rotate: false
-  xy: 465, 268
-  size: 32, 32
+  rotate: true
+  xy: 394, 76
+  size: 191, 187
   orig: 191, 187
-  offset: 77, 79
+  offset: 0, 0
   index: -1
 bola energia png/bola de enrgia 11-01
   rotate: false
-  xy: 695, 151
-  size: 69, 57
+  xy: 370, 269
+  size: 214, 220
   orig: 214, 220
-  offset: 78, 78
+  offset: 0, 0
   index: -1
 bola energia png/bola de enrgia 12-01
   rotate: false
-  xy: 473, 2
-  size: 81, 64
+  xy: 696, 502
+  size: 227, 226
   orig: 227, 226
-  offset: 74, 77
+  offset: 0, 0
   index: -1
 bola energia png/bola de enrgia 4-01
   rotate: false
-  xy: 2, 223
-  size: 288, 287
+  xy: 2, 570
+  size: 449, 449
   orig: 449, 449
-  offset: 77, 79
+  offset: 0, 0
   index: -1
 bola energia png/bola de enrgia 5-01
   rotate: false
-  xy: 292, 302
-  size: 209, 208
+  xy: 2, 202
+  size: 366, 366
   orig: 366, 366
-  offset: 77, 83
+  offset: 0, 0
   index: -1
 bola energia png/bola de enrgia 6-01
   rotate: false
-  xy: 503, 236
-  size: 141, 108
+  xy: 453, 730
+  size: 289, 289
   orig: 289, 289
-  offset: 74, 77
+  offset: 0, 0
   index: -1
 bola energia png/bola de enrgia 7-01
   rotate: false
-  xy: 627, 151
-  size: 66, 72
+  xy: 744, 730
+  size: 289, 289
   orig: 289, 289
-  offset: 102, 106
+  offset: 0, 0
   index: -1
 bola energia png/bola de enrgia 8-01
-  rotate: false
-  xy: 473, 143
-  size: 91, 91
+  rotate: true
+  xy: 1621, 786
+  size: 233, 247
   orig: 233, 247
-  offset: 73, 77
+  offset: 0, 0
   index: -1
 bola energia png/bola de enrgia 9-01
   rotate: false
-  xy: 473, 68
-  size: 73, 73
+  xy: 453, 491
+  size: 241, 237
   orig: 241, 237
-  offset: 80, 84
+  offset: 0, 0
   index: -1
