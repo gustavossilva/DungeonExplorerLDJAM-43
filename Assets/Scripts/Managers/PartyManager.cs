@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PartyManager : Singleton<PartyManager> {
 
-	
+	public GameObject party;
 	//0 - Barbarian 1 - Paladin 2 - Ranger 3 - Cleric 4 - Wizard
 	public bool[] heroesAlive = new bool[5];
 	public List<CharacterCombat> characters = new List<CharacterCombat>();
@@ -25,6 +26,7 @@ public class PartyManager : Singleton<PartyManager> {
 
 	public void StartBattle(Transform oldPos){
 		positionPreBattle = oldPos;
+		SceneManager.LoadScene("Combat");
 	}
 
 	public void EndBattle(GameObject party){
