@@ -799,6 +799,7 @@ GameObject:
   - component: {fileID: 303577822}
   - component: {fileID: 303577821}
   - component: {fileID: 303577820}
+  - component: {fileID: 303577823}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -889,6 +890,159 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 303577818}
+  m_Mesh: {fileID: 0}
+--- !u!114 &303577823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 303577818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e1fec7fdf2f394e95b78aea0d1d4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iddle: {fileID: 11400000, guid: 374ff09af5aa4784e82b1334029e65d3, type: 2}
+  jump: {fileID: 11400000, guid: fbdf586845ee78d488fcb622594aa3fe, type: 2}
+  attack: {fileID: 11400000, guid: 47d81a4ce78ab31498454d1714ac1c1e, type: 2}
+  hit: {fileID: 11400000, guid: 06c5ba4cd461d02478f53ab8dce1f43d, type: 2}
+  death: {fileID: 11400000, guid: 585c23eab241346439649a40fc9eccd4, type: 2}
+  iddleTime: 0
+  jumpTime: 0
+  attackTime: 1.2
+  hitTime: 0.4
+  deathTime: 1.1
+  testJump: 0
+  testAttack: 0
+  testHit: 0
+  testDeath: 0
+--- !u!1 &344829473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 344829474}
+  - component: {fileID: 344829478}
+  - component: {fileID: 344829477}
+  - component: {fileID: 344829476}
+  - component: {fileID: 344829475}
+  m_Layer: 0
+  m_Name: Slime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &344829474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344829473}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -1.721, y: 1.721, z: 1.721}
+  m_Children: []
+  m_Father: {fileID: 769806533}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &344829475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344829473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e1fec7fdf2f394e95b78aea0d1d4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iddle: {fileID: 11400000, guid: a8164e11f5d870346b340515e0740907, type: 2}
+  jump: {fileID: 11400000, guid: ac4baff15e8ab844faa7df205cca4e6d, type: 2}
+  attack: {fileID: 11400000, guid: 5ba929baa6d9edf4f9121b09376204be, type: 2}
+  hit: {fileID: 11400000, guid: 73d43e315d249cd4f8578d9dc2a6f611, type: 2}
+  death: {fileID: 11400000, guid: 6e00f3140df1fb54781abed207307083, type: 2}
+  iddleTime: 0
+  jumpTime: 0
+  attackTime: 1.2
+  hitTime: 0.2
+  deathTime: 0.9
+  testJump: 0
+  testAttack: 0
+  testHit: 0
+  testDeath: 0
+--- !u!114 &344829476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344829473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonDataAsset: {fileID: 11400000, guid: 9511fd50bbe15df42a8bddab95fe98e9, type: 2}
+  initialSkinName: 
+  initialFlipX: 0
+  initialFlipY: 0
+  separatorSlotNames: []
+  zSpacing: 0
+  useClipping: 1
+  immutableTriangles: 0
+  pmaVertexColors: 1
+  clearStateOnDisable: 0
+  tintBlack: 0
+  singleSubmesh: 0
+  addNormals: 0
+  calculateTangents: 0
+  disableRenderingOnOverride: 1
+  _animationName: 
+  loop: 1
+  timeScale: 1
+--- !u!23 &344829477
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344829473}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: faff12c492cff6c4bb1df818900ea147, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 926943111
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+--- !u!33 &344829478
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344829473}
   m_Mesh: {fileID: 0}
 --- !u!1 &368131729
 GameObject:
@@ -1574,6 +1728,8 @@ Transform:
   m_Children:
   - {fileID: 303577819}
   - {fileID: 1641865299}
+  - {fileID: 907801292}
+  - {fileID: 344829474}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1853,6 +2009,134 @@ Transform:
   m_Father: {fileID: 2063519610}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &907801291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907801292}
+  - component: {fileID: 907801296}
+  - component: {fileID: 907801295}
+  - component: {fileID: 907801294}
+  - component: {fileID: 907801293}
+  m_Layer: 0
+  m_Name: Goburin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &907801292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907801291}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -1.721, y: 1.721, z: 1.721}
+  m_Children: []
+  m_Father: {fileID: 769806533}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &907801293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907801291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e1fec7fdf2f394e95b78aea0d1d4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iddle: {fileID: 11400000, guid: 2131ab7af38b26a4f8e8b3d1a8169bb2, type: 2}
+  jump: {fileID: 11400000, guid: 9d497922d6a7253438d6fe15f6602796, type: 2}
+  attack: {fileID: 11400000, guid: 5b25947ce59bf7d479241465a41c824e, type: 2}
+  hit: {fileID: 11400000, guid: a905a8a212bf4f1458fda627d3bcf4cf, type: 2}
+  death: {fileID: 11400000, guid: d24709d9b3e0a03418d73a6bc161f6c4, type: 2}
+  iddleTime: 0
+  jumpTime: 0
+  attackTime: 1.4
+  hitTime: 0.7
+  deathTime: 1.1
+  testJump: 0
+  testAttack: 0
+  testHit: 0
+  testDeath: 0
+--- !u!114 &907801294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907801291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonDataAsset: {fileID: 11400000, guid: 2121895f24e2ee34bb6f3f101f8daee5, type: 2}
+  initialSkinName: 
+  initialFlipX: 0
+  initialFlipY: 0
+  separatorSlotNames: []
+  zSpacing: 0
+  useClipping: 1
+  immutableTriangles: 0
+  pmaVertexColors: 1
+  clearStateOnDisable: 0
+  tintBlack: 0
+  singleSubmesh: 0
+  addNormals: 0
+  calculateTangents: 0
+  disableRenderingOnOverride: 1
+  _animationName: 
+  loop: 1
+  timeScale: 1
+--- !u!23 &907801295
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907801291}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 3c5adcc06ecf8a747af9e1228090dda9, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 926943111
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+--- !u!33 &907801296
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907801291}
+  m_Mesh: {fileID: 0}
 --- !u!1 &950266824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,33 +2216,57 @@ MonoBehaviour:
     isBattling: 0
     transform: {fileID: 628320789}
     animations: {fileID: 628320793}
+    stats: {fileID: 0}
   paladin:
     hero: {fileID: 1584945402}
     isAlive: 0
     isBattling: 0
     transform: {fileID: 1584945403}
     animations: {fileID: 1584945407}
+    stats: {fileID: 0}
   ranger:
     hero: {fileID: 862018073}
     isAlive: 0
     isBattling: 0
     transform: {fileID: 862018074}
     animations: {fileID: 862018078}
+    stats: {fileID: 0}
   cleric:
     hero: {fileID: 1378281647}
     isAlive: 0
     isBattling: 0
     transform: {fileID: 1378281648}
     animations: {fileID: 1378281652}
+    stats: {fileID: 0}
   wizard:
     hero: {fileID: 1543875652}
     isAlive: 0
     isBattling: 0
     transform: {fileID: 1543875653}
     animations: {fileID: 1543875657}
+    stats: {fileID: 0}
   clericSlider: {fileID: 1869506663}
   slideSpeed: 5
-  Monster: {fileID: 0}
+  skeleton:
+    monster: {fileID: 303577818}
+    health: 0
+    animations: {fileID: 303577823}
+    stats: {fileID: 0}
+  trund:
+    monster: {fileID: 1641865298}
+    health: 0
+    animations: {fileID: 1641865303}
+    stats: {fileID: 0}
+  goburin:
+    monster: {fileID: 907801291}
+    health: 0
+    animations: {fileID: 907801293}
+    stats: {fileID: 0}
+  slime:
+    monster: {fileID: 344829473}
+    health: 0
+    animations: {fileID: 344829475}
+    stats: {fileID: 0}
   battlePos: {fileID: 596904649}
   initialPosition: {fileID: 1886939072}
 --- !u!1 &983534432
@@ -3143,6 +3451,7 @@ GameObject:
   - component: {fileID: 1641865302}
   - component: {fileID: 1641865301}
   - component: {fileID: 1641865300}
+  - component: {fileID: 1641865303}
   m_Layer: 0
   m_Name: Trund
   m_TagString: Untagged
@@ -3234,6 +3543,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1641865298}
   m_Mesh: {fileID: 0}
+--- !u!114 &1641865303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1641865298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e1fec7fdf2f394e95b78aea0d1d4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iddle: {fileID: 11400000, guid: 183828801251867478920bc3aa3363c8, type: 2}
+  jump: {fileID: 11400000, guid: 901f64f67d9e8b341820ffdea592861d, type: 2}
+  attack: {fileID: 11400000, guid: 394494d1e704391469f0e873ee4e3f46, type: 2}
+  hit: {fileID: 11400000, guid: 709d298cda7f11b41b7c2c9927fd549c, type: 2}
+  death: {fileID: 11400000, guid: 484641073904e994ba46056a1debb791, type: 2}
+  iddleTime: 0
+  jumpTime: 0
+  attackTime: 1.2
+  hitTime: 0.4
+  deathTime: 1.7
+  testJump: 0
+  testAttack: 0
+  testHit: 0
+  testDeath: 0
 --- !u!1 &1699825209
 GameObject:
   m_ObjectHideFlags: 0

@@ -39,6 +39,7 @@ public class PaladinManager : Singleton<PaladinManager> {
 			missAxe = false;
 			remainDefenses = 6;
 			BattleManager.Instance.paladin.animations.PlayHitAniamtion();
+			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.hitTime);
 			//Enemy Attack Animation
 			//Receive Damage
@@ -54,6 +55,8 @@ public class PaladinManager : Singleton<PaladinManager> {
 			missAxe = false;
 			remainDefenses = 6;
 			BattleManager.Instance.paladin.animations.PlayAttackAnimation();
+			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
+			//BattleManager.CheckMonsterLife();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.attackTime);
 			//Enemy Hit Animation
 			//Do Damage

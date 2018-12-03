@@ -11,7 +11,8 @@ public class BattleManager : Singleton<BattleManager> {
 	public Hero barbarian, paladin, ranger, cleric, wizard;
 	public Slider clericSlider;	
 	public float slideSpeed = 5;
-	public GameObject Monster;
+	public Monster skeleton, trund, goburin, slime;
+	public Monster activeMonster;
 	public Transform battlePos, initialPosition;
 	//Handle Alive players
 	//Carrega stats
@@ -25,22 +26,60 @@ public class BattleManager : Singleton<BattleManager> {
 	}
 
 	private void Start() {
-		/* if(PartyManager.Instance.heroesAlive[0])
+		/* 
+		 if(PartyManager.Instance.heroesAlive[0]){
 			barbarian.isAlive = true;
 			barbarian.hero.SetActive(true);
-		if(PartyManager.Instance.heroesAlive[1])
+			barbarian.stats = PartyManager.Instance.characters[0].charStats;
+		 }
+		if(PartyManager.Instance.heroesAlive[1]){
 			paladin.isAlive = true;
 			paladin.hero.SetActive(true);
-		if(PartyManager.Instance.heroesAlive[2])
+			paladin.stats = PartyManager.Instance.characters[1].charStats;
+		}
+		if(PartyManager.Instance.heroesAlive[2]){
 			ranger.isAlive = true;
 			ranger.hero.SetActive(true);
-		if(PartyManager.Instance.heroesAlive[3])
+			ranger.stats = PartyManager.Instance.characters[2].charStats;
+		}
+		if(PartyManager.Instance.heroesAlive[3]){
 			cleric.isAlive = true;
 			cleric.hero.SetActive(true);
-		if(PartyManager.Instance.heroesAlive[4])
-			wizzard.isAlive = true;
-			wizzard.hero.SetActive(true);*/
-		//get playersNumber from manager
+			cleric.stats = PartyManager.Instance.characters[3].charStats;
+		}
+		if(PartyManager.Instance.heroesAlive[4]){
+			wizard.isAlive = true;
+			wizard.hero.SetActive(true);
+			wizard.stats = PartyManager.Instance.characters[4].charStats;
+		}*/
+		/*skeleton.stats = skeleton.monster.GetComponent<CharacterStats>();
+		trund.stats = trund.monster.GetComponent<CharacterStats>();
+		goburin.stats = goburin.monster.GetComponent<CharacterStats>();
+		slime.stats = slime.monster.GetComponent<CharacterStats>();
+		boss.stats = boss.monster.GetComponent<CharacterStats>();
+		if(MonsterManager.Instance.monsterName == "Skeleton")
+		{
+				activeMonster = skeleton;
+		}
+		else if(MonsterManager.Instance.monsterName == "Trund")
+		{
+			activeMonster = trund;
+		}
+		else if(MonsterManager.Instance.monsterName == "Goburin")
+		{
+			activeMonster = goburin;
+		}
+		else if(MonsterManager.Instance.monsterName == "Slime")
+		{
+			activeMonster = slime;
+		}
+	  else
+		{
+			//Boss
+		}*/
+		activeMonster = skeleton;
+		activeMonster.monster.SetActive(true);
+
 		barbarian.isAlive = true;
 paladin.isAlive = true;
 ranger.isAlive = true;
@@ -184,6 +223,15 @@ public struct Hero{
 	public bool isBattling;
 	public Transform transform;
 	public BattlePlayersAnimation animations;
+	public CharacterStats stats;
+}
+
+[System.Serializable]
+public struct Monster {
+	public GameObject monster;
+	public float health;
+	public BattleMonsterAnimation animations;
+	public CharacterStats stats;
 }
 
 

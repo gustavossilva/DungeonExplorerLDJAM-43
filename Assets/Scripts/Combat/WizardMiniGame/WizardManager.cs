@@ -26,6 +26,7 @@ public class WizardManager : Singleton<WizardManager> {
 			winner = false;
 			loser = false;
 			BattleManager.Instance.wizard.animations.PlayAttackAnimation();
+			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.wizard, BattleManager.Instance.wizard.animations.attackTime);
 		}
 		if(loser && isPlaying)
@@ -34,6 +35,7 @@ public class WizardManager : Singleton<WizardManager> {
 			winner = false;
 			loser = false;
 			BattleManager.Instance.wizard.animations.PlayHitAniamtion();
+			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.wizard, BattleManager.Instance.wizard.animations.hitTime);
 		}
 	}
