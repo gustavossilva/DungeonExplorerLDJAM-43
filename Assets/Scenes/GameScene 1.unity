@@ -925,7 +925,7 @@ Light:
   m_Type: 2
   m_Color: {r: 0.8113208, g: 0.56152976, b: 0.23344605, a: 0.6627451}
   m_Intensity: 2.8
-  m_Range: 6.47
+  m_Range: 6.28
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1303,7 +1303,7 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 20d08fc47c3672544810984460413c16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11105,7 +11105,7 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2b703b5efb9816749804574aaedf7551, type: 2}
+  - {fileID: 2100000, guid: 20d08fc47c3672544810984460413c16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23408,11 +23408,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1806919007415014, guid: 8c69e2d3595a9b547970fcbf6289f1f8, type: 2}
-  slotCharA: {fileID: 1167645911}
-  slotCharB: {fileID: 1152868676}
-  slotCharC: {fileID: 1132675863}
-  slotCharD: {fileID: 2122468967}
-  slotMainChar: {fileID: 966139333}
+  slotPaladino: {fileID: 0}
+  slotRanger: {fileID: 0}
+  slotClerigo: {fileID: 0}
+  slotWizard: {fileID: 0}
+  slotBarbaro: {fileID: 0}
   slots:
   - {fileID: 641268897}
   - {fileID: 1790023163}
@@ -25216,7 +25216,7 @@ TilemapRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 20d08fc47c3672544810984460413c16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
