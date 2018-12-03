@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Spine.Unity;
+using UnityEngine;
 public class SkeletonBehaviour : MonoBehaviour {
 	public float cooldown = 0.35f;
 	private float movementCooldown;
@@ -17,42 +17,43 @@ public class SkeletonBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		skeletonSkeleton = GetComponent<SkeletonAnimation>();
+		skeletonSkeleton = GetComponent<SkeletonAnimation> ();
 		_gridMovement = GetComponent<GridMovement> ();
 		movementCooldown = cooldown;
-		skeletonSkeleton.AnimationState.SetAnimation(0,idleAnimation,true); 
-		_gridMovement.hasAnimation += StartJumpAnimation;
+		skeletonSkeleton.AnimationState.SetAnimation (0, idleAnimation, true);
+		Player.Instance.moved += MoveWhenPlayerMove;
+		skeletonSkeleton.AnimationState.Event += MoveAfterAnimation;
+	}
+
+	private void MoveAfterAnimation (Spine.TrackEntry track, Spine.Event e) {
+		// When the animation passes through the energy event, starts showing the energy text
+		if (string.Equals ("Jump", e.Data.Name, System.StringComparison.Ordinal))
+			Move ();
+	}
+
+	private void MoveWhenPlayerMove () {
+		skeletonSkeleton.AnimationState.SetAnimation (1, jumpAnimation, false);
 	}
 
 	// Update is called once per frame
-	void Update () {
-		movementCooldown -= Time.deltaTime;
-		if (movementCooldown <= 0) {
-			_obstacleTag = string.Empty;
-			if(!downFirst){
-				MoveAndCheck(Vector2.up);
-			}else{
-				MoveAndCheck(Vector2.down);
-			}
+	void Move () {
+		_obstacleTag = string.Empty;
+		if (!downFirst) {
+			MoveAndCheck (Vector2.up);
+		} else {
+			MoveAndCheck (Vector2.down);
 		}
 	}
-	void MoveAndCheck(Vector2 direction){
+	void MoveAndCheck (Vector2 direction) {
 		// Perform the movement
-		
-		_obstacleTag = _gridMovement.MoveBy(direction);
-		
+		_obstacleTag = _gridMovement.MoveBy (direction);
+
 		// Verifies if the players got in contact with an enemy
-		if(string.IsNullOrEmpty(_obstacleTag)){
+		if (string.IsNullOrEmpty (_obstacleTag)) {
 			movementCooldown = cooldown;
-			
-		}
-		else{
+
+		} else {
 			downFirst = !downFirst;
 		}
 	}
-
-	void StartJumpAnimation(){
-		skeletonSkeleton.AnimationState.SetAnimation(1,jumpAnimation,false);
-	}
 }
-

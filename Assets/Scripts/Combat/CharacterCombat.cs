@@ -8,8 +8,15 @@ public class CharacterCombat : MonoBehaviour {
 	CharacterStats charStats;
 	public Slot slot;
 
-	void Start () {
+	void Awake () {
 		charStats = GetComponent<CharacterStats>();
+		PartyManager.Instance.AddCharacter(this);
+	}
+
+	void Start(){
+		// Take the item from the slot first!!!
+
+		// UseItemOnStart();
 	}
 
 	public void Attack (CharacterStats target)
@@ -29,15 +36,18 @@ public class CharacterCombat : MonoBehaviour {
 			switch(slot.itemUI.effect){
 				case Effect.AUMENTA_DANO:
 					// Tell the Party Manager to increase damage of all the characters
-					// PartyManager.Instance.IncreaseDamage(); ---> this will iterate through all the CharacterCombat scripts and called the IncreaseDamage below
+					// This will iterate through all the CharacterCombat scripts and called the IncreaseDamage below
+					PartyManager.Instance.IncreasePartyDamage(5);
 					break;
 				case Effect.REDUZ_DANO_RECEBIDO:
 					// Tell the PartyManager to increase the armor of all the characters
-					// PartyManager.Instance.IncreaseArmor(); ---> this will iterate through all the CharacterCombat scripts and called the IncreaseArmor below
+					// This will iterate through all the CharacterCombat scripts and called the IncreaseArmor below
+					PartyManager.Instance.IncreasePartyArmor(10);
 					break;
 				case Effect.RESTAURA_HP:
 					// Tell the PartyManager to heal  all the characters
-					// PartyManager.Instance.HealEveryone() ---> this will iterate through all the CharacterCombat scripts and called the Heal below
+					// This will iterate through all the CharacterCombat scripts and called the Heal below
+					PartyManager.Instance.HealParty(15);
 					break;
 			}
 		}

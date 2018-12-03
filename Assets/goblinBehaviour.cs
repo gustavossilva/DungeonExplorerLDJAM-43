@@ -38,15 +38,13 @@ public class goblinBehaviour : MonoBehaviour {
 				break;
 		}
 		movementCooldown = cooldown;
+		Player.Instance.moved += Move;
 	}
 
 	// Update is called once per frame
-	void Update () {
-		movementCooldown -= Time.deltaTime;
-		if (movementCooldown <= 0) {
-			GoblinMovement (startPosition);
-			movementCooldown = cooldown;
-		}
+	void Move () {
+		GoblinMovement (startPosition);
+		movementCooldown = cooldown;
 	}
 
 	private void GoblinMovement (StartPosition movementType) {

@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "miyiZiO2XHfukIX7GfHAHn1Ofys", "spine": "3.7.42-beta", "width": 271.6, "height": 365.42, "images": "", "audio": "" },
+"skeleton": { "hash": "qFeaBXiJbEbxda6KNEY9UJ4JGv0", "spine": "3.7.42-beta", "width": 271.6, "height": 365.42, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "body", "parent": "root", "x": 0.61, "y": 113.91 },
@@ -58,6 +58,9 @@
 			"skely-25": { "x": -12.03, "y": -3.98, "rotation": -88.67, "width": 48, "height": 51 }
 		}
 	}
+},
+"events": {
+	"Jump": {}
 },
 "animations": {
 	"attack": {
@@ -796,7 +799,10 @@
 					]
 				}
 			}
-		}
+		},
+		"events": [
+			{ "time": 0.1667, "name": "Jump" }
+		]
 	}
 }
 }
