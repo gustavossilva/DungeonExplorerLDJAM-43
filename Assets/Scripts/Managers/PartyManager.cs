@@ -21,7 +21,9 @@ public class PartyManager : Singleton<PartyManager> {
 	public CharacterStats clericStats;
 	public CharacterStats wizardStats;
 
-	public Transform positionPreBattle = null;
+	public Vector3 positionPreBattle;
+
+	private bool startGameLoading = true;
 
 	public string monsterId;
 	protected override void Awake() {
@@ -80,12 +82,15 @@ public class PartyManager : Singleton<PartyManager> {
 
 	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
 	{
+		if(!startGameLoading){
 			if(scene.name == "GameScene")
 			{
 				party = GameObject.Find("Player");
-				party.transform.position = positionPreBattle.position;
+				party.transform.position = positionPreBattle;
 				MonsterManager.Instance.EndBattle(true,monsterId);
 			}
+		}
+		startGameLoading = false;
 	}
 
 	// public void AddCharacter(CharacterCombat character){

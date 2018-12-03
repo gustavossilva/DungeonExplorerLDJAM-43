@@ -25,11 +25,11 @@ public class MonsterManager : Singleton<MonsterManager> {
 	public void EndBattle(bool victoryCondition,string monsterId){
 		if(victoryCondition)
 		{
-			//GameOver
+			monstersInGame[monsterId] = false; 
 		}
 		else
 		{
-			monstersInGame[monsterId] = false;
+			
 		}
 	}
 

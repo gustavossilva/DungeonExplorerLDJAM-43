@@ -47,8 +47,6 @@ public class Player : Singleton<Player> {
 
 	// Use this for initialization
 	void Start () {
-		if(PartyManager.Instance.positionPreBattle == null)
-			PartyManager.Instance.positionPreBattle = this.transform;
 		_gridMovement = GetComponent<GridMovement>();
 		movementCooldown = cooldown;
 		canMove = true;

@@ -38,7 +38,7 @@ public class GridMovement : MonoBehaviour {
 		if (hasAnimation != null)
 			hasAnimation ();
 		if (this.transform.CompareTag ("Player"))
-			PartyManager.Instance.positionPreBattle.position = final;
+			PartyManager.Instance.positionPreBattle = final;
 		// Change transform position
 		while (!MathUtil.IsApproximate (transform.position, final, .1f)) {
 			// transform.position = Vector3.Lerp(transform.position, final, Time.deltaTime * 5f);
