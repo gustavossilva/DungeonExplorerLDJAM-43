@@ -27,6 +27,7 @@ public class BarbarianManager : Singleton<BarbarianManager> {
 				BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
 				BattleManager.Instance.activeMonster.stats.TakeDamage(BattleManager.Instance.barbarian.stats.damage.GetValue());
 				BattleManager.Instance.CheckStats();
+				BattleManager.Instance.UpdateEnemyHealthBar();
 				BattleManager.Instance.ChangeCharacter(BattleManager.Instance.barbarian, BattleManager.Instance.barbarian.animations.attackTime);
 			}
 			else
@@ -36,6 +37,7 @@ public class BarbarianManager : Singleton<BarbarianManager> {
 				BattleManager.Instance.barbarian.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
 				InventoryManager.Instance.ChangeHealth(Character.BARBARIAN, BattleManager.Instance.barbarian.stats.currentHealth);
 				BattleManager.Instance.CheckStats();
+				BattleManager.Instance.UpdatePartyHealthBars();
 				BattleManager.Instance.ChangeCharacter(BattleManager.Instance.barbarian, BattleManager.Instance.barbarian.animations.hitTime);
 			}
 				isPlaying = false;

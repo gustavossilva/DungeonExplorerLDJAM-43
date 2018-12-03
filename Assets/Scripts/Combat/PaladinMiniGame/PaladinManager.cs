@@ -43,6 +43,7 @@ public class PaladinManager : Singleton<PaladinManager> {
 			BattleManager.Instance.paladin.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
 			InventoryManager.Instance.ChangeHealth(Character.PALADIN, BattleManager.Instance.paladin.stats.currentHealth);
 			BattleManager.Instance.CheckStats();
+			BattleManager.Instance.UpdatePartyHealthBars();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.hitTime);
 			//Enemy Attack Animation
 			//Receive Damage
@@ -61,6 +62,7 @@ public class PaladinManager : Singleton<PaladinManager> {
 			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.stats.TakeDamage(BattleManager.Instance.paladin.stats.damage.GetValue());
 			BattleManager.Instance.CheckStats();
+			BattleManager.Instance.UpdateEnemyHealthBar();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.attackTime);
 			//Enemy Hit Animation
 			//Do Damage

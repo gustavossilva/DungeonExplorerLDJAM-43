@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
 
+	private float _currentHealth;
+
 	public Stat maxHealth;
-	public float currentHealth { get; private set; }
+	public float currentHealth { get{return _currentHealth;} set {_currentHealth = Mathf.Clamp(value, 0f, int.MaxValue);} }
 	public Stat damage;
 	public Stat armor;
 

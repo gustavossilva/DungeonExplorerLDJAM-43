@@ -9,7 +9,8 @@ public class BattleManager : Singleton<BattleManager> {
 
 	public GameObject barbGame, pallyGame, rangerGame, clericGame, wizardGame;
 	public Hero barbarian, paladin, ranger, cleric, wizard;
-	public Slider clericSlider;	
+	public Slider clericSlider;
+	public Slider enemyHealthBar, barbarianHealthBar, paladinHealthBar, rangerHealthBar, clericHealthBar, wizardHealthBar;
 	public float slideSpeed = 5;
 	public Monster skeleton, trund, goburin, slime;
 	public Monster activeMonster;
@@ -29,31 +30,56 @@ public class BattleManager : Singleton<BattleManager> {
 
 	private void Start() {
 		 
-		 if(PartyManager.Instance.heroesAlive[0]){
+		if(PartyManager.Instance.heroesAlive[0]){
 			barbarian.isAlive = true;
 			barbarian.hero.SetActive(true);
 			barbarian.stats = PartyManager.Instance.barbaroCharacter.charStats;
-		 }
+		}else{
+			barbarianHealthBar.transform.GetChild(3).gameObject.SetActive(true);
+			barbarian.stats = PartyManager.Instance.barbaroCharacter.charStats;
+		}
 		if(PartyManager.Instance.heroesAlive[1]){
 			paladin.isAlive = true;
 			paladin.hero.SetActive(true);
 			paladin.stats = PartyManager.Instance.paladinoCharacter.charStats;
+		}else{
+			paladinHealthBar.transform.GetChild(3).gameObject.SetActive(true);
+			paladin.stats = PartyManager.Instance.paladinoCharacter.charStats;
+
 		}
 		if(PartyManager.Instance.heroesAlive[2]){
 			ranger.isAlive = true;
 			ranger.hero.SetActive(true);
 			ranger.stats = PartyManager.Instance.rangerCharacter.charStats;
+		}else{
+			rangerHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
+			ranger.stats = PartyManager.Instance.rangerCharacter.charStats;
+
 		}
 		if(PartyManager.Instance.heroesAlive[3]){
 			cleric.isAlive = true;
 			cleric.hero.SetActive(true);
 			cleric.stats = PartyManager.Instance.clericCharacter.charStats;
+		}else{
+			clericHealthBar.transform.GetChild(3).gameObject.SetActive(true);
+			cleric.stats = PartyManager.Instance.clericCharacter.charStats;
+
 		}
 		if(PartyManager.Instance.heroesAlive[4]){
 			wizard.isAlive = true;
 			wizard.hero.SetActive(true);
 			wizard.stats = PartyManager.Instance.wizardCharacter.charStats;
+		}else{
+			wizardHealthBar.transform.GetChild(3).gameObject.SetActive(true);
+			wizard.stats = PartyManager.Instance.wizardCharacter.charStats;
+
 		}
+			
+		UpdatePartyHealthBars();	
+
+		
+
+
 		skeleton.stats = skeleton.monster.GetComponent<CharacterStats>();
 		trund.stats = trund.monster.GetComponent<CharacterStats>();
 		goburin.stats = goburin.monster.GetComponent<CharacterStats>();
@@ -185,6 +211,18 @@ public class BattleManager : Singleton<BattleManager> {
 		}
 	}
 
+	public void UpdatePartyHealthBars(){
+		barbarianHealthBar.value = (barbarian.stats.currentHealth / barbarian.stats.maxHealth.baseValue) * 100;
+		paladinHealthBar.value = (paladin.stats.currentHealth / paladin.stats.maxHealth.baseValue) * 100;	
+		rangerHealthBar.value = (ranger.stats.currentHealth / ranger.stats.maxHealth.baseValue) * 100;	
+		clericHealthBar.value = (cleric.stats.currentHealth / cleric.stats.maxHealth.baseValue) * 100;	
+		wizardHealthBar.value = (wizard.stats.currentHealth / wizard.stats.maxHealth.baseValue) * 100;
+	}
+
+	public void UpdateEnemyHealthBar(){
+		enemyHealthBar.value = (activeMonster.stats.currentHealth / activeMonster.stats.maxHealth.baseValue) * 100;
+	}
+
 	public void CheckStats()
 	{
 		if(activeMonster.stats.currentHealth <= 0)
@@ -198,26 +236,31 @@ public class BattleManager : Singleton<BattleManager> {
 		{
 			barbarian.isAlive = false;
 			PartyManager.Instance.heroesAlive[0] = false;
+			barbarianHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(paladin.stats.currentHealth <= 0)
 		{
 			paladin.isAlive = false;
 			PartyManager.Instance.heroesAlive[1] = false;
+			paladinHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(ranger.stats.currentHealth <= 0)
 		{
 			ranger.isAlive = false;
 			PartyManager.Instance.heroesAlive[2] = false;
+			rangerHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(cleric.stats.currentHealth <= 0)
 		{
 			cleric.isAlive = false;
 			PartyManager.Instance.heroesAlive[3] = false;
+			clericHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(wizard.stats.currentHealth <= 0)
 		{
 			wizard.isAlive = false;
 			PartyManager.Instance.heroesAlive[4] = false;
+			wizardHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(!barbarian.isAlive && !paladin.isAlive && !ranger.isAlive && !cleric.isAlive && !wizard.isAlive)
 		{

@@ -31,6 +31,7 @@ public class ClericManager : Singleton<ClericManager> {
 			isPlaying = false;
 			BattleManager.Instance.cleric.animations.PlayAttackAnimation();
 			PartyManager.Instance.HealParty(BattleManager.Instance.cleric.stats.damage.GetValue());
+			BattleManager.Instance.UpdatePartyHealthBars();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.cleric, BattleManager.Instance.cleric.animations.attackTime);
 			healthBar.value = 50;
 			healthBar.gameObject.SetActive(false);
@@ -44,6 +45,7 @@ public class ClericManager : Singleton<ClericManager> {
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.cleric, BattleManager.Instance.cleric.animations.hitTime);
 			BattleManager.Instance.CheckStats();
+			BattleManager.Instance.UpdatePartyHealthBars();
 			healthBar.value = 50;
 			healthBar.gameObject.SetActive(false);
 		}
