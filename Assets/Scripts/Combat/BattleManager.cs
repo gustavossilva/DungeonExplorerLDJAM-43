@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class BattleManager : Singleton<BattleManager> {
 		
 
@@ -14,6 +14,7 @@ public class BattleManager : Singleton<BattleManager> {
 	public Monster skeleton, trund, goburin, slime;
 	public Monster activeMonster;
 	public Transform battlePos, initialPosition;
+	public TextMeshProUGUI winText;
 	//Handle Alive players
 	//Carrega stats
 	//Gera o efeito dos itens
@@ -197,9 +198,53 @@ public class BattleManager : Singleton<BattleManager> {
 		}
 	}
 
+	public void CheckStats()
+	{
+		if(activeMonster.stats.currentHealth <= 0)
+		{
+			activeMonster.animations.PlayDeathAnimation();
+		}
+		if(barbarian.stats.currentHealth <= 0)
+		{
+			barbarian.isAlive = false;
+			PartyManager.Instance.heroesAlive[0] = false;
+		}
+		if(paladin.stats.currentHealth <= 0)
+		{
+			paladin.isAlive = false;
+			PartyManager.Instance.heroesAlive[1] = false;
+		}
+		if(ranger.stats.currentHealth <= 0)
+		{
+			ranger.isAlive = false;
+			PartyManager.Instance.heroesAlive[2] = false;
+		}
+		if(cleric.stats.currentHealth <= 0)
+		{
+			cleric.isAlive = false;
+			PartyManager.Instance.heroesAlive[3] = false;
+		}
+		if(wizard.stats.currentHealth <= 0)
+		{
+			wizard.isAlive = false;
+			PartyManager.Instance.heroesAlive[4] = false;
+		}
+		if(!barbarian.isAlive && !paladin.isAlive && !ranger.isAlive && !cleric.isAlive && !wizard.isAlive)
+		{
+			//GameOver
+		}
+	}
+
 	public void ChangeCharacter(Hero character, float delay=0)
 	{
 		StartCoroutine(MoveBack(character, delay));
+	}
+
+	IEnumerator WinBattle()
+	{
+		winText.gameObject.SetActive(true);
+		yield return new WaitForSeconds(2f);
+		//PartyManager.Instance.EndBattle();
 	}
 
 	IEnumerator MoveBack(Hero character, float delay)
