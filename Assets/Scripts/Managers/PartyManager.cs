@@ -25,7 +25,7 @@ public class PartyManager : Singleton<PartyManager> {
 	}
 
 	public void StartBattle(Transform oldPos){
-		positionPreBattle = oldPos;
+		positionPreBattle = oldPos ;
 		SceneManager.LoadScene("Combat");
 	}
 

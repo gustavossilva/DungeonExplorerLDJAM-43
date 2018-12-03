@@ -63,8 +63,9 @@ public class SlimeBehaviour : MonoBehaviour {
 	/// <param name="other">The other Collider2D involved in this collision.</param>
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.tag == "Player"){
-			
+		if(other.CompareTag("Player")){
+			MonsterManager.Instance.monsterName = "Slime";
+			MonsterManager.Instance.StartBattle(other.transform);
 		}
 	}
 

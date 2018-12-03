@@ -52,11 +52,11 @@ public class BattleManager : Singleton<BattleManager> {
 			wizard.hero.SetActive(true);
 			wizard.stats = PartyManager.Instance.characters[4].charStats;
 		}*/
-		/*skeleton.stats = skeleton.monster.GetComponent<CharacterStats>();
+		skeleton.stats = skeleton.monster.GetComponent<CharacterStats>();
 		trund.stats = trund.monster.GetComponent<CharacterStats>();
 		goburin.stats = goburin.monster.GetComponent<CharacterStats>();
 		slime.stats = slime.monster.GetComponent<CharacterStats>();
-		boss.stats = boss.monster.GetComponent<CharacterStats>();
+		// boss.stats = boss.monster.GetComponent<CharacterStats>();
 		if(MonsterManager.Instance.monsterName == "Skeleton")
 		{
 				activeMonster = skeleton;
@@ -76,8 +76,8 @@ public class BattleManager : Singleton<BattleManager> {
 	  else
 		{
 			//Boss
-		}*/
-		activeMonster = skeleton;
+		}
+		// activeMonster = skeleton;
 		activeMonster.monster.SetActive(true);
 
 		barbarian.isAlive = true;
