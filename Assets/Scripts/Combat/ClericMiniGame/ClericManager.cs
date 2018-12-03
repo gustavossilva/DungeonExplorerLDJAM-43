@@ -12,6 +12,8 @@ public class ClericManager : Singleton<ClericManager> {
 	public Slider healthBar;
 	public bool isPlaying = false;
 
+	public AudioClip attackClip, hitClip;
+
 
 	protected override void Awake(){
 		IsPersistentBetweenScenes = false;
@@ -36,6 +38,7 @@ public class ClericManager : Singleton<ClericManager> {
 		}
 		if(healthBar.value >= 99.5 && isPlaying)
 		{
+			GetComponent<AudioSource>().PlayOneShot(attackClip, .4f);
 			isPlaying = false;
 			BattleManager.Instance.cleric.animations.PlayAttackAnimation();
 			PartyManager.Instance.HealParty(BattleManager.Instance.cleric.stats.damage.GetValue());
@@ -60,6 +63,8 @@ public class ClericManager : Singleton<ClericManager> {
 
 	public void Loser()
 	{
+		// GetComponent<AudioSource>().PlayOneShot(hitClip, .4f);
+
 			isPlaying = false;
 			BattleManager.Instance.cleric.animations.PlayHitAniamtion();
 			BattleManager.Instance.cleric.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());

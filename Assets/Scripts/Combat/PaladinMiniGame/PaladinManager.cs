@@ -12,6 +12,9 @@ public class PaladinManager : Singleton<PaladinManager> {
 	public bool missAxe = false;
 	public int remainDefenses = 6;
 
+	public AudioClip attackClip, hitClip;
+
+
 	protected override void Awake() {
 		IsPersistentBetweenScenes = false;
 		base.Awake();
@@ -38,6 +41,8 @@ public class PaladinManager : Singleton<PaladinManager> {
 			isPlaying = false;
 			missAxe = false;
 			remainDefenses = 6;
+		// GetComponent<AudioSource>().PlayOneShot(hitClip, .4f);
+
 			BattleManager.Instance.paladin.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.paladin.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
@@ -49,6 +54,8 @@ public class PaladinManager : Singleton<PaladinManager> {
 			//Receive Damage
 		}
 		if(remainDefenses <= 0 && isPlaying){
+			GetComponent<AudioSource>().PlayOneShot(attackClip, .4f);
+
 			axe1.SetActive(false);
 			axe2.SetActive(false);
 			axe3.SetActive(false);
