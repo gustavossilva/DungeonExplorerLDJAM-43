@@ -15,6 +15,8 @@ public class InGameItem : MonoBehaviour {
 
 	public string id;
 
+	public AudioClip clip;
+
 	/// <summary>
 	/// Start is called on the frame when a script is enabled just before
 	/// any of the Update methods is called the first time.
@@ -36,6 +38,7 @@ public class InGameItem : MonoBehaviour {
 					if (InventoryManager.Instance.ItemCollected (item)) { 
 						ItemManager.Instance.ChestsOpened[id] = true;
 						openChest ();
+						GetComponent<AudioSource>().PlayOneShot(clip, .5f);
 					} else 
 						Debug.Log ("Inventory Full!");
 				}
