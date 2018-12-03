@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16d25291e480af4b9b874468469b73d, type: 3}
   m_Name: AumentaDano
   m_EditorClassIdentifier: 
-  _spriteInGame: {fileID: 21300002, guid: 2c72d87030fa3164e9d85450749d51da, type: 3}
-  _spriteUI: {fileID: 21300032, guid: 5c4f1fa01d076b0448a9438531d30a91, type: 3}
+  _spriteInGame: {fileID: 21300000, guid: 11183582cc34f154cb7f652fcf242425, type: 3}
+  _spriteUI: {fileID: 21300000, guid: 79dbe3fdbecc7764aa98b730e02ce0b5, type: 3}
   _description: Increase damage for all your squad members
   _effect: 4
