@@ -24940,6 +24940,11 @@ GameObject:
   - component: {fileID: 1246436428}
   - component: {fileID: 1246436430}
   - component: {fileID: 1246436431}
+  - component: {fileID: 1246436436}
+  - component: {fileID: 1246436435}
+  - component: {fileID: 1246436434}
+  - component: {fileID: 1246436433}
+  - component: {fileID: 1246436432}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -24959,11 +24964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1806919007415014, guid: 8c69e2d3595a9b547970fcbf6289f1f8, type: 2}
-  slotCharA: {fileID: 1167645911}
-  slotCharB: {fileID: 1152868676}
-  slotCharC: {fileID: 1132675863}
-  slotCharD: {fileID: 2122468967}
-  slotMainChar: {fileID: 966139333}
+  slotPaladino: {fileID: 1167645911}
+  slotRanger: {fileID: 1152868676}
+  slotClerigo: {fileID: 1132675863}
+  slotWizard: {fileID: 2122468967}
+  slotBarbaro: {fileID: 966139333}
   slots:
   - {fileID: 641268897}
   - {fileID: 1790023163}
@@ -25012,9 +25017,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   party: {fileID: 102897505}
   heroesAlive: 0000000000
-  characters: []
+  barbaroCharacter: {fileID: 1246436436}
+  paladinoCharacter: {fileID: 1246436435}
+  rangerCharacter: {fileID: 1246436434}
+  clericCharacter: {fileID: 1246436433}
+  wizardCharacter: {fileID: 1246436432}
   positionPreBattle: {fileID: 0}
   monsterId: 
+--- !u!114 &1246436432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charStats: {fileID: 0}
+  slot: {fileID: 0}
+  character: 4
+--- !u!114 &1246436433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charStats: {fileID: 0}
+  slot: {fileID: 0}
+  character: 3
+--- !u!114 &1246436434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charStats: {fileID: 0}
+  slot: {fileID: 0}
+  character: 2
+--- !u!114 &1246436435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charStats: {fileID: 0}
+  slot: {fileID: 0}
+  character: 1
+--- !u!114 &1246436436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charStats: {fileID: 0}
+  slot: {fileID: 0}
+  character: 0
 --- !u!1001 &1250471345
 Prefab:
   m_ObjectHideFlags: 0

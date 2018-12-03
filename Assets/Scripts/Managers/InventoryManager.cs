@@ -12,11 +12,11 @@ public enum Character{
 public class InventoryManager : Singleton<InventoryManager> {
 	
 	public GameObject prefab;
-	public Slot slotCharA;
-	public Slot slotCharB;
-	public Slot slotCharC;
-	public Slot slotCharD;
-	public Slot slotMainChar;
+	public Slot slotPaladino;
+	public Slot slotRanger;
+	public Slot slotClerigo;
+	public Slot slotWizard;
+	public Slot slotBarbaro;
 	public Slot[] slots;
 
 	private const int maxItemsQuantity = 6;

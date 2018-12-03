@@ -9,7 +9,7 @@ public class MonsterManager : Singleton<MonsterManager> {
 
 	public Dictionary<string,bool> monstersInGame;
 
-	public string monsterName = "";
+	public string monsterName = ""; 
 
 
 	protected override void Awake() {

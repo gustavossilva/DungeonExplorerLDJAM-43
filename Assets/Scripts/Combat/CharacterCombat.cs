@@ -2,49 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterStats))]
 public class CharacterCombat : MonoBehaviour {
 
 	public CharacterStats charStats;
 	public Slot slot;
 
 	public enum Char{
-		CHAR_A,
-		CHAR_B,
-		CHAR_C,
-		CHAR_D,
-		MAIN_CHAR
+		BARBARO,
+		PALADINO,
+		RANGER,
+		CLERIC,
+		WIZARD
 	}
 
 	public Char character;
 
 	void Awake () {
 		charStats = GetComponent<CharacterStats>();
-		PartyManager.Instance.AddCharacter(this);
+		// PartyManager.Instance.AddCharacter(this);
 	}
 
 	void Start(){
 		// Take the item from the slot first!!!
-		switch(character){
-			case Char.CHAR_A:
-				slot = InventoryManager.Instance.slotCharA;
-				break;
-			case Char.CHAR_B:
-				slot = InventoryManager.Instance.slotCharB;
-				break;
-			case Char.CHAR_C:
-				slot = InventoryManager.Instance.slotCharC;
-				break;
-			case Char.CHAR_D:
-				slot = InventoryManager.Instance.slotCharD;
-				break;
-			case Char.MAIN_CHAR:
-				slot = InventoryManager.Instance.slotMainChar;
-				break;
-		}
+		// switch(character){
+		// 	case Char.CHAR_A:
+		// 		slot = InventoryManager.Instance.slotCharA;
+		// 		break;
+		// 	case Char.CHAR_B:
+		// 		slot = InventoryManager.Instance.slotCharB;
+		// 		break;
+		// 	case Char.CHAR_C:
+		// 		slot = InventoryManager.Instance.slotCharC;
+		// 		break;
+		// 	case Char.CHAR_D:
+		// 		slot = InventoryManager.Instance.slotCharD;
+		// 		break;
+		// 	case Char.MAIN_CHAR:
+		// 		slot = InventoryManager.Instance.slotMainChar;
+		// 		break;
+		// }
 
 		// use item
-		UseItemOnStart();
+		// UseItemOnStart();
 	}
 
 	// public void Attack (CharacterStats target)
