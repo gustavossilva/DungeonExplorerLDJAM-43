@@ -41,6 +41,7 @@ public class PaladinManager : Singleton<PaladinManager> {
 			BattleManager.Instance.paladin.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.paladin.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
+			InventoryManager.Instance.ChangeHealth(Character.PALADIN, BattleManager.Instance.paladin.stats.currentHealth);
 			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.hitTime);
 			//Enemy Attack Animation

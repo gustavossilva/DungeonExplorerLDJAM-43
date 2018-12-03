@@ -39,6 +39,7 @@ public class RangerManager : Singleton<RangerManager> {
 			BattleManager.Instance.ranger.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.ranger.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
+			InventoryManager.Instance.ChangeHealth(Character.RANGER, BattleManager.Instance.ranger.stats.currentHealth);
 			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.ranger, BattleManager.Instance.ranger.animations.hitTime);
 		}

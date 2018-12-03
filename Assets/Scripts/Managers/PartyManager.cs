@@ -119,6 +119,12 @@ public class PartyManager : Singleton<PartyManager> {
 		rangerCharacter.Heal(amount);
 		clericCharacter.Heal(amount);
 		wizardCharacter.Heal(amount);
+
+		InventoryManager.Instance.ChangeHealth(Character.BARBARIAN, barbaroCharacter.charStats.currentHealth);
+		InventoryManager.Instance.ChangeHealth(Character.PALADIN, paladinoCharacter.charStats.currentHealth);
+		InventoryManager.Instance.ChangeHealth(Character.RANGER, rangerCharacter.charStats.currentHealth);
+		InventoryManager.Instance.ChangeHealth(Character.CLERIC, clericCharacter.charStats.currentHealth);
+		InventoryManager.Instance.ChangeHealth(Character.WIZARD, wizardCharacter.charStats.currentHealth);
 	}
 
 	public void KillHero(int index)

@@ -39,6 +39,7 @@ public class WizardManager : Singleton<WizardManager> {
 			BattleManager.Instance.wizard.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.wizard.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
+			InventoryManager.Instance.ChangeHealth(Character.WIZARD, BattleManager.Instance.wizard.stats.currentHealth);
 			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.wizard, BattleManager.Instance.wizard.animations.hitTime);
 		}

@@ -34,6 +34,7 @@ public class BarbarianManager : Singleton<BarbarianManager> {
 				BattleManager.Instance.barbarian.animations.PlayHitAniamtion();
 				BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 				BattleManager.Instance.barbarian.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
+				InventoryManager.Instance.ChangeHealth(Character.BARBARIAN, BattleManager.Instance.barbarian.stats.currentHealth);
 				BattleManager.Instance.CheckStats();
 				BattleManager.Instance.ChangeCharacter(BattleManager.Instance.barbarian, BattleManager.Instance.barbarian.animations.hitTime);
 			}

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public enum Character{
 	BARBARIAN,
 	CLERIC,
@@ -18,6 +20,12 @@ public class InventoryManager : Singleton<InventoryManager> {
 	public Slot slotWizard;
 	public Slot slotBarbaro;
 	public Slot[] slots;
+
+	public Text barbarianHealthText;
+	public Text paladinHealthText;
+	public Text rangerHealthText;
+	public Text clericHealthText;
+	public Text wizardHealthText;
 
 	private const int maxItemsQuantity = 6;
 	public int itemsQuantity = 0;
@@ -50,7 +58,26 @@ public class InventoryManager : Singleton<InventoryManager> {
 
 	
 
-	public void ChangeHealth(Character character){
+	public void ChangeHealth(Character character, float currentHealth){
+		string health = "Health: " + currentHealth;
 		// Change the health text
+		switch(character){
+			case Character.BARBARIAN:
+				barbarianHealthText.text = health;
+				break;
+			case Character.CLERIC:
+				clericHealthText.text = health;
+				break;
+			case Character.PALADIN:
+				paladinHealthText.text = health;
+				break;
+			case Character.RANGER:
+				rangerHealthText.text = health;
+				break;
+			case Character.WIZARD:
+				wizardHealthText.text = health;
+				break;
+
+		}
 	}
 }

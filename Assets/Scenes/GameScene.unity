@@ -25413,6 +25413,11 @@ MonoBehaviour:
   - {fileID: 943696237}
   - {fileID: 92875155}
   - {fileID: 11263880}
+  barbarianHealthText: {fileID: 490801428}
+  paladinHealthText: {fileID: 1369880990}
+  rangerHealthText: {fileID: 659399636}
+  clericHealthText: {fileID: 2135385476}
+  wizardHealthText: {fileID: 2094775115}
   itemsQuantity: 0
 --- !u!4 &1246436429
 Transform:
@@ -25464,7 +25469,7 @@ MonoBehaviour:
   rangerStats: {fileID: 1246436439}
   clericStats: {fileID: 1246436438}
   wizardStats: {fileID: 1246436437}
-  positionPreBattle: {fileID: 0}
+  positionPreBattle: {x: 0, y: 0, z: 0}
   monsterId: 
 --- !u!114 &1246436432
 MonoBehaviour:

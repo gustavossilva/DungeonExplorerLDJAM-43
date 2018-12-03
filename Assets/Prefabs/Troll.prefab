@@ -208,12 +208,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trollMoves: 01000000010000000100000001000000010000000100000001000000010000000200000002000000
+  trollMoves2: 
+  usedMoves: 
   playerNearby: {fileID: 61894329333121518}
   playerPosition: {fileID: 0}
+  hasTwoWays: 0
   cooldown: 0.5
   timeToNextMovement: 0
   idle: {fileID: 11400000, guid: 183828801251867478920bc3aa3363c8, type: 2}
   jump: {fileID: 11400000, guid: 901f64f67d9e8b341820ffdea592861d, type: 2}
+  id: 
 --- !u!114 &114634859800718358
 MonoBehaviour:
   m_ObjectHideFlags: 1
