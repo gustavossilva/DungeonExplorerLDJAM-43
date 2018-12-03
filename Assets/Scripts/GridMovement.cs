@@ -21,8 +21,9 @@ public class GridMovement : MonoBehaviour {
 		if (!HasParede (finalPos, out hit)) {
 			if (!coroutineIsRunning){
 				StartCoroutine (Move (finalPos));
-				if(this.transform.CompareTag("Player") && amount.y == 0f){
+				if(this.transform.CompareTag("Player") && (amount.y >= 0f)){
 					GetComponent<Animator>().SetTrigger("jump");
+					GetComponentInChildren<Spine.Unity.SkeletonAnimation>().state.SetAnimation(1, "Jump Mov", false).TimeScale = 3f;
 				}
 			}
 			return string.Empty;
