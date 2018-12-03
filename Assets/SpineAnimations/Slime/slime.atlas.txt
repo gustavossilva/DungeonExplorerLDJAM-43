@@ -5,30 +5,30 @@ format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Slime body
-  rotate: false
-  xy: 102, 26
-  size: 88, 68
+  rotate: true
+  xy: 2, 2
+  size: 123, 89
   orig: 123, 89
-  offset: 17, 12
+  offset: 0, 0
   index: -1
 Slime gotas
-  rotate: false
-  xy: 2, 25
-  size: 98, 69
+  rotate: true
+  xy: 93, 8
+  size: 117, 84
   orig: 117, 84
-  offset: 8, 8
+  offset: 0, 0
   index: -1
 slime boca
   rotate: false
-  xy: 2, 2
-  size: 51, 21
+  xy: 179, 88
+  size: 68, 37
   orig: 68, 37
-  offset: 8, 7
+  offset: 0, 0
   index: -1
 slime olho
   rotate: false
-  xy: 192, 81
-  size: 38, 13
+  xy: 179, 50
+  size: 62, 36
   orig: 62, 36
-  offset: 13, 12
+  offset: 0, 0
   index: -1

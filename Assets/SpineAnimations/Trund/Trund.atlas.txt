@@ -6,50 +6,50 @@ filter: Linear,Linear
 repeat: none
 Trund body
   rotate: false
-  xy: 2, 25
-  size: 138, 213
+  xy: 2, 9
+  size: 198, 244
   orig: 198, 244
-  offset: 31, 18
+  offset: 0, 0
   index: -1
 Trund direita
   rotate: false
-  xy: 142, 103
-  size: 78, 135
+  xy: 202, 91
+  size: 127, 162
   orig: 127, 162
-  offset: 19, 14
+  offset: 0, 0
   index: -1
 Trund esquerda
-  rotate: false
-  xy: 222, 112
-  size: 76, 126
+  rotate: true
+  xy: 331, 126
+  size: 127, 162
   orig: 127, 162
-  offset: 27, 15
+  offset: 0, 0
   index: -1
 Trund eye
-  rotate: false
-  xy: 2, 2
-  size: 53, 21
+  rotate: true
+  xy: 202, 2
+  size: 87, 53
   orig: 87, 53
-  offset: 14, 15
+  offset: 0, 0
   index: -1
 Trund head
-  rotate: false
-  xy: 300, 149
-  size: 87, 89
+  rotate: true
+  xy: 331, 4
+  size: 120, 128
   orig: 120, 128
-  offset: 19, 17
+  offset: 0, 0
   index: -1
 Trund mouth
-  rotate: false
-  xy: 142, 86
-  size: 47, 15
+  rotate: true
+  xy: 257, 2
+  size: 87, 50
   orig: 87, 50
-  offset: 22, 19
+  offset: 0, 0
   index: -1
 Trund nose
   rotate: false
-  xy: 222, 104
-  size: 11, 6
+  xy: 461, 90
+  size: 42, 34
   orig: 42, 34
-  offset: 17, 13
+  offset: 0, 0
   index: -1

@@ -1,69 +1,69 @@
 
 Mage.png
-size: 512,256
+size: 1024,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Magic Sword
   rotate: true
-  xy: 158, 76
+  xy: 192, 2
   size: 69, 221
   orig: 69, 221
   offset: 0, 0
   index: -1
 lamarina
   rotate: true
-  xy: 158, 147
+  xy: 352, 147
   size: 107, 201
   orig: 107, 201
   offset: 0, 0
   index: -1
 wizard body
   rotate: false
-  xy: 381, 103
-  size: 110, 151
+  xy: 192, 73
+  size: 158, 181
   orig: 158, 181
-  offset: 20, 14
+  offset: 0, 0
   index: -1
 wizard direita
   rotate: true
-  xy: 75, 28
-  size: 37, 74
+  xy: 677, 177
+  size: 77, 120
   orig: 77, 120
-  offset: 20, 20
+  offset: 0, 0
   index: -1
 wizard esquerda
   rotate: true
-  xy: 2, 17
-  size: 48, 71
+  xy: 555, 177
+  size: 77, 120
   orig: 77, 120
-  offset: 16, 23
+  offset: 0, 0
   index: -1
 wizard head
   rotate: false
-  xy: 2, 67
-  size: 154, 187
+  xy: 2, 30
+  size: 188, 224
   orig: 188, 224
-  offset: 19, 20
+  offset: 0, 0
   index: -1
 wizard nariz
-  rotate: true
-  xy: 2, 2
-  size: 13, 4
+  rotate: false
+  xy: 434, 107
+  size: 50, 38
   orig: 50, 38
-  offset: 17, 14
+  offset: 0, 0
   index: -1
 wizard olho
   rotate: false
-  xy: 381, 79
-  size: 38, 22
+  xy: 352, 92
+  size: 80, 53
   orig: 80, 53
-  offset: 21, 18
+  offset: 0, 0
   index: -1
 wizard sobr
   rotate: false
-  xy: 158, 70
-  size: 46, 4
+  xy: 799, 216
+  size: 80, 38
   orig: 80, 38
-  offset: 17, 18
+  offset: 0, 0
   index: -1

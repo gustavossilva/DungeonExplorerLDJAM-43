@@ -1,68 +1,68 @@
 
 Cleric.png
-size: 512,256
+size: 1024,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 cajado-17
   rotate: true
-  xy: 158, 114
+  xy: 2, 2
   size: 20, 179
   orig: 20, 179
   offset: 0, 0
   index: -1
 cleric body
   rotate: false
-  xy: 361, 87
-  size: 111, 156
+  xy: 186, 48
+  size: 137, 181
   orig: 137, 181
-  offset: 12, 13
+  offset: 0, 0
   index: -1
 cleric direita
-  rotate: false
-  xy: 2, 8
-  size: 47, 69
+  rotate: true
+  xy: 528, 151
+  size: 78, 110
   orig: 78, 110
-  offset: 13, 20
+  offset: 0, 0
   index: -1
 cleric esquerda
-  rotate: false
-  xy: 474, 171
-  size: 36, 72
+  rotate: true
+  xy: 640, 151
+  size: 78, 110
   orig: 78, 110
-  offset: 18, 18
+  offset: 0, 0
   index: -1
 cleric head
   rotate: false
-  xy: 2, 79
-  size: 154, 164
+  xy: 2, 24
+  size: 182, 205
   orig: 182, 205
-  offset: 13, 23
+  offset: 0, 0
   index: -1
 cleric nose
-  rotate: true
-  xy: 474, 129
-  size: 40, 9
+  rotate: false
+  xy: 325, 73
+  size: 75, 47
   orig: 75, 47
-  offset: 17, 14
+  offset: 0, 0
   index: -1
 cleric olho
-  rotate: true
-  xy: 339, 98
-  size: 36, 20
+  rotate: false
+  xy: 752, 182
+  size: 75, 47
   orig: 75, 47
-  offset: 19, 13
+  offset: 0, 0
   index: -1
 cleric sobr
   rotate: false
-  xy: 2, 2
-  size: 45, 4
+  xy: 402, 84
+  size: 75, 36
   orig: 75, 36
-  offset: 14, 17
+  offset: 0, 0
   index: -1
 lamarina
   rotate: true
-  xy: 158, 136
+  xy: 325, 122
   size: 107, 201
   orig: 107, 201
   offset: 0, 0

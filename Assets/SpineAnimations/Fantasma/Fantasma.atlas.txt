@@ -1,41 +1,41 @@
 
 Fantasma.png
-size: 512,128
+size: 512,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 fantasma CABEÇA
-  rotate: true
-  xy: 205, 40
-  size: 81, 107
+  rotate: false
+  xy: 151, 102
+  size: 137, 147
   orig: 137, 147
-  offset: 26, 20
+  offset: 0, 0
   index: -1
 fantasma OLHO
   rotate: false
-  xy: 2, 2
-  size: 36, 26
+  xy: 373, 172
+  size: 82, 77
   orig: 82, 77
-  offset: 24, 20
+  offset: 0, 0
   index: -1
 fantasma body
-  rotate: true
-  xy: 2, 30
-  size: 91, 201
+  rotate: false
+  xy: 2, 2
+  size: 147, 247
   orig: 147, 247
-  offset: 35, 16
+  offset: 0, 0
   index: -1
 mao
   rotate: false
-  xy: 314, 64
-  size: 32, 27
+  xy: 151, 20
+  size: 81, 80
   orig: 81, 80
-  offset: 23, 23
+  offset: 0, 0
   index: -1
 mao2
   rotate: false
-  xy: 314, 93
-  size: 32, 28
+  xy: 290, 169
+  size: 81, 80
   orig: 81, 80
-  offset: 27, 18
+  offset: 0, 0
   index: -1

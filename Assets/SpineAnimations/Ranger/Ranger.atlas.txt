@@ -1,82 +1,82 @@
 
 Ranger.png
-size: 512,256
+size: 1024,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 capa
-  rotate: false
-  xy: 408, 127
-  size: 101, 127
+  rotate: true
+  xy: 565, 97
+  size: 144, 159
   orig: 144, 159
-  offset: 16, 15
+  offset: 0, 0
   index: -1
 lamarina
-  rotate: false
-  xy: 2, 53
+  rotate: true
+  xy: 362, 134
   size: 107, 201
   orig: 107, 201
   offset: 0, 0
   index: -1
 ranger boca
-  rotate: false
-  xy: 150, 66
-  size: 40, 11
+  rotate: true
+  xy: 112, 7
+  size: 68, 50
   orig: 68, 50
-  offset: 15, 18
+  offset: 0, 0
   index: -1
 ranger body
   rotate: true
-  xy: 248, 151
-  size: 103, 158
+  xy: 173, 99
+  size: 142, 187
   orig: 142, 187
-  offset: 20, 13
+  offset: 0, 0
   index: -1
 ranger direita
-  rotate: false
-  xy: 111, 2
-  size: 37, 75
+  rotate: true
+  xy: 2, 2
+  size: 73, 108
   orig: 73, 108
-  offset: 16, 17
+  offset: 0, 0
   index: -1
 ranger esquerda
-  rotate: true
-  xy: 2, 3
-  size: 48, 70
+  rotate: false
+  xy: 726, 139
+  size: 77, 102
   orig: 77, 102
-  offset: 14, 15
+  offset: 0, 0
   index: -1
 ranger head
   rotate: false
-  xy: 111, 119
-  size: 135, 135
+  xy: 2, 77
+  size: 169, 164
   orig: 169, 164
-  offset: 17, 17
+  offset: 0, 0
   index: -1
 ranger olhos
   rotate: false
-  xy: 362, 128
-  size: 37, 21
+  xy: 805, 152
+  size: 68, 49
   orig: 68, 49
-  offset: 16, 14
+  offset: 0, 0
   index: -1
 ranger sobr
   rotate: false
-  xy: 248, 121
-  size: 45, 5
+  xy: 726, 108
+  size: 68, 29
   orig: 68, 29
-  offset: 11, 12
+  offset: 0, 0
   index: -1
 ranger-18-18
   rotate: true
-  xy: 111, 79
-  size: 38, 132
+  xy: 805, 203
+  size: 38, 133
   orig: 38, 133
   offset: 0, 0
   index: -1
 ranger-19
   rotate: false
-  xy: 248, 128
+  xy: 362, 111
   size: 112, 21
   orig: 112, 21
   offset: 0, 0

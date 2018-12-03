@@ -5,50 +5,50 @@ format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Goburin body
-  rotate: true
-  xy: 2, 2
-  size: 67, 82
+  rotate: false
+  xy: 2, 25
+  size: 89, 93
   orig: 89, 93
-  offset: 10, 6
+  offset: 0, 0
   index: -1
 Goburin direita
   rotate: false
-  xy: 99, 82
-  size: 38, 44
+  xy: 202, 59
+  size: 50, 59
   orig: 50, 59
-  offset: 7, 9
+  offset: 0, 0
   index: -1
 Goburin esquerda
   rotate: true
-  xy: 139, 87
-  size: 19, 42
+  xy: 93, 2
+  size: 43, 58
   orig: 43, 58
-  offset: 12, 7
+  offset: 0, 0
   index: -1
 Goburin eye
-  rotate: true
-  xy: 86, 36
-  size: 33, 10
+  rotate: false
+  xy: 153, 7
+  size: 53, 30
   orig: 53, 30
-  offset: 11, 9
+  offset: 0, 0
   index: -1
 Goburin head
   rotate: false
-  xy: 2, 71
-  size: 95, 55
+  xy: 93, 47
+  size: 107, 71
   orig: 107, 71
-  offset: 7, 8
+  offset: 0, 0
   index: -1
 Goburin mouth
   rotate: false
-  xy: 99, 77
-  size: 7, 3
+  xy: 2, 5
+  size: 19, 18
   orig: 19, 18
-  offset: 6, 7
+  offset: 0, 0
   index: -1
 dagger
   rotate: false
-  xy: 139, 108
+  xy: 202, 39
   size: 52, 18
   orig: 52, 18
   offset: 0, 0

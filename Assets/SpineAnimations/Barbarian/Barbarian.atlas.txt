@@ -1,75 +1,75 @@
 
 Barbarian.png
-size: 512,256
+size: 1024,256
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 barbarian Body
   rotate: true
-  xy: 289, 9
-  size: 107, 156
+  xy: 548, 99
+  size: 131, 177
   orig: 131, 177
-  offset: 13, 11
+  offset: 0, 0
   index: -1
 barbarian eye
   rotate: false
-  xy: 2, 2
-  size: 37, 21
+  xy: 896, 188
+  size: 63, 42
   orig: 63, 42
-  offset: 14, 10
+  offset: 0, 0
   index: -1
 barbarian head
   rotate: false
-  xy: 289, 118
-  size: 141, 135
+  xy: 180, 71
+  size: 163, 159
   orig: 163, 159
-  offset: 12, 13
+  offset: 0, 0
   index: -1
 barbarian mouth
-  rotate: true
-  xy: 507, 241
-  size: 12, 2
+  rotate: false
+  xy: 245, 35
+  size: 42, 34
   orig: 42, 34
-  offset: 14, 15
+  offset: 0, 0
   index: -1
 barbarian- right hand
   rotate: false
-  xy: 432, 170
-  size: 73, 83
+  xy: 727, 122
+  size: 97, 108
   orig: 97, 108
-  offset: 14, 10
+  offset: 0, 0
   index: -1
 barbarian- sobrancelha
   rotate: false
-  xy: 432, 125
-  size: 46, 4
+  xy: 345, 84
+  size: 69, 37
   orig: 69, 37
-  offset: 12, 18
+  offset: 0, 0
   index: -1
 barbarian-Scar
   rotate: false
-  xy: 180, 16
-  size: 35, 34
+  xy: 180, 7
+  size: 63, 62
   orig: 63, 62
-  offset: 13, 12
+  offset: 0, 0
   index: -1
 barbarian-left hand
-  rotate: true
-  xy: 432, 131
-  size: 37, 74
+  rotate: false
+  xy: 826, 130
+  size: 68, 100
   orig: 68, 100
-  offset: 14, 13
+  offset: 0, 0
   index: -1
 lamarina
-  rotate: false
-  xy: 180, 52
+  rotate: true
+  xy: 345, 123
   size: 107, 201
   orig: 107, 201
   offset: 0, 0
   index: -1
 machado
   rotate: false
-  xy: 2, 25
+  xy: 2, 2
   size: 176, 228
   orig: 176, 228
   offset: 0, 0
