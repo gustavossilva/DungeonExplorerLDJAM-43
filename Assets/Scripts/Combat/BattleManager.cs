@@ -229,37 +229,52 @@ public class BattleManager : Singleton<BattleManager> {
 		}
 		if(barbarian.stats.currentHealth <= 0)
 		{
+			if(SelectedCharacter.Instance.selectedCharName == "Barbarian"){
+				PartyManager.Instance.GameOver();
+			}
 			barbarian.isAlive = false;
 			PartyManager.Instance.heroesAlive[0] = false;
 			barbarianHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(paladin.stats.currentHealth <= 0)
 		{
+			if(SelectedCharacter.Instance.selectedCharName == "Paladin"){
+				PartyManager.Instance.GameOver();
+			}
 			paladin.isAlive = false;
 			PartyManager.Instance.heroesAlive[1] = false;
 			paladinHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(ranger.stats.currentHealth <= 0)
 		{
+			if(SelectedCharacter.Instance.selectedCharName == "Ranger"){
+				PartyManager.Instance.GameOver();				
+			}
 			ranger.isAlive = false;
 			PartyManager.Instance.heroesAlive[2] = false;
 			rangerHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(cleric.stats.currentHealth <= 0)
 		{
+			if(SelectedCharacter.Instance.selectedCharName == "Cleric"){
+				PartyManager.Instance.GameOver();				
+			}
 			cleric.isAlive = false;
 			PartyManager.Instance.heroesAlive[3] = false;
 			clericHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(wizard.stats.currentHealth <= 0)
 		{
+			if(SelectedCharacter.Instance.selectedCharName == "Wizard"){
+				PartyManager.Instance.GameOver();				
+			}
 			wizard.isAlive = false;
 			PartyManager.Instance.heroesAlive[4] = false;
 			wizardHealthBar.transform.GetChild(3).gameObject.SetActive(true);	
 		}
 		if(!barbarian.isAlive && !paladin.isAlive && !ranger.isAlive && !cleric.isAlive && !wizard.isAlive)
 		{
-			//GameOver
+				PartyManager.Instance.GameOver();
 		}
 	}
 
