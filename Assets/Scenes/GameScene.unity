@@ -2026,6 +2026,7 @@ MonoBehaviour:
   chestImagem: {fileID: 21300000, guid: 865abf6cf8d666641a4d93e4fed7c476, type: 3}
   chestRenderer: {fileID: 0}
   chestCollider: {fileID: 326125079}
+  id: donthit
 --- !u!212 &326125081
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2285,6 +2286,7 @@ MonoBehaviour:
   chestImagem: {fileID: 21300000, guid: f7fd7d4c393f6484188b8798833d51a0, type: 3}
   chestRenderer: {fileID: 0}
   chestCollider: {fileID: 366364731}
+  id: damage
 --- !u!212 &366364733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10861,6 +10863,7 @@ MonoBehaviour:
   chestImagem: {fileID: 21300000, guid: 865abf6cf8d666641a4d93e4fed7c476, type: 3}
   chestRenderer: {fileID: 0}
   chestCollider: {fileID: 502355359}
+  id: reducehit
 --- !u!212 &502355361
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25921,6 +25924,7 @@ GameObject:
   - component: {fileID: 1246436439}
   - component: {fileID: 1246436438}
   - component: {fileID: 1246436437}
+  - component: {fileID: 1246436442}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -26180,6 +26184,17 @@ MonoBehaviour:
   armor:
     baseValue: 0
     critical: 0
+--- !u!114 &1246436442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83eb281e00b499646a6961ff91956ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1250471345
 Prefab:
   m_ObjectHideFlags: 0
@@ -26299,6 +26314,7 @@ MonoBehaviour:
   chestImagem: {fileID: 21300000, guid: f7fd7d4c393f6484188b8798833d51a0, type: 3}
   chestRenderer: {fileID: 0}
   chestCollider: {fileID: 1254038082}
+  id: critical
 --- !u!212 &1254038084
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27622,6 +27638,7 @@ MonoBehaviour:
   chestImagem: {fileID: 21300000, guid: f7fd7d4c393f6484188b8798833d51a0, type: 3}
   chestRenderer: {fileID: 0}
   chestCollider: {fileID: 1608414606}
+  id: heal
 --- !u!212 &1608414604
 SpriteRenderer:
   m_ObjectHideFlags: 0
