@@ -30,10 +30,10 @@ public class ClericManager : Singleton<ClericManager> {
 		{
 			isPlaying = false;
 			BattleManager.Instance.cleric.animations.PlayAttackAnimation();
+			PartyManager.Instance.HealParty(BattleManager.Instance.cleric.stats.damage.GetValue());
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.cleric, BattleManager.Instance.cleric.animations.attackTime);
 			healthBar.value = 50;
 			healthBar.gameObject.SetActive(false);
-			Debug.Log("Heal Everyone");
 		}
 		if(healthBar.value <= 0.2 && isPlaying)
 		{
@@ -43,7 +43,6 @@ public class ClericManager : Singleton<ClericManager> {
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.cleric, BattleManager.Instance.cleric.animations.hitTime);
 			healthBar.value = 50;
 			healthBar.gameObject.SetActive(false);
-			Debug.Log("Hit player");
 		}
 	}
 
