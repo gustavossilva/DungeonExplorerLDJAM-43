@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16d25291e480af4b9b874468469b73d, type: 3}
   m_Name: Critico
   m_EditorClassIdentifier: 
-  _spriteInGame: {fileID: 21300010, guid: bf541ba7810cafd43af665d35d1dc29e, type: 3}
-  _spriteUI: {fileID: 21300110, guid: 6effb0022735ead45acf361ef8832074, type: 3}
+  _spriteInGame: {fileID: 21300000, guid: 33bc8ffa248257f408192d0ece2ede23, type: 3}
+  _spriteUI: {fileID: 21300000, guid: 59d2a86402f710d48af46e56e3ece5ee, type: 3}
   _description: 50% chance to perform a critical x2
   _effect: 3

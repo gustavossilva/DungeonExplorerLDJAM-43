@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c16d25291e480af4b9b874468469b73d, type: 3}
   m_Name: RestauraHp
   m_EditorClassIdentifier: 
-  _spriteInGame: {fileID: 21300010, guid: bf541ba7810cafd43af665d35d1dc29e, type: 3}
-  _spriteUI: {fileID: 21300110, guid: 6effb0022735ead45acf361ef8832074, type: 3}
+  _spriteInGame: {fileID: 21300000, guid: 163c6efd270e0504d89adec997702f14, type: 3}
+  _spriteUI: {fileID: 21300000, guid: 00325c4714a87d645afefe203faf89f6, type: 3}
   _description: Restore 15 HP for all squad members for every new battle
   _effect: 0
