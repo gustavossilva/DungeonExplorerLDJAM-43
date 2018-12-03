@@ -10,6 +10,7 @@ public class BarbarianManager : Singleton<BarbarianManager> {
 	public bool isPlaying = false;
 	private bool canAttack = false;
 
+	public AudioClip attackClip, hitClip;
 
 	protected override void Awake() {
 		IsPersistentBetweenScenes = false;
@@ -33,6 +34,7 @@ public class BarbarianManager : Singleton<BarbarianManager> {
 		{
 			if(canAttack)
 			{
+				GetComponent<AudioSource>().PlayOneShot(attackClip, .4f);
 				BattleManager.Instance.barbarian.animations.PlayAttackAnimation();
 				BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
 				BattleManager.Instance.activeMonster.stats.TakeDamage(BattleManager.Instance.barbarian.stats.damage.GetValue());
@@ -61,6 +63,8 @@ public class BarbarianManager : Singleton<BarbarianManager> {
 
 	public void Loser()
 	{
+		// GetComponent<AudioSource>().PlayOneShot(hitClip, .4f);
+
 		BattleManager.Instance.barbarian.animations.PlayHitAniamtion();
 		BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 		BattleManager.Instance.barbarian.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());

@@ -10,6 +10,9 @@ public class RangerManager : Singleton<RangerManager> {
 	public int maxTime;
 	public bool isPlaying = false;
 	public bool winner, loser;
+
+	public AudioClip attackClip, hitClip;
+
 	protected override void Awake() {
 		IsPersistentBetweenScenes = false;
 		base.Awake();
@@ -30,6 +33,8 @@ public class RangerManager : Singleton<RangerManager> {
 			return;
 		if(winner && isPlaying)
 		{
+			GetComponent<AudioSource>().PlayOneShot(attackClip, .4f);
+
 			isPlaying = false;
 			winner = false;
 			loser = false;	
@@ -55,6 +60,8 @@ public class RangerManager : Singleton<RangerManager> {
 
 	public void Loser()
 	{
+		// GetComponent<AudioSource>().PlayOneShot(hitClip, .4f);
+
 			isPlaying = false;
 			winner = false;
 			loser = false;
