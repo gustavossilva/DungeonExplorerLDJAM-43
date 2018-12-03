@@ -11,6 +11,8 @@ public class PartyManager : Singleton<PartyManager> {
 	public List<CharacterCombat> characters = new List<CharacterCombat>();
 
 	public Transform positionPreBattle;
+
+	public string monsterId;
 	protected override void Awake() {
 		IsPersistentBetweenScenes = true;
 		base.Awake();
@@ -24,13 +26,15 @@ public class PartyManager : Singleton<PartyManager> {
 		}
 	}
 
-	public void StartBattle(Transform oldPos){
+	public void StartBattle(Transform oldPos, string monsterId){
 		positionPreBattle = oldPos ;
+		this.monsterId = monsterId;
 		SceneManager.LoadScene("Combat");
 	}
 
 	public void EndBattle(GameObject party){
 		party.transform.position = positionPreBattle.position;
+		MonsterManager.Instance.EndBattle(true,monsterId);
 	}
 
 	public void AddCharacter(CharacterCombat character){

@@ -15,8 +15,15 @@ public class SkeletonBehaviour : MonoBehaviour {
 
 	private SkeletonAnimation skeletonSkeleton;
 
+	public string id;
+
 	// Use this for initialization
 	void Start () {
+		if (!MonsterManager.Instance.monstersInGame.ContainsKey (id))
+			MonsterManager.Instance.monstersInGame.Add (id, true);
+		else {
+			gameObject.SetActive (MonsterManager.Instance.monstersInGame[id]);
+		}
 		skeletonSkeleton = GetComponent<SkeletonAnimation> ();
 		_gridMovement = GetComponent<GridMovement> ();
 		movementCooldown = cooldown;
@@ -56,11 +63,10 @@ public class SkeletonBehaviour : MonoBehaviour {
 			downFirst = !downFirst;
 		}
 	}
-		void OnTriggerEnter2D(Collider2D other)
-	{
-		if(other.CompareTag("Player")){
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.CompareTag ("Player")) {
 			MonsterManager.Instance.monsterName = "Skeleton";
-			MonsterManager.Instance.StartBattle(other.transform);
+			MonsterManager.Instance.StartBattle (other.transform,id);
 		}
 	}
 }

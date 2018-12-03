@@ -317,6 +317,11 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114500073200647142, guid: ac8723ed4c2ab5543bc372841198643c,
+        type: 2}
+      propertyPath: id
+      value: toreto
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
   m_IsPrefabAsset: 0
@@ -530,6 +535,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 0.35
   canMove: 0
+  skeleton: {fileID: 0}
+  _barbarianAsset: {fileID: 11400000, guid: 48e25ac25be56df4c9bc01df8c6506c8, type: 2}
+  _clericAsset: {fileID: 11400000, guid: 5f2d3a2a7cc707649b607216a30c37dc, type: 2}
+  _rangerAsset: {fileID: 11400000, guid: 7f908c4d6ffc87e438cc5dccdfbca3d5, type: 2}
+  _wizardAsset: {fileID: 11400000, guid: 6ab7a859e126e1242ae49c82a36aa984, type: 2}
+  _paladinAsset: {fileID: 11400000, guid: b4af2d04d53c1ac4ba9f41cc55bbfede, type: 2}
 --- !u!114 &102897507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,8 +567,8 @@ Transform:
   m_LocalPosition: {x: -3.489, y: 3.491, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 524977097}
   - {fileID: 322743717}
+  - {fileID: 479886988}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -806,6 +817,11 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.y
       value: 1.2426403
+      objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: flavio
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
@@ -1127,7 +1143,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 102897508}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &322743718
 Light:
@@ -1349,6 +1365,11 @@ Prefab:
     - target: {fileID: 1514605598445466, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
       propertyPath: m_Name
       value: SlimeBottom1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: bolha
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
@@ -9219,6 +9240,11 @@ Prefab:
       propertyPath: upFirst
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: pudim
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
   m_IsPrefabAsset: 0
@@ -9413,9 +9439,116 @@ Prefab:
       propertyPath: m_Offset.y
       value: 1.1668553
       objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: alex
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &479886987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479886988}
+  - component: {fileID: 479886991}
+  - component: {fileID: 479886990}
+  - component: {fileID: 479886989}
+  m_Layer: 0
+  m_Name: New SkeletonAnimation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &479886988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479886987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 102897508}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &479886989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479886987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonDataAsset: {fileID: 0}
+  initialSkinName: 
+  initialFlipX: 0
+  initialFlipY: 0
+  separatorSlotNames: []
+  zSpacing: 0
+  useClipping: 1
+  immutableTriangles: 0
+  pmaVertexColors: 1
+  clearStateOnDisable: 0
+  tintBlack: 0
+  singleSubmesh: 0
+  addNormals: 0
+  calculateTangents: 0
+  disableRenderingOnOverride: 1
+  _animationName: 
+  loop: 0
+  timeScale: 1
+--- !u!23 &479886990
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479886987}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &479886991
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 479886987}
+  m_Mesh: {fileID: 0}
 --- !u!1 &490801426
 GameObject:
   m_ObjectHideFlags: 0
@@ -9825,81 +9958,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4237644075626404, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d,
     type: 2}
   m_PrefabInternal: {fileID: 1178066130}
---- !u!1 &524977096
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 524977097}
-  - component: {fileID: 524977098}
-  m_Layer: 0
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &524977097
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 524977096}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.045, y: 0.011, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 102897508}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &524977098
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 524977096}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 926943111
-  m_SortingLayer: 3
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300016, guid: 1dbca277352d7e7438b1f9ba168025cc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &555153315
 GameObject:
   m_ObjectHideFlags: 0
@@ -10816,6 +10874,11 @@ Prefab:
       propertyPath: m_Offset.y
       value: 1.1668572
       objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: natan
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
   m_IsPrefabAsset: 0
@@ -10876,6 +10939,11 @@ Prefab:
     - target: {fileID: 1907171042633156, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
       propertyPath: m_Name
       value: GoblinTopLeft2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500073200647142, guid: ac8723ed4c2ab5543bc372841198643c,
+        type: 2}
+      propertyPath: id
+      value: brian
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
@@ -11195,6 +11263,11 @@ Prefab:
       propertyPath: m_Offset.y
       value: 1.0026513
       objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: junior
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
   m_IsPrefabAsset: 0
@@ -11281,6 +11354,11 @@ Prefab:
     - target: {fileID: 1498181976718458, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
       propertyPath: m_Name
       value: SkeletonLeft1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114283240954344964, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d,
+        type: 2}
+      propertyPath: id
+      value: cleyto
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
@@ -23549,6 +23627,11 @@ Prefab:
       propertyPath: m_Name
       value: GoblinTopLeft1
       objectReference: {fileID: 0}
+    - target: {fileID: 114500073200647142, guid: ac8723ed4c2ab5543bc372841198643c,
+        type: 2}
+      propertyPath: id
+      value: diabinho
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
   m_IsPrefabAsset: 0
@@ -23687,6 +23770,11 @@ Prefab:
     - target: {fileID: 1498181976718458, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
       propertyPath: m_Name
       value: SkeletonMid
+      objectReference: {fileID: 0}
+    - target: {fileID: 114283240954344964, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d,
+        type: 2}
+      propertyPath: id
+      value: pavao
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
@@ -23845,6 +23933,7 @@ MonoBehaviour:
   heroesAlive: 0000000000
   characters: []
   positionPreBattle: {fileID: 0}
+  monsterId: 
 --- !u!1001 &1250471345
 Prefab:
   m_ObjectHideFlags: 0
@@ -23897,6 +23986,11 @@ Prefab:
         type: 2}
       propertyPath: downFirst
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114283240954344964, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d,
+        type: 2}
+      propertyPath: id
+      value: jorge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
@@ -24142,6 +24236,11 @@ Prefab:
       propertyPath: m_Name
       value: SlimeMid2
       objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: saladinha
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
   m_IsPrefabAsset: 0
@@ -24228,6 +24327,11 @@ Prefab:
     - target: {fileID: 1498181976718458, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
       propertyPath: m_Name
       value: SkeletonLeft2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114283240954344964, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d,
+        type: 2}
+      propertyPath: id
+      value: jairo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
@@ -24807,6 +24911,11 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.y
       value: 1.2489573
+      objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: viniciuspaulo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
@@ -25619,6 +25728,11 @@ Prefab:
       propertyPath: m_Name
       value: SlimeRight
       objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: coco
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
   m_IsPrefabAsset: 0
@@ -25985,6 +26099,11 @@ Prefab:
       propertyPath: startPosition
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114500073200647142, guid: ac8723ed4c2ab5543bc372841198643c,
+        type: 2}
+      propertyPath: id
+      value: marcao
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
   m_IsPrefabAsset: 0
@@ -26252,6 +26371,11 @@ Prefab:
       propertyPath: m_Name
       value: SlimeBottom2
       objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: sabao
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
   m_IsPrefabAsset: 0
@@ -26347,6 +26471,11 @@ Prefab:
         type: 2}
       propertyPath: cooldown
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: careca
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}

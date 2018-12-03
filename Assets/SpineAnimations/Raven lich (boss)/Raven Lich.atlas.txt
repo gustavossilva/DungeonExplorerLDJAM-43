@@ -1,0 +1,153 @@
+
+Raven Lich.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Raven Direita
+  rotate: false
+  xy: 646, 225
+  size: 83, 119
+  orig: 137, 162
+  offset: 23, 20
+  index: -1
+Raven Head
+  rotate: true
+  xy: 735, 284
+  size: 74, 124
+  orig: 135, 167
+  offset: 34, 13
+  index: -1
+Raven Pluma D
+  rotate: true
+  xy: 503, 346
+  size: 164, 230
+  orig: 214, 271
+  offset: 26, 19
+  index: -1
+Raven body
+  rotate: false
+  xy: 268, 37
+  size: 110, 146
+  orig: 167, 198
+  offset: 29, 23
+  index: -1
+Raven esquerda
+  rotate: true
+  xy: 566, 145
+  size: 89, 59
+  orig: 132, 116
+  offset: 22, 24
+  index: -1
+Raven eye
+  rotate: true
+  xy: 268, 207
+  size: 14, 22
+  orig: 69, 70
+  offset: 24, 23
+  index: -1
+Raven pluma A
+  rotate: false
+  xy: 292, 185
+  size: 171, 115
+  orig: 215, 155
+  offset: 25, 20
+  index: -1
+Raven pluma b
+  rotate: true
+  xy: 2, 28
+  size: 193, 264
+  orig: 251, 311
+  offset: 24, 21
+  index: -1
+Raven pluma c
+  rotate: false
+  xy: 879, 371
+  size: 128, 139
+  orig: 187, 221
+  offset: 20, 45
+  index: -1
+Raven poncho
+  rotate: false
+  xy: 735, 360
+  size: 142, 150
+  orig: 183, 194
+  offset: 21, 19
+  index: -1
+Raven pé direito
+  rotate: true
+  xy: 731, 210
+  size: 72, 118
+  orig: 146, 171
+  offset: 29, 20
+  index: -1
+Raven pé esquerda
+  rotate: false
+  xy: 380, 37
+  size: 91, 146
+  orig: 146, 183
+  offset: 29, 16
+  index: -1
+bola energia png/bola de enrgia 10-01
+  rotate: false
+  xy: 465, 268
+  size: 32, 32
+  orig: 191, 187
+  offset: 77, 79
+  index: -1
+bola energia png/bola de enrgia 11-01
+  rotate: false
+  xy: 695, 151
+  size: 69, 57
+  orig: 214, 220
+  offset: 78, 78
+  index: -1
+bola energia png/bola de enrgia 12-01
+  rotate: false
+  xy: 473, 2
+  size: 81, 64
+  orig: 227, 226
+  offset: 74, 77
+  index: -1
+bola energia png/bola de enrgia 4-01
+  rotate: false
+  xy: 2, 223
+  size: 288, 287
+  orig: 449, 449
+  offset: 77, 79
+  index: -1
+bola energia png/bola de enrgia 5-01
+  rotate: false
+  xy: 292, 302
+  size: 209, 208
+  orig: 366, 366
+  offset: 77, 83
+  index: -1
+bola energia png/bola de enrgia 6-01
+  rotate: false
+  xy: 503, 236
+  size: 141, 108
+  orig: 289, 289
+  offset: 74, 77
+  index: -1
+bola energia png/bola de enrgia 7-01
+  rotate: false
+  xy: 627, 151
+  size: 66, 72
+  orig: 289, 289
+  offset: 102, 106
+  index: -1
+bola energia png/bola de enrgia 8-01
+  rotate: false
+  xy: 473, 143
+  size: 91, 91
+  orig: 233, 247
+  offset: 73, 77
+  index: -1
+bola energia png/bola de enrgia 9-01
+  rotate: false
+  xy: 473, 68
+  size: 73, 73
+  orig: 241, 237
+  offset: 80, 84
+  index: -1

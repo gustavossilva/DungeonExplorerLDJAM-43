@@ -23,12 +23,19 @@ public class TrollBehaviour : MonoBehaviour {
 	public AnimationReferenceAsset jump;
 
 	private SkeletonAnimation trollSkeleton;
+
+	public string id;
 	// Use this for initialization
 	private void Awake () {
 		trollSkeleton = GetComponent<SkeletonAnimation> ();
 		_gridMoviment = GetComponent<GridMovement> ();
 	}
 	void Start () {
+		if (!MonsterManager.Instance.monstersInGame.ContainsKey (id))
+			MonsterManager.Instance.monstersInGame.Add (id, true);
+		else {
+			gameObject.SetActive (MonsterManager.Instance.monstersInGame[id]);
+		}
 		trollSkeleton.AnimationState.SetAnimation (0, idle, true);
 		timeToNextMovement = cooldown;
 		trollSkeleton.AnimationState.Event += MoveAfterAnimation;
@@ -109,7 +116,7 @@ public class TrollBehaviour : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag ("Player")) {
 			MonsterManager.Instance.monsterName = "Trund";
-			MonsterManager.Instance.StartBattle (other.transform);
+			MonsterManager.Instance.StartBattle (other.transform, id);
 		}
 	}
 }
