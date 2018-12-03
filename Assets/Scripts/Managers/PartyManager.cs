@@ -93,6 +93,11 @@ public class PartyManager : Singleton<PartyManager> {
 		startGameLoading = false;
 	}
 
+	public void GameOver()
+	{
+		SceneManager.LoadScene("GameOver");
+	}
+
 	// public void AddCharacter(CharacterCombat character){
 	// 	characters.Add(character);
 	// }
