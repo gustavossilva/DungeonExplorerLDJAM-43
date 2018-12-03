@@ -317,6 +317,11 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114500073200647142, guid: ac8723ed4c2ab5543bc372841198643c,
+        type: 2}
+      propertyPath: id
+      value: toreto
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
   m_IsPrefabAsset: 0
@@ -812,6 +817,11 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.y
       value: 1.2426403
+      objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: flavio
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
@@ -1355,6 +1365,11 @@ Prefab:
     - target: {fileID: 1514605598445466, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
       propertyPath: m_Name
       value: SlimeBottom1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: bolha
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
@@ -9225,6 +9240,11 @@ Prefab:
       propertyPath: upFirst
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: pudim
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
   m_IsPrefabAsset: 0
@@ -9418,6 +9438,11 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.y
       value: 1.1668553
+      objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: alex
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
@@ -10849,6 +10874,11 @@ Prefab:
       propertyPath: m_Offset.y
       value: 1.1668572
       objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: natan
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
   m_IsPrefabAsset: 0
@@ -10909,6 +10939,11 @@ Prefab:
     - target: {fileID: 1907171042633156, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
       propertyPath: m_Name
       value: GoblinTopLeft2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114500073200647142, guid: ac8723ed4c2ab5543bc372841198643c,
+        type: 2}
+      propertyPath: id
+      value: brian
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
@@ -11228,6 +11263,11 @@ Prefab:
       propertyPath: m_Offset.y
       value: 1.0026513
       objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: junior
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
   m_IsPrefabAsset: 0
@@ -11314,6 +11354,11 @@ Prefab:
     - target: {fileID: 1498181976718458, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
       propertyPath: m_Name
       value: SkeletonLeft1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114283240954344964, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d,
+        type: 2}
+      propertyPath: id
+      value: cleyto
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
@@ -23582,6 +23627,11 @@ Prefab:
       propertyPath: m_Name
       value: GoblinTopLeft1
       objectReference: {fileID: 0}
+    - target: {fileID: 114500073200647142, guid: ac8723ed4c2ab5543bc372841198643c,
+        type: 2}
+      propertyPath: id
+      value: diabinho
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
   m_IsPrefabAsset: 0
@@ -23720,6 +23770,11 @@ Prefab:
     - target: {fileID: 1498181976718458, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
       propertyPath: m_Name
       value: SkeletonMid
+      objectReference: {fileID: 0}
+    - target: {fileID: 114283240954344964, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d,
+        type: 2}
+      propertyPath: id
+      value: pavao
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
@@ -23878,6 +23933,7 @@ MonoBehaviour:
   heroesAlive: 0000000000
   characters: []
   positionPreBattle: {fileID: 0}
+  monsterId: 
 --- !u!1001 &1250471345
 Prefab:
   m_ObjectHideFlags: 0
@@ -23930,6 +23986,11 @@ Prefab:
         type: 2}
       propertyPath: downFirst
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114283240954344964, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d,
+        type: 2}
+      propertyPath: id
+      value: jorge
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
@@ -24175,6 +24236,11 @@ Prefab:
       propertyPath: m_Name
       value: SlimeMid2
       objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: saladinha
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
   m_IsPrefabAsset: 0
@@ -24261,6 +24327,11 @@ Prefab:
     - target: {fileID: 1498181976718458, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
       propertyPath: m_Name
       value: SkeletonLeft2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114283240954344964, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d,
+        type: 2}
+      propertyPath: id
+      value: jairo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9e9e9a16249d44aa6dcb58a2b6007d, type: 2}
@@ -24840,6 +24911,11 @@ Prefab:
         type: 2}
       propertyPath: m_Offset.y
       value: 1.2489573
+      objectReference: {fileID: 0}
+    - target: {fileID: 114250239782232924, guid: 0ee03f78fc096be4f87b249e75af72ea,
+        type: 2}
+      propertyPath: id
+      value: viniciuspaulo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee03f78fc096be4f87b249e75af72ea, type: 2}
@@ -25652,6 +25728,11 @@ Prefab:
       propertyPath: m_Name
       value: SlimeRight
       objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: coco
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
   m_IsPrefabAsset: 0
@@ -26018,6 +26099,11 @@ Prefab:
       propertyPath: startPosition
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114500073200647142, guid: ac8723ed4c2ab5543bc372841198643c,
+        type: 2}
+      propertyPath: id
+      value: marcao
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac8723ed4c2ab5543bc372841198643c, type: 2}
   m_IsPrefabAsset: 0
@@ -26285,6 +26371,11 @@ Prefab:
       propertyPath: m_Name
       value: SlimeBottom2
       objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: sabao
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
   m_IsPrefabAsset: 0
@@ -26380,6 +26471,11 @@ Prefab:
         type: 2}
       propertyPath: cooldown
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114821238032233594, guid: 27cbbb0cef2d3f84999dd15986c5acd8,
+        type: 2}
+      propertyPath: id
+      value: careca
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27cbbb0cef2d3f84999dd15986c5acd8, type: 2}
