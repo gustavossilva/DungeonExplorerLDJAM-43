@@ -13,7 +13,7 @@ public enum Character{
 
 public class InventoryManager : Singleton<InventoryManager> {
 	
-	public GameObject prefab;
+	public GameObject prefab, barbarianX, paladinX, rangerX, clericX, wizardX;
 	public Slot slotPaladino;
 	public Slot slotRanger;
 	public Slot slotClerigo;
@@ -63,21 +63,30 @@ public class InventoryManager : Singleton<InventoryManager> {
 		// Change the health text
 		switch(character){
 			case Character.BARBARIAN:
+				if(currentHealth <= 0f)
+					barbarianX.SetActive(true);
 				barbarianHealthText.text = health;
 				break;
 			case Character.CLERIC:
+				if(currentHealth <= 0f)
+					clericX.SetActive(true);
 				clericHealthText.text = health;
 				break;
 			case Character.PALADIN:
+				if(currentHealth <= 0f)
+					paladinX.SetActive(true);
 				paladinHealthText.text = health;
 				break;
 			case Character.RANGER:
+				if(currentHealth <= 0f)
+					rangerX.SetActive(true);
 				rangerHealthText.text = health;
 				break;
 			case Character.WIZARD:
+				if(currentHealth <= 0f)
+					wizardX.SetActive(true);
 				wizardHealthText.text = health;
 				break;
-
 		}
 	}
 }
