@@ -11,7 +11,7 @@ public class Stat {
 	private List<float> modifiers = new List<float>();
 
 	private int multiplier;
-	public bool critical;
+	public bool critical = false;
 
 	public float numberOfModifiers {
 		get { return modifiers.Count; }
