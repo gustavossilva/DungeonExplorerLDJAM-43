@@ -15,7 +15,7 @@ public class PartyManager : Singleton<PartyManager> {
 	public CharacterCombat clericCharacter;
 	public CharacterCombat wizardCharacter;
 
-	public Transform positionPreBattle;
+	public Transform positionPreBattle = null;
 
 	public string monsterId;
 	protected override void Awake() {
