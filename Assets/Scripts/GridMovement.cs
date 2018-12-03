@@ -46,7 +46,8 @@ public class GridMovement : MonoBehaviour {
 		}
 
 		transform.position = final;
-
+		if(this.transform.CompareTag("Player"))
+			PartyManager.Instance.positionPreBattle.position = final;
 		coroutineIsRunning = false;
 
 
