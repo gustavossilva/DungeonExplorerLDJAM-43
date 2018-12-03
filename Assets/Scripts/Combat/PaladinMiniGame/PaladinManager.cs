@@ -40,6 +40,8 @@ public class PaladinManager : Singleton<PaladinManager> {
 			remainDefenses = 6;
 			BattleManager.Instance.paladin.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
+			BattleManager.Instance.paladin.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
+			//BattleManager.CheckStats();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.hitTime);
 			//Enemy Attack Animation
 			//Receive Damage
@@ -56,7 +58,8 @@ public class PaladinManager : Singleton<PaladinManager> {
 			remainDefenses = 6;
 			BattleManager.Instance.paladin.animations.PlayAttackAnimation();
 			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
-			//BattleManager.CheckMonsterLife();
+			BattleManager.Instance.activeMonster.stats.TakeDamage(BattleManager.Instance.paladin.stats.damage.GetValue());
+			//BattleManager.CheckStats();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.attackTime);
 			//Enemy Hit Animation
 			//Do Damage
