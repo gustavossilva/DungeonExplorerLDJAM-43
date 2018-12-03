@@ -43,7 +43,6 @@ public class Player : Singleton<Player> {
 				skeleton.skeletonDataAsset = _clericAsset;
 				break;
 		}
-
 	}
 
 	// Use this for initialization
@@ -72,29 +71,24 @@ public class Player : Singleton<Player> {
 			// LEFT
 			if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)){
 				MoveAndCheck(Vector2.left);
-				skeleton.state.SetAnimation(1, "Jump Mov", false);
 				return;
 			}
 
 			// RIGHT
 			if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)){
 				MoveAndCheck(Vector2.right);
-				skeleton.state.SetAnimation(1, "Jump Mov", false);
-
 				return;
 			}
 
 			// UP
 			if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)){
 				MoveAndCheck(Vector2.up);
-				skeleton.state.SetAnimation(1, "Jump Mov", false);
 				return;
 			}
 
 			// DOWN
 			if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)){
 				MoveAndCheck(Vector2.down);
-				skeleton.state.SetAnimation(1, "Jump Mov", false);
 				return;
 			}
 		}
