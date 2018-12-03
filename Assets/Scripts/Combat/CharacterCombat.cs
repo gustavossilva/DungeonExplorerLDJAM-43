@@ -7,18 +7,8 @@ public class CharacterCombat : MonoBehaviour {
 	public CharacterStats charStats;
 	public Slot slot;
 
-	public enum Char{
-		BARBARO,
-		PALADINO,
-		RANGER,
-		CLERIC,
-		WIZARD
-	}
-
-	public Char character;
-
 	void Awake () {
-		charStats = GetComponent<CharacterStats>();
+		// charStats = GetComponent<CharacterStats>();
 		// PartyManager.Instance.AddCharacter(this);
 	}
 

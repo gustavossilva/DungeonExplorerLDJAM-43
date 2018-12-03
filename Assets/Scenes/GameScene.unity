@@ -25377,6 +25377,11 @@ GameObject:
   - component: {fileID: 1246436434}
   - component: {fileID: 1246436433}
   - component: {fileID: 1246436432}
+  - component: {fileID: 1246436441}
+  - component: {fileID: 1246436440}
+  - component: {fileID: 1246436439}
+  - component: {fileID: 1246436438}
+  - component: {fileID: 1246436437}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -25454,6 +25459,11 @@ MonoBehaviour:
   rangerCharacter: {fileID: 1246436434}
   clericCharacter: {fileID: 1246436433}
   wizardCharacter: {fileID: 1246436432}
+  barbaroStats: {fileID: 0}
+  paladinoStats: {fileID: 0}
+  rangerStats: {fileID: 0}
+  clericStats: {fileID: 0}
+  wizardStats: {fileID: 0}
   positionPreBattle: {fileID: 0}
   monsterId: 
 --- !u!114 &1246436432
@@ -25467,9 +25477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 0}
+  charStats: {fileID: 1246436437}
   slot: {fileID: 0}
-  character: 4
 --- !u!114 &1246436433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25481,9 +25490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 0}
+  charStats: {fileID: 1246436438}
   slot: {fileID: 0}
-  character: 3
 --- !u!114 &1246436434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25495,9 +25503,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 0}
+  charStats: {fileID: 1246436439}
   slot: {fileID: 0}
-  character: 2
 --- !u!114 &1246436435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25509,9 +25516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 0}
+  charStats: {fileID: 1246436440}
   slot: {fileID: 0}
-  character: 1
 --- !u!114 &1246436436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25523,9 +25529,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 0}
+  charStats: {fileID: 1246436441}
   slot: {fileID: 0}
-  character: 0
+--- !u!114 &1246436437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 0
+    critical: 0
+  damage:
+    baseValue: 0
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
+--- !u!114 &1246436438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 0
+    critical: 0
+  damage:
+    baseValue: 0
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
+--- !u!114 &1246436439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 0
+    critical: 0
+  damage:
+    baseValue: 0
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
+--- !u!114 &1246436440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 0
+    critical: 0
+  damage:
+    baseValue: 0
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
+--- !u!114 &1246436441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246436427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 0
+    critical: 0
+  damage:
+    baseValue: 50
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
 --- !u!1001 &1250471345
 Prefab:
   m_ObjectHideFlags: 0

@@ -15,6 +15,12 @@ public class PartyManager : Singleton<PartyManager> {
 	public CharacterCombat clericCharacter;
 	public CharacterCombat wizardCharacter;
 
+	public CharacterStats barbaroStats;
+	public CharacterStats paladinoStats;
+	public CharacterStats rangerStats;
+	public CharacterStats clericStats;
+	public CharacterStats wizardStats;
+
 	public Transform positionPreBattle = null;
 
 	public string monsterId;
@@ -36,6 +42,18 @@ public class PartyManager : Singleton<PartyManager> {
 		wizardCharacter.slot = InventoryManager.Instance.slotWizard;
 		clericCharacter.slot = InventoryManager.Instance.slotClerigo;
 
+		barbaroCharacter.charStats = barbaroStats;
+		rangerCharacter.charStats = rangerStats;
+		paladinoCharacter.charStats = paladinoStats;
+		clericCharacter.charStats = clericStats;
+		wizardCharacter.charStats = wizardStats;
+	}
+
+	public void StartBattle(Transform oldPos, string monsterId){
+		// positionPreBattle = oldPos ;
+		this.monsterId = monsterId;
+		SceneManager.LoadScene("Combat");
+
 		barbaroCharacter.UseItemOnStart();
 		rangerCharacter.UseItemOnStart();
 		paladinoCharacter.UseItemOnStart();
@@ -43,13 +61,8 @@ public class PartyManager : Singleton<PartyManager> {
 		clericCharacter.UseItemOnStart();
 	}
 
-	public void StartBattle(Transform oldPos, string monsterId){
-		// positionPreBattle = oldPos ;
-		this.monsterId = monsterId;
-		SceneManager.LoadScene("Combat");
-	}
-
 	public void EndBattle(){
+		SceneManager.LoadScene("GameScene");
 		party.transform.position = positionPreBattle.position;
 		MonsterManager.Instance.EndBattle(true,monsterId);
 	}
