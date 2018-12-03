@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AxeBehaviour : MonoBehaviour {
-	public const string PLAYER_TAG = "Player";
+	public const string PLAYER_TAG = "GameController";
 	public Transform rightLimit;
 	public Vector2 targetPosition;
 	public float speed = 15f;
+	public bool doDamage = true;
 	private void OnEnable() {
 		targetPosition = new Vector2(rightLimit.position.x,transform.position.y);
 	}
@@ -24,8 +25,9 @@ public class AxeBehaviour : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
-		if(other.CompareTag(PLAYER_TAG))
+		if(other.CompareTag(PLAYER_TAG) && doDamage)
 		{
+			doDamage = false;
 			PaladinManager.Instance.remainDefenses--;
 			gameObject.SetActive(false);
 		}

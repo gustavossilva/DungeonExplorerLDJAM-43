@@ -6,8 +6,9 @@ public class PaladinManager : Singleton<PaladinManager> {
 
 
 	public GameObject axe1,axe2,axe3,axe4,axe5,axe6;
+	public Vector2 axeInitPos = new Vector2(0.2123f,0);
 	public Transform topLimit, bottomLimit;
-	public bool isPlaying = false;
+	public bool isPlaying;
 	public bool missAxe = false;
 	public int remainDefenses = 6;
 
@@ -16,17 +17,55 @@ public class PaladinManager : Singleton<PaladinManager> {
 		base.Awake();
 	}
 
+	protected override void OnEnable() {
+		base.OnEnable();
+		axe1.transform.position = axeInitPos;
+		axe2.transform.position = axeInitPos;
+		axe3.transform.position = axeInitPos;
+		axe4.transform.position = axeInitPos;
+		axe5.transform.position = axeInitPos;
+		axe6.transform.position = axeInitPos;
+		isPlaying = true;
+	}
+
 	private void Start() {
 		StartCoroutine(PlayGame());
 	}
 
 	private void Update() {
+		if(!isPlaying)
+			return;
 		if(missAxe)
 		{
-			Debug.Log("perdeu");
+			StopCoroutine(PlayGame());
+			axe1.SetActive(false);
+			axe2.SetActive(false);
+			axe3.SetActive(false);
+			axe4.SetActive(false);
+			axe5.SetActive(false);
+			axe6.SetActive(false);
+			isPlaying = false;
+			missAxe = false;
+			remainDefenses = 6;
+			BattleManager.Instance.paladin.animations.PlayHitAniamtion();
+			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.hitTime);
+			//Enemy Attack Animation
+			//Receive Damage
 		}
-		if(remainDefenses <= 0){
-			Debug.Log("ganhou");
+		if(remainDefenses <= 0 && isPlaying){
+			axe1.SetActive(false);
+			axe2.SetActive(false);
+			axe3.SetActive(false);
+			axe4.SetActive(false);
+			axe5.SetActive(false);
+			axe6.SetActive(false);
+			isPlaying = false;
+			missAxe = false;
+			remainDefenses = 6;
+			BattleManager.Instance.paladin.animations.PlayAttackAnimation();
+			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.attackTime);
+			//Enemy Hit Animation
+			//Do Damage
 		}
 	}
 

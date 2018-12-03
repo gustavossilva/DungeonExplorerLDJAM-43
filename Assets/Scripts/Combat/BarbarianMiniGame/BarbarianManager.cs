@@ -10,6 +10,11 @@ public class BarbarianManager : Singleton<BarbarianManager> {
 		IsPersistentBetweenScenes = false;
 		base.Awake();
 	}
+
+	protected override void OnEnable() {
+		base.OnEnable();
+		isPlaying = true;
+	}
 	
 	void Update () {
 		if(!isPlaying)
@@ -18,13 +23,16 @@ public class BarbarianManager : Singleton<BarbarianManager> {
 		{
 			if(canAttack)
 			{
-				Debug.Log("Attack");
-				gameObject.SetActive(false);
+				BattleManager.Instance.barbarian.animations.PlayAttackAnimation();
+				BattleManager.Instance.ChangeCharacter(BattleManager.Instance.barbarian, BattleManager.Instance.barbarian.animations.attackTime);
 			}
 			else
 			{
-				Debug.Log("Char hit");
+				BattleManager.Instance.barbarian.animations.PlayHitAniamtion();
+				BattleManager.Instance.ChangeCharacter(BattleManager.Instance.barbarian, BattleManager.Instance.barbarian.animations.hitTime);
 			}
+				isPlaying = false;
+				canAttack = false;
 		}
 	}
 

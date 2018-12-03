@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BattleManager : MonoBehaviour {
+public class BattleManager : Singleton<BattleManager> {
 		
 
 
-	public GameObject barbGame, pallyGame, rangerGame, clericGame, wizzardGame;
-	public Hero barbarian, paladin, ranger, cleric, wizzard;
+	public GameObject barbGame, pallyGame, rangerGame, clericGame, wizardGame;
+	public Hero barbarian, paladin, ranger, cleric, wizard;
 	public Slider clericSlider;	
 	public float slideSpeed = 5;
 	public GameObject Monster;
@@ -19,8 +19,13 @@ public class BattleManager : MonoBehaviour {
 	//Habilita os personagens
 	//Inicia animação de entrada do primeiro personagem na fila
 	//Inicia o minigame referente ao personagem em primeiro na fila
+	protected override void Awake() {
+		IsPersistentBetweenScenes = false;
+		base.Awake();
+	}
+
 	private void Start() {
-		if(PartyManager.Instance.heroesAlive[0])
+		/* if(PartyManager.Instance.heroesAlive[0])
 			barbarian.isAlive = true;
 			barbarian.hero.SetActive(true);
 		if(PartyManager.Instance.heroesAlive[1])
@@ -34,13 +39,27 @@ public class BattleManager : MonoBehaviour {
 			cleric.hero.SetActive(true);
 		if(PartyManager.Instance.heroesAlive[4])
 			wizzard.isAlive = true;
-			wizzard.hero.SetActive(true);
+			wizzard.hero.SetActive(true);*/
 		//get playersNumber from manager
+		barbarian.isAlive = true;
+paladin.isAlive = true;
+ranger.isAlive = true;
+cleric.isAlive = true;
+wizard.isAlive = true;
 	}
 
 	public void Battle()
 	{
 
+	}
+
+	public void TurnOffGames()
+	{
+		barbGame.SetActive(false);
+		pallyGame.SetActive(false);
+		rangerGame.SetActive(false);
+		clericGame.SetActive(false);
+		wizardGame.SetActive(false);
 	}
 
 	private void Update() {
@@ -49,33 +68,53 @@ public class BattleManager : MonoBehaviour {
 			if(!barbarian.isBattling)
 				barbarian.transform.position = Vector2.MoveTowards(barbarian.transform.position,battlePos.position,slideSpeed * Time.deltaTime);
 			if(barbarian.transform.position.x == battlePos.position.x)
+			{
 				barbarian.isBattling = true;
-		}else if(paladin.hero.activeSelf)
+				barbGame.SetActive(true);
+			}
+		}
+		else if(paladin.hero.activeSelf)
 		{
+			//if monster is dead, endbattle
 			if(!paladin.isBattling)
 				paladin.transform.position = Vector2.MoveTowards(paladin.transform.position,battlePos.position,slideSpeed * Time.deltaTime);
-			if(paladin.transform.position.x == battlePos.position.x)		
+			if(paladin.transform.position.x == battlePos.position.x)
+			{
 				paladin.isBattling = true;
+				pallyGame.SetActive(true);
+			}
 		}else if(ranger.hero.activeSelf)
 		{
+			//if monster is dead, endbattle
 			if(!ranger.isBattling)			
 				ranger.transform.position = Vector2.MoveTowards(ranger.transform.position,battlePos.position,slideSpeed * Time.deltaTime);
 			if(ranger.transform.position.x == battlePos.position.x)
+			{
 				ranger.isBattling = true;
+				rangerGame.SetActive(true);
+			}
 		}else if(cleric.hero.activeSelf)
 		{
+			//if monster is dead, endbattle
 			if(!cleric.isBattling)			
 				cleric.transform.position = Vector2.MoveTowards(cleric.transform.position,battlePos.position,slideSpeed * Time.deltaTime);
-			if(cleric.transform.position.x == battlePos.position.x)
+			if(cleric.transform.position.x == battlePos.position.x){
 				cleric.isBattling = true;
-		}else if(wizzard.hero.activeSelf)
+				clericGame.SetActive(true);
+			}
+		}else if(wizard.hero.activeSelf)
 		{
-			if(!wizzard.isBattling)			
-				wizzard.transform.position = Vector2.MoveTowards(wizzard.transform.position,battlePos.position,slideSpeed * Time.deltaTime);
-			if(wizzard.transform.position.x == battlePos.position.x)
-				wizzard.isBattling = true;
+			//if monster is dead, endbattle
+			if(!wizard.isBattling)			
+				wizard.transform.position = Vector2.MoveTowards(wizard.transform.position,battlePos.position,slideSpeed * Time.deltaTime);
+			if(wizard.transform.position.x == battlePos.position.x){
+				wizard.isBattling = true;
+				wizardGame.SetActive(true);
+			}
 		}else{
-			//RestartBattle();
+			//if monster is dead, endbattle
+			//else
+			BattleAgain();
 		}
 		if(Input.GetKeyDown(KeyCode.Q))
 		{
@@ -95,19 +134,45 @@ public class BattleManager : MonoBehaviour {
 		}
 	}
 
-	public void ChangeCharacter(Hero character)
+	public void BattleAgain()
 	{
-		StartCoroutine(MoveBack(character));
+		if(barbarian.isAlive){
+			barbarian.hero.SetActive(true);
+			barbarian.isBattling = false;
+		}
+		if(paladin.isAlive){
+			paladin.hero.SetActive(true);
+			paladin.isBattling = false;
+		}
+		if(ranger.isAlive){
+			ranger.hero.SetActive(true);
+			ranger.isBattling = false;
+		}
+		if(cleric.isAlive){
+			cleric.hero.SetActive(true);
+			cleric.isBattling = false;
+		}
+		if(wizard.isAlive){
+			wizard.hero.SetActive(true);
+			wizard.isBattling = false;
+		}
 	}
 
-	IEnumerator MoveBack(Hero character)
+	public void ChangeCharacter(Hero character, float delay=0)
+	{
+		StartCoroutine(MoveBack(character, delay));
+	}
+
+	IEnumerator MoveBack(Hero character, float delay)
 	{
 		character.isBattling = false;
+		yield return new WaitForSeconds(delay);
 		while(character.transform.position.x > initialPosition.position.x)
 		{
 			character.transform.position = Vector2.MoveTowards(character.transform.position,initialPosition.position,slideSpeed * Time.deltaTime);
 			yield return new WaitForEndOfFrame();
 		}
+		TurnOffGames();
 		character.hero.SetActive(false);
 	}
 
@@ -118,6 +183,7 @@ public struct Hero{
 	public bool isAlive;
 	public bool isBattling;
 	public Transform transform;
+	public BattlePlayersAnimation animations;
 }
 
 
