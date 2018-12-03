@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ClericMovement : MonoBehaviour {
 	public Transform left,right;
+	private Vector2 initialPos;
 	public float pullForce;
 	public float clickForce;
 
@@ -15,7 +16,17 @@ public class ClericMovement : MonoBehaviour {
 		direction = "Right";
 	}
 
+	private void OnEnable() {
+		initialPos = new Vector2(0,-0.647f);
+		transform.position = initialPos;
+		Debug.Log(initialPos);
+		Debug.Log(transform.position);
+	}
+
 	private void Update() {
+		if(!ClericManager.Instance.isPlaying){
+			return;
+		}
 		switch (direction)
 		{
 			case "Right":
@@ -36,7 +47,6 @@ public class ClericMovement : MonoBehaviour {
 		{
 			transform.position = Vector2.MoveTowards(transform.position, left.position, clickForce * Time.deltaTime);
 		}
-		Debug.Log(transform.position.x - left.position.x);
 		if((transform.position.x - left.position.x) < 3.9){
 			direction = "Left";
 		}

@@ -14,6 +14,9 @@ public class PointerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(!BarbarianManager.Instance.isPlaying){
+			return;
+		}
 		if(transform.position.x == rightLimit.position.x)
 		{
 			target = leftLimit;

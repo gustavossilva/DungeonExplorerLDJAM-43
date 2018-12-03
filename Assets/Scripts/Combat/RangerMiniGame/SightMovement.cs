@@ -13,26 +13,33 @@ public class SightMovement : MonoBehaviour {
 	void Start () {
 		initialPos = transform.position;
 	}
+
+	private void OnEnable() {
+		canShoot = false;
+		generateNewPos = false;
+	}
 	
 		void Update () {
-		if(!generateNewPos)
-		{
-			newPos = Random.insideUnitCircle * 1.17f + initialPos;
-			posController.position = newPos;
-			generateNewPos = true;
-		}
-		transform.position = Vector2.MoveTowards(transform.position,newPos, speed * Time.deltaTime);
-		if(Input.GetMouseButtonDown(0))
-		{
-			if(canShoot)
+			if(!RangerManager.Instance.isPlaying)
+				return;
+			if(!generateNewPos)
 			{
-				Debug.Log("hit enemy");
+				newPos = Random.insideUnitCircle * 1.17f + initialPos;
+				posController.position = newPos;
+				generateNewPos = true;
 			}
-			else
+			transform.position = Vector2.MoveTowards(transform.position,newPos, speed * Time.deltaTime);
+			if(Input.GetMouseButtonDown(0))
 			{
-				Debug.Log("hit player");
+				if(canShoot)
+				{
+					RangerManager.Instance.winner = true;
+				}
+				else
+				{
+					RangerManager.Instance.loser = true;
+				}
 			}
-		}
 
 	}
 

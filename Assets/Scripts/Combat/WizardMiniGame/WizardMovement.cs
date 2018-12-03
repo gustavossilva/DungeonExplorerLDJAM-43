@@ -12,14 +12,19 @@ public class WizardMovement : MonoBehaviour {
 	public Transform target;
 	public bool mouseUP = false;
 	public bool onTarget = false;
-	public bool gameOver = false;
 	void Start () {
 		target = rightLimit;
+	}
+
+	private void OnEnable() {
+		mouseUP = false;
+		onTarget = false;
+		transform.position = leftLimit.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(gameOver)
+		if(!WizardManager.Instance.isPlaying)
 			return;
 		if(transform.position.x == rightLimit.position.x)
 		{
@@ -41,13 +46,13 @@ public class WizardMovement : MonoBehaviour {
 		{
 			if(onTarget)
 			{
+				WizardManager.Instance.winner = true;
 				Debug.Log("Venceu");
-				gameOver = true;
 			}
 			else
 			{
+				WizardManager.Instance.loser = true;
 				Debug.Log("Perdeu");
-				gameOver = true;
 			}
 		}
 	}
