@@ -8,6 +8,8 @@ public class MusicHolder : Singleton<MusicHolder> {
 	public AudioClip menuMusic;
 	public AudioClip dungeonMusic;
 
+	private AudioClip currentAudioClip;
+
 	protected override void Awake(){
 		base.IsPersistentBetweenScenes = true;
 		base.Awake();
@@ -26,11 +28,14 @@ public class MusicHolder : Singleton<MusicHolder> {
 
 	private void PlayMusic(AudioClip clip, float volume){
 		AudioSource source = GetComponent<AudioSource>();
-		source.Stop();
-		source.clip = clip;
-		source.loop = true;
-		source.volume = volume;
-		source.Play();
+		if(currentAudioClip != clip){
+			source.Stop();
+			currentAudioClip = clip;
+			source.clip = currentAudioClip;
+			source.loop = true;
+			source.volume = volume;
+			source.Play();
+		}
 	}
 
 }

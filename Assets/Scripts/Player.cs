@@ -20,6 +20,9 @@ public class Player : Singleton<Player> {
 	public SkeletonDataAsset _rangerAsset;
 	public SkeletonDataAsset _wizardAsset;
 	public SkeletonDataAsset _paladinAsset;
+	public AudioClip footstepClip;
+	public AudioSource audioSource;
+	public Animator anim;
 
 	protected override void  Awake(){
 		base.IsPersistentBetweenScenes = false;
@@ -98,10 +101,12 @@ public class Player : Singleton<Player> {
 
 	void MoveAndCheck(Vector2 direction){
 		// Perform the movement
+		// anim.SetTrigger("jump");
 		_obstacleTag = _gridMovement.MoveBy(direction);
 		
 		// Verifies if the players got in contact with an enemy
 		if(string.IsNullOrEmpty(_obstacleTag)){
+			audioSource.PlayOneShot(footstepClip);
 			movementCooldown = cooldown;
 			if(moved != null)
 				moved();

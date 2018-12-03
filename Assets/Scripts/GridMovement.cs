@@ -19,8 +19,12 @@ public class GridMovement : MonoBehaviour {
 
 		// Verifica se ha algo
 		if (!HasParede (finalPos, out hit)) {
-			if (!coroutineIsRunning)
+			if (!coroutineIsRunning){
 				StartCoroutine (Move (finalPos));
+				if(this.transform.CompareTag("Player") && amount.y == 0f){
+					GetComponent<Animator>().SetTrigger("jump");
+				}
+			}
 			return string.Empty;
 		}
 
