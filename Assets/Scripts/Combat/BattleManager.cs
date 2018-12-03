@@ -12,7 +12,7 @@ public class BattleManager : Singleton<BattleManager> {
 	public Slider clericSlider;
 	public Slider enemyHealthBar, barbarianHealthBar, paladinHealthBar, rangerHealthBar, clericHealthBar, wizardHealthBar;
 	public float slideSpeed = 5;
-	public Monster skeleton, trund, goburin, slime;
+	public Monster skeleton, trund, goburin, slime, boss;
 	public Monster activeMonster;
 	public Transform battlePos, initialPosition;
 	public TextMeshProUGUI winText;
@@ -103,7 +103,7 @@ public class BattleManager : Singleton<BattleManager> {
 		}
 	  else
 		{
-			//Boss
+			activeMonster = boss;
 		}
 		// activeMonster = skeleton;
 		activeMonster.monster.SetActive(true);
@@ -113,11 +113,6 @@ public class BattleManager : Singleton<BattleManager> {
 		ranger.isAlive = true;
 		cleric.isAlive = true;
 		wizard.isAlive = true;
-	}
-
-	public void Battle()
-	{
-
 	}
 
 	public void TurnOffGames()
@@ -276,7 +271,7 @@ public class BattleManager : Singleton<BattleManager> {
 	IEnumerator WinBattle()
 	{
 		winText.gameObject.SetActive(true);
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(activeMonster.animations.deathTime+0.5f);
 		PartyManager.Instance.EndBattle();
 	}
 
