@@ -10,8 +10,9 @@ public class BossBehaviour : MonoBehaviour {
 	public AnimationReferenceAsset idle;
 
 	public GameObject openPortal;
-
-	private void Awake () {
+	
+	// Use this for initialization
+	void Start () {
 		if (!MonsterManager.Instance.monstersInGame.ContainsKey (id))
 			MonsterManager.Instance.monstersInGame.Add (id, true);
 		else {
@@ -19,9 +20,6 @@ public class BossBehaviour : MonoBehaviour {
 			openPortal.SetActive(true);
 		}
 		bossSkeleton = GetComponent<SkeletonAnimation> ();
-	}
-	// Use this for initialization
-	void Start () {
 		bossSkeleton.AnimationState.SetAnimation (0, idle, true);
 	}
 

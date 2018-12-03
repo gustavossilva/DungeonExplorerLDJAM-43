@@ -25459,11 +25459,11 @@ MonoBehaviour:
   rangerCharacter: {fileID: 1246436434}
   clericCharacter: {fileID: 1246436433}
   wizardCharacter: {fileID: 1246436432}
-  barbaroStats: {fileID: 0}
-  paladinoStats: {fileID: 0}
-  rangerStats: {fileID: 0}
-  clericStats: {fileID: 0}
-  wizardStats: {fileID: 0}
+  barbaroStats: {fileID: 1246436441}
+  paladinoStats: {fileID: 1246436440}
+  rangerStats: {fileID: 1246436439}
+  clericStats: {fileID: 1246436438}
+  wizardStats: {fileID: 1246436437}
   positionPreBattle: {fileID: 0}
   monsterId: 
 --- !u!114 &1246436432
@@ -25477,7 +25477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 1246436437}
+  charStats: {fileID: 0}
   slot: {fileID: 0}
 --- !u!114 &1246436433
 MonoBehaviour:
@@ -25490,7 +25490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 1246436438}
+  charStats: {fileID: 0}
   slot: {fileID: 0}
 --- !u!114 &1246436434
 MonoBehaviour:
@@ -25503,7 +25503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 1246436439}
+  charStats: {fileID: 0}
   slot: {fileID: 0}
 --- !u!114 &1246436435
 MonoBehaviour:
@@ -25516,7 +25516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 1246436440}
+  charStats: {fileID: 0}
   slot: {fileID: 0}
 --- !u!114 &1246436436
 MonoBehaviour:
@@ -25529,7 +25529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05aef0b83d79f94c9479c58990e64f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charStats: {fileID: 1246436441}
+  charStats: {fileID: 0}
   slot: {fileID: 0}
 --- !u!114 &1246436437
 MonoBehaviour:
@@ -25543,10 +25543,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 0
+    baseValue: 100
     critical: 0
   damage:
-    baseValue: 0
+    baseValue: 50
     critical: 0
   armor:
     baseValue: 0
@@ -25563,10 +25563,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 0
+    baseValue: 100
     critical: 0
   damage:
-    baseValue: 0
+    baseValue: 50
     critical: 0
   armor:
     baseValue: 0
@@ -25583,10 +25583,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 0
+    baseValue: 100
     critical: 0
   damage:
-    baseValue: 0
+    baseValue: 50
     critical: 0
   armor:
     baseValue: 0
@@ -25603,10 +25603,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 0
+    baseValue: 100
     critical: 0
   damage:
-    baseValue: 0
+    baseValue: 50
     critical: 0
   armor:
     baseValue: 0
@@ -25623,7 +25623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 0
+    baseValue: 100
     critical: 0
   damage:
     baseValue: 50
