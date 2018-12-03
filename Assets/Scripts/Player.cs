@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 [RequireComponent(typeof(GridMovement))]
 public class Player : Singleton<Player> {
@@ -13,9 +14,36 @@ public class Player : Singleton<Player> {
 
 	public event System.Action moved;
 
+	public SkeletonAnimation skeleton;
+	public SkeletonDataAsset _barbarianAsset;
+	public SkeletonDataAsset _clericAsset;
+	public SkeletonDataAsset _rangerAsset;
+	public SkeletonDataAsset _wizardAsset;
+	public SkeletonDataAsset _paladinAsset;
+
 	protected override void  Awake(){
 		base.IsPersistentBetweenScenes = false;
 		base.Awake();
+
+		skeleton = GetComponentInChildren<SkeletonAnimation>();
+		switch(SelectedCharacter.Instance.selectedCharName){
+			case "Barbarian":
+				skeleton.skeletonDataAsset = _barbarianAsset;
+				break;
+			case "Wizard":
+				skeleton.skeletonDataAsset = _wizardAsset;
+				break;
+			case "Ranger":
+				skeleton.skeletonDataAsset = _rangerAsset;
+				break;
+			case "Paladin":
+				skeleton.skeletonDataAsset = _paladinAsset;
+				break;
+			case "Cleric":
+				skeleton.skeletonDataAsset = _clericAsset;
+				break;
+		}
+
 	}
 
 	// Use this for initialization
@@ -23,6 +51,11 @@ public class Player : Singleton<Player> {
 		_gridMovement = GetComponent<GridMovement>();
 		movementCooldown = cooldown;
 		canMove = true;
+		skeleton.ClearState();
+		skeleton.Initialize(false);
+		skeleton.state.SetAnimation(0, "Iddle", true);
+		skeleton.gameObject.GetComponent<MeshRenderer>().sortingLayerName = "Foreground";
+		skeleton.gameObject.GetComponent<MeshRenderer>().sortingOrder = 1000;
 	}
 	
 	// Update is called once per frame
@@ -39,24 +72,29 @@ public class Player : Singleton<Player> {
 			// LEFT
 			if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)){
 				MoveAndCheck(Vector2.left);
+				skeleton.state.SetAnimation(1, "Jump Mov", false);
 				return;
 			}
 
 			// RIGHT
 			if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)){
 				MoveAndCheck(Vector2.right);
+				skeleton.state.SetAnimation(1, "Jump Mov", false);
+
 				return;
 			}
 
 			// UP
 			if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)){
 				MoveAndCheck(Vector2.up);
+				skeleton.state.SetAnimation(1, "Jump Mov", false);
 				return;
 			}
 
 			// DOWN
 			if(Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)){
 				MoveAndCheck(Vector2.down);
+				skeleton.state.SetAnimation(1, "Jump Mov", false);
 				return;
 			}
 		}
