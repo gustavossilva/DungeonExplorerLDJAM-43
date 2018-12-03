@@ -44,13 +44,13 @@ public class TrollBehaviour : MonoBehaviour {
 		if (playerNearby.OverlapPoint (playerPosition.position) && !_isMoving && !backToHome) {
 			_isMoving = true;
 			moveIndex = 0;
-			if(hasTwoWays){
-				if(Random.Range(0,100) >= 50){
+			if (hasTwoWays) {
+				if (Random.Range (0, 100) >= 50) {
 					usedMoves = trollMoves2;
-				}else{
+				} else {
 					usedMoves = trollMoves;
 				}
-			}else{
+			} else {
 				usedMoves = trollMoves;
 			}
 		}
@@ -58,7 +58,7 @@ public class TrollBehaviour : MonoBehaviour {
 			timeToNextMovement -= Time.deltaTime;
 			if (timeToNextMovement <= 0) {
 				trollSkeleton.AnimationState.SetAnimation (1, jump, false);
-				timeToNextMovement = cooldown; 
+				timeToNextMovement = cooldown;
 			}
 		}
 	}
@@ -69,11 +69,11 @@ public class TrollBehaviour : MonoBehaviour {
 			moveIndex = usedMoves.Count - 1;
 		}
 		if (moveIndex < 0 && backToHome && _isMoving) {
-			_isMoving = false;	 
+			_isMoving = false;
 			backToHome = false;
-			
+
 		}
-		if(_isMoving){
+		if (_isMoving) {
 			switch (usedMoves[moveIndex]) {
 				case MovementType.UP:
 					if (backToHome)
@@ -99,12 +99,18 @@ public class TrollBehaviour : MonoBehaviour {
 					else
 						_gridMoviment.MoveBy (Vector3.right);
 					break;
-			} 
+			}
 		}
 		if (!backToHome)
 			moveIndex++;
 		else
 			moveIndex--;
+	}
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.CompareTag ("Player")) {
+			MonsterManager.Instance.monsterName = "Trund";
+			MonsterManager.Instance.StartBattle (other.transform);
+		}
 	}
 }
 public enum MovementType {

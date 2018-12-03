@@ -56,4 +56,11 @@ public class SkeletonBehaviour : MonoBehaviour {
 			downFirst = !downFirst;
 		}
 	}
+		void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.CompareTag("Player")){
+			MonsterManager.Instance.monsterName = "Skeleton";
+			MonsterManager.Instance.StartBattle(other.transform);
+		}
+	}
 }

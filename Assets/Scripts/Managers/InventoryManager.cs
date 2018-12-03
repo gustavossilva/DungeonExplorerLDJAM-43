@@ -48,6 +48,8 @@ public class InventoryManager : Singleton<InventoryManager> {
 		return false;
 	}
 
+	
+
 	public void ChangeHealth(Character character){
 		// Change the health text
 	}

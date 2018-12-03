@@ -7,14 +7,16 @@ public class MonsterManager : Singleton<MonsterManager> {
 	public CharacterStats monsterStats;
 	public GameObject monster;
 
+	public string monsterName = "";
+
+
 	protected override void Awake() {
 		IsPersistentBetweenScenes = true;
 		base.Awake();
 	}
 
-	public void StartBattle(GameObject monsterEncounter){
-		monster = monsterEncounter;
-		monsterStats = monster.GetComponent<CharacterStats>();
+	public void StartBattle(Transform player){
+		PartyManager.Instance.StartBattle(player);
 	}
 
 	public void EndBattle(bool victoryCondition){

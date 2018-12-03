@@ -26,7 +26,7 @@ public class goblinBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 		//Inicia o goblin com uma das posições finais possíveis(isso irá diferenciar cada possível goblin)
 		switch (startPosition) {
 			case StartPosition.TOP_LEFT: //horário
@@ -38,7 +38,7 @@ public class goblinBehaviour : MonoBehaviour {
 				break;
 			case StartPosition.TOP_RIGHT: //antihorario
 				this.transform.position = topRight.position;
-				nextPosition.Add (StartPosition.TOP_LEFT); 
+				nextPosition.Add (StartPosition.TOP_LEFT);
 				nextPosition.Add (StartPosition.BOTTOM_LEFT);
 				nextPosition.Add (StartPosition.BOTTOM_RIGHT);
 				nextPosition.Add (StartPosition.TOP_RIGHT);
@@ -49,20 +49,20 @@ public class goblinBehaviour : MonoBehaviour {
 		}
 		movementCooldown = cooldown;
 		Player.Instance.moved += Move;
-		goblinSkeleton.AnimationState.SetAnimation(0,idle,true); 
+		goblinSkeleton.AnimationState.SetAnimation (0, idle, true);
 		goblinSkeleton.AnimationState.Event += MoveAfterAnimation;
 	}
 
 	private void MoveAfterAnimation (Spine.TrackEntry track, Spine.Event e) {
 		// When the animation passes through the energy event, starts showing the energy text
-		if (string.Equals ("Jump", e.Data.Name, System.StringComparison.Ordinal)){
+		if (string.Equals ("Jump", e.Data.Name, System.StringComparison.Ordinal)) {
 			GoblinMovement (startPosition);
 		}
 	}
 
 	// Update is called once per frame
 	void Move () {
-		goblinSkeleton.AnimationState.SetAnimation(1,jump,false);
+		goblinSkeleton.AnimationState.SetAnimation (1, jump, false);
 	}
 
 	private void GoblinMovement (StartPosition movementType) {
@@ -103,7 +103,12 @@ public class goblinBehaviour : MonoBehaviour {
 				break;
 		}
 	}
-
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.CompareTag ("Player")) {
+			MonsterManager.Instance.monsterName = "Goburin";
+			MonsterManager.Instance.StartBattle (other.transform);
+		}
+	}
 }
 
 public enum StartPosition {
