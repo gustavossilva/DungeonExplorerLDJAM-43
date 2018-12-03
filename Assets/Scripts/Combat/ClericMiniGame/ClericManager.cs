@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ClericManager : Singleton<ClericManager> {
 
+	public TextMeshProUGUI timer;
+	public int actualTime;
+	public int maxTime;
 	public Slider healthBar;
 	public bool isPlaying = false;
 
@@ -19,6 +23,10 @@ public class ClericManager : Singleton<ClericManager> {
 		base.OnEnable();
 		isPlaying = true;
 		healthBar.gameObject.SetActive(true);
+		timer.text = maxTime.ToString();
+		actualTime = maxTime;
+		timer.gameObject.SetActive(true);
+		StartCoroutine(Timer());
 	}
 
 	void Update () {
@@ -35,9 +43,23 @@ public class ClericManager : Singleton<ClericManager> {
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.cleric, BattleManager.Instance.cleric.animations.attackTime);
 			healthBar.value = 50;
 			healthBar.gameObject.SetActive(false);
+			timer.gameObject.SetActive(false);
+			StopAllCoroutines();
 		}
 		if(healthBar.value <= 0.2 && isPlaying)
 		{
+			Loser();
+			StopAllCoroutines();
+		}
+		if(actualTime == 0)
+		{
+			Loser();
+			StopAllCoroutines();
+		}
+	}
+
+	public void Loser()
+	{
 			isPlaying = false;
 			BattleManager.Instance.cleric.animations.PlayHitAniamtion();
 			BattleManager.Instance.cleric.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
@@ -48,6 +70,18 @@ public class ClericManager : Singleton<ClericManager> {
 			BattleManager.Instance.UpdatePartyHealthBars();
 			healthBar.value = 50;
 			healthBar.gameObject.SetActive(false);
+			timer.gameObject.SetActive(false);
+	}
+
+
+
+	IEnumerator Timer (){
+		WaitForSeconds wait = new WaitForSeconds(1f);
+		while(actualTime != 0)
+		{
+			yield return wait;
+			actualTime--;
+			timer.text = actualTime.ToString();
 		}
 	}
 

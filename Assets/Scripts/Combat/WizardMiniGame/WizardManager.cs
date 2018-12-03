@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class WizardManager : Singleton<WizardManager> {
 
+	public TextMeshProUGUI timer;
+	public int actualTime;
+	public int maxTime;
 	public bool isPlaying = false;
 	public bool winner, loser;
 	protected override void Awake() {
@@ -14,6 +17,10 @@ public class WizardManager : Singleton<WizardManager> {
 	protected override void OnEnable(){
 		base.OnEnable();
 		isPlaying = true;
+		timer.text = maxTime.ToString();
+		actualTime = maxTime;
+		timer.gameObject.SetActive(true);
+		StartCoroutine(Timer());
 	}
 
 	// Update is called once per frame
@@ -31,9 +38,21 @@ public class WizardManager : Singleton<WizardManager> {
 			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.UpdateEnemyHealthBar();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.wizard, BattleManager.Instance.wizard.animations.attackTime);
+			StopAllCoroutines();
+			timer.gameObject.SetActive(false);
 		}
 		if(loser && isPlaying)
 		{
+			Loser();
+		}
+		if(actualTime == 0)
+		{
+			loser = true;
+		}
+	}
+
+	public void Loser()
+	{
 			isPlaying = false;
 			winner = false;
 			loser = false;
@@ -44,6 +63,17 @@ public class WizardManager : Singleton<WizardManager> {
 			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.UpdatePartyHealthBars();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.wizard, BattleManager.Instance.wizard.animations.hitTime);
+			StopAllCoroutines();
+			timer.gameObject.SetActive(false);
+	}
+
+	IEnumerator Timer (){
+		WaitForSeconds wait = new WaitForSeconds(1f);
+		while(actualTime != 0)
+		{
+			yield return wait;
+			actualTime--;
+			timer.text = actualTime.ToString();
 		}
 	}
 }
