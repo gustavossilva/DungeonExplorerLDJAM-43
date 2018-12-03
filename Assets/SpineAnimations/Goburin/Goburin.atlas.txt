@@ -1,0 +1,55 @@
+
+Goburin.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Goburin body
+  rotate: true
+  xy: 2, 2
+  size: 67, 82
+  orig: 89, 93
+  offset: 10, 6
+  index: -1
+Goburin direita
+  rotate: false
+  xy: 99, 82
+  size: 38, 44
+  orig: 50, 59
+  offset: 7, 9
+  index: -1
+Goburin esquerda
+  rotate: true
+  xy: 139, 87
+  size: 19, 42
+  orig: 43, 58
+  offset: 12, 7
+  index: -1
+Goburin eye
+  rotate: true
+  xy: 86, 36
+  size: 33, 10
+  orig: 53, 30
+  offset: 11, 9
+  index: -1
+Goburin head
+  rotate: false
+  xy: 2, 71
+  size: 95, 55
+  orig: 107, 71
+  offset: 7, 8
+  index: -1
+Goburin mouth
+  rotate: false
+  xy: 99, 77
+  size: 7, 3
+  orig: 19, 18
+  offset: 6, 7
+  index: -1
+dagger
+  rotate: false
+  xy: 139, 108
+  size: 52, 18
+  orig: 52, 18
+  offset: 0, 0
+  index: -1
