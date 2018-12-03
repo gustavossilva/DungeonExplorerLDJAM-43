@@ -159,22 +159,6 @@ public class BattleManager : Singleton<BattleManager> {
 			//else
 			BattleAgain();
 		}
-		if(Input.GetKeyDown(KeyCode.Q))
-		{
-			ChangeCharacter(barbarian);
-		}
-		if(Input.GetKeyDown(KeyCode.W))
-		{
-		ChangeCharacter(paladin);
-		}
-		if(Input.GetKeyDown(KeyCode.E))
-		{
-		ChangeCharacter(ranger);
-		}
-		if(Input.GetKeyDown(KeyCode.R))
-		{
-			ChangeCharacter(cleric);
-		}
 	}
 
 	public void BattleAgain()

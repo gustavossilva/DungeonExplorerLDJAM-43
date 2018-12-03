@@ -39,6 +39,7 @@ public class ClericManager : Singleton<ClericManager> {
 		{
 			isPlaying = false;
 			BattleManager.Instance.cleric.animations.PlayHitAniamtion();
+			BattleManager.Instance.cleric.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.cleric, BattleManager.Instance.cleric.animations.hitTime);
 			BattleManager.Instance.CheckStats();

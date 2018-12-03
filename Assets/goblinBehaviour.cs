@@ -18,11 +18,14 @@ public class goblinBehaviour : MonoBehaviour {
 	public AnimationReferenceAsset idle;
 	public string id;
 
+	float scaleX;
+
 	int jumpTimes = 0;
 	private int _startPosition;
 	private void Awake () {
 		goblinSkeleton = GetComponent<SkeletonAnimation> ();
 		_gridMovement = GetComponent<GridMovement> ();
+		scaleX = transform.localScale.x;
 	}
 
 	// Use this for initialization
@@ -80,30 +83,44 @@ public class goblinBehaviour : MonoBehaviour {
 		switch (nextPosition[positionIndex]) {
 			case StartPosition.TOP_LEFT:
 				if (movementType == StartPosition.TOP_LEFT)
-					_gridMovement.MoveBy (Vector3.up);
-				else
+				{
+					_gridMovement.MoveBy (Vector3.up);	
+				}
+				else{
+					transform.localScale = new Vector3(-scaleX, transform.localScale.y, transform.localScale.z);
 					_gridMovement.MoveBy (Vector3.left);
+				}
 				jumpTimes++;
 				break;
 			case StartPosition.TOP_RIGHT:
-				if (movementType == StartPosition.TOP_LEFT)
+				if (movementType == StartPosition.TOP_LEFT){
+					transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
 					_gridMovement.MoveBy (Vector3.right);
-				else
+				}
+				else{
 					_gridMovement.MoveBy (Vector3.up);
+				}
 				jumpTimes++;
 				break;
 			case StartPosition.BOTTOM_LEFT:
 				if (movementType == StartPosition.TOP_LEFT)
+				{	
+					transform.localScale = new Vector3(-scaleX, transform.localScale.y, transform.localScale.z);
 					_gridMovement.MoveBy (Vector3.left);
-				else
+				}else{
 					_gridMovement.MoveBy (Vector3.down);
+				}
 				jumpTimes++;
 				break;
 			case StartPosition.BOTTOM_RIGHT:
 				if (movementType == StartPosition.TOP_LEFT)
+				{	
+					transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
 					_gridMovement.MoveBy (Vector3.down);
-				else
+				}else{
+					transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
 					_gridMovement.MoveBy (Vector3.right);
+				}
 				jumpTimes++;
 				break;
 		}

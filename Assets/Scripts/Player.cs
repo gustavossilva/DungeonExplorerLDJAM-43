@@ -71,12 +71,14 @@ public class Player : Singleton<Player> {
 			// LEFT
 			if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)){
 				MoveAndCheck(Vector2.left);
+				transform.GetChild(1).localScale = new Vector3(-0.3f, transform.GetChild(1).localScale.y, transform.GetChild(1).localScale.z);
 				return;
 			}
 
 			// RIGHT
 			if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)){
 				MoveAndCheck(Vector2.right);
+				transform.GetChild(1).localScale = new Vector3(0.3f, transform.GetChild(1).localScale.y, transform.GetChild(1).localScale.z);
 				return;
 			}
 

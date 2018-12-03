@@ -24,11 +24,14 @@ public class TrollBehaviour : MonoBehaviour {
 
 	private SkeletonAnimation trollSkeleton;
 
+	float scaleX;
+
 	public string id;
 	// Use this for initialization
 	private void Awake () {
 		trollSkeleton = GetComponent<SkeletonAnimation> ();
 		_gridMoviment = GetComponent<GridMovement> ();
+		scaleX = transform.localScale.x;
 	}
 	void Start () {
 		if (!MonsterManager.Instance.monstersInGame.ContainsKey (id))
@@ -95,16 +98,21 @@ public class TrollBehaviour : MonoBehaviour {
 						_gridMoviment.MoveBy (Vector3.down);
 					break;
 				case MovementType.LEFT:
-					if (backToHome)
+					if (backToHome){
 						_gridMoviment.MoveBy (Vector3.right);
-					else
+						transform.localScale = new Vector3(-scaleX, transform.localScale.y, transform.localScale.z);
+					}else{
 						_gridMoviment.MoveBy (Vector3.left);
-					break;
+						transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
+					}break;
 				case MovementType.RIGHT:
-					if (backToHome)
+					if (backToHome){
 						_gridMoviment.MoveBy (Vector3.left);
-					else
+						transform.localScale = new Vector3(scaleX, transform.localScale.y, transform.localScale.z);
+					}else{
 						_gridMoviment.MoveBy (Vector3.right);
+						transform.localScale = new Vector3(-scaleX, transform.localScale.y, transform.localScale.z);
+					}
 					break;
 			}
 		}
