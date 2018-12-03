@@ -63,28 +63,53 @@ public class InventoryManager : Singleton<InventoryManager> {
 		// Change the health text
 		switch(character){
 			case Character.BARBARIAN:
-				if(currentHealth <= 0f)
+				if(currentHealth <= 0f){
 					barbarianX.SetActive(true);
+					if(!slotBarbaro.IsEmpty()){
+						slotBarbaro.itemUI = null;
+						Destroy(slotBarbaro.transform.GetChild(0).gameObject);
+					}
+				}
 				barbarianHealthText.text = health;
 				break;
 			case Character.CLERIC:
-				if(currentHealth <= 0f)
+				if(currentHealth <= 0f){
 					clericX.SetActive(true);
+					if(!slotClerigo.IsEmpty()){
+						slotClerigo.itemUI = null;
+						Destroy(slotClerigo.transform.GetChild(0).gameObject);
+					}
+				}
 				clericHealthText.text = health;
 				break;
 			case Character.PALADIN:
-				if(currentHealth <= 0f)
+				if(currentHealth <= 0f){
 					paladinX.SetActive(true);
+					if(!slotPaladino.IsEmpty()){
+						slotPaladino.itemUI = null;
+						Destroy(slotPaladino.transform.GetChild(0).gameObject);
+					}
+				}
 				paladinHealthText.text = health;
 				break;
 			case Character.RANGER:
-				if(currentHealth <= 0f)
+				if(currentHealth <= 0f){
 					rangerX.SetActive(true);
+					if(!slotRanger.IsEmpty()){
+						slotRanger.itemUI = null;
+						Destroy(slotRanger.transform.GetChild(0).gameObject);
+					}
+				}
 				rangerHealthText.text = health;
 				break;
 			case Character.WIZARD:
-				if(currentHealth <= 0f)
+				if(currentHealth <= 0f){
 					wizardX.SetActive(true);
+					if(!slotWizard.IsEmpty()){
+						slotWizard.itemUI = null;
+						Destroy(slotWizard.transform.GetChild(0).gameObject);
+					}
+				}
 				wizardHealthText.text = health;
 				break;
 		}
