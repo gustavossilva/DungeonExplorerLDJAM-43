@@ -7,6 +7,12 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
+    guid: d5c30633d074db149a3b36aaf75b97c7
+  - enabled: 1
+    path: Assets/Scenes/GameIntro.unity
+    guid: 318751c97a9c8e9429797d3bd670cdac
+  - enabled: 1
+    path: Assets/Scenes/SelectChar.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Combat.unity
@@ -14,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 024e2be99d2dd6a439e45103adfff89f
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 8d0c57bb592b25f45b2b78ee85888b73
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 394dc9383a556a14195610ec727168b7
   m_configObjects: {}
