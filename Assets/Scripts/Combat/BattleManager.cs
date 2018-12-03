@@ -15,6 +15,7 @@ public class BattleManager : Singleton<BattleManager> {
 	public Monster activeMonster;
 	public Transform battlePos, initialPosition;
 	public TextMeshProUGUI winText;
+	public bool gameOver = false;
 	//Handle Alive players
 	//Carrega stats
 	//Gera o efeito dos itens
@@ -27,32 +28,32 @@ public class BattleManager : Singleton<BattleManager> {
 	}
 
 	private void Start() {
-		/* 
+		 
 		 if(PartyManager.Instance.heroesAlive[0]){
 			barbarian.isAlive = true;
 			barbarian.hero.SetActive(true);
-			barbarian.stats = PartyManager.Instance.characters[0].charStats;
+			barbarian.stats = PartyManager.Instance.barbaroCharacter.charStats;
 		 }
 		if(PartyManager.Instance.heroesAlive[1]){
 			paladin.isAlive = true;
 			paladin.hero.SetActive(true);
-			paladin.stats = PartyManager.Instance.characters[1].charStats;
+			paladin.stats = PartyManager.Instance.paladinoCharacter.charStats;
 		}
 		if(PartyManager.Instance.heroesAlive[2]){
 			ranger.isAlive = true;
 			ranger.hero.SetActive(true);
-			ranger.stats = PartyManager.Instance.characters[2].charStats;
+			ranger.stats = PartyManager.Instance.rangerCharacter.charStats;
 		}
 		if(PartyManager.Instance.heroesAlive[3]){
 			cleric.isAlive = true;
 			cleric.hero.SetActive(true);
-			cleric.stats = PartyManager.Instance.characters[3].charStats;
+			cleric.stats = PartyManager.Instance.clericCharacter.charStats;
 		}
 		if(PartyManager.Instance.heroesAlive[4]){
 			wizard.isAlive = true;
 			wizard.hero.SetActive(true);
-			wizard.stats = PartyManager.Instance.characters[4].charStats;
-		}*/
+			wizard.stats = PartyManager.Instance.wizardCharacter.charStats;
+		}
 		skeleton.stats = skeleton.monster.GetComponent<CharacterStats>();
 		trund.stats = trund.monster.GetComponent<CharacterStats>();
 		goburin.stats = goburin.monster.GetComponent<CharacterStats>();
@@ -103,6 +104,8 @@ public class BattleManager : Singleton<BattleManager> {
 	}
 
 	private void Update() {
+		if(gameOver)
+			return;
 		if(barbarian.hero.activeSelf)
 		{
 			if(!barbarian.isBattling)
@@ -203,6 +206,9 @@ public class BattleManager : Singleton<BattleManager> {
 		if(activeMonster.stats.currentHealth <= 0)
 		{
 			activeMonster.animations.PlayDeathAnimation();
+			StopAllCoroutines();
+			gameOver = true;
+			StartCoroutine(WinBattle());
 		}
 		if(barbarian.stats.currentHealth <= 0)
 		{
@@ -244,7 +250,7 @@ public class BattleManager : Singleton<BattleManager> {
 	{
 		winText.gameObject.SetActive(true);
 		yield return new WaitForSeconds(2f);
-		//PartyManager.Instance.EndBattle();
+		PartyManager.Instance.EndBattle();
 	}
 
 	IEnumerator MoveBack(Hero character, float delay)

@@ -28,7 +28,7 @@ public class RangerManager : Singleton<RangerManager> {
 			BattleManager.Instance.ranger.animations.PlayAttackAnimation();
 			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.stats.TakeDamage(BattleManager.Instance.ranger.stats.damage.GetValue());
-			//BattleManager.CheckStats();
+			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.ranger, BattleManager.Instance.ranger.animations.attackTime);
 		}
 		if(loser && isPlaying)
@@ -39,7 +39,7 @@ public class RangerManager : Singleton<RangerManager> {
 			BattleManager.Instance.ranger.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.ranger.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
-			//BattleManager.CheckStats();
+			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.ranger, BattleManager.Instance.ranger.animations.hitTime);
 		}
 	}

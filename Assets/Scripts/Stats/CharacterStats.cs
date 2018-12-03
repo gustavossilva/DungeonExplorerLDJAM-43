@@ -27,6 +27,8 @@ public class CharacterStats : MonoBehaviour {
 
 	public void TakeHeal(float heal)
 	{
+		if(currentHealth <= 0)
+			return;
 		currentHealth += heal;
 		currentHealth = Mathf.Clamp(currentHealth,0,maxHealth.GetValue()); 
 	}

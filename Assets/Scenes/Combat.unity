@@ -1135,7 +1135,7 @@ MonoBehaviour:
     baseValue: 100
     critical: 0
   damage:
-    baseValue: 10
+    baseValue: 50
     critical: 0
   armor:
     baseValue: 0
@@ -1532,7 +1532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &628320789
 Transform:
   m_ObjectHideFlags: 0
@@ -1955,7 +1955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &862018074
 Transform:
   m_ObjectHideFlags: 0
@@ -2424,6 +2424,8 @@ MonoBehaviour:
     stats: {fileID: 0}
   battlePos: {fileID: 596904649}
   initialPosition: {fileID: 1886939072}
+  winText: {fileID: 1209133986}
+  gameOver: 0
 --- !u!1 &983534432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,7 +3076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1378281648
 Transform:
   m_ObjectHideFlags: 0
@@ -3392,7 +3394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1543875653
 Transform:
   m_ObjectHideFlags: 0
@@ -3567,7 +3569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1584945403
 Transform:
   m_ObjectHideFlags: 0

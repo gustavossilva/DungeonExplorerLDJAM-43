@@ -41,6 +41,7 @@ public class ClericManager : Singleton<ClericManager> {
 			BattleManager.Instance.cleric.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.cleric, BattleManager.Instance.cleric.animations.hitTime);
+			BattleManager.Instance.CheckStats();
 			healthBar.value = 50;
 			healthBar.gameObject.SetActive(false);
 		}
