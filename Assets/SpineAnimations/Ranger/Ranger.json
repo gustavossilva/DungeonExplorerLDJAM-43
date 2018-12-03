@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "CZLJwHQni8Z4O3cVMiyNAF7/P64", "spine": "3.7.42-beta", "width": 163.32, "height": 269.27, "images": "", "audio": "C:/Users/victo/Desktop/LDJAM 43#/Projeto/Personagens/Ranger" },
+"skeleton": { "hash": "6xN9P8UiISu93Epi9o45UXGaJ6Q", "spine": "3.7.42-beta", "width": 163.32, "height": 269.27, "images": "", "audio": "C:/Users/victo/Desktop/LDJAM 43#/Projeto/Personagens/Ranger" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "arm", "parent": "root", "length": 38.36, "rotation": -118.04, "x": -35.23, "y": 128.38 },
@@ -137,6 +137,9 @@
 			"ranger-19": { "x": 1.15, "y": -0.97, "scaleX": 1.277, "rotation": 15.93, "width": 112, "height": 21 }
 		}
 	}
+},
+"events": {
+	"Jump": {}
 },
 "animations": {
 	"Hit": {
@@ -771,7 +774,10 @@
 					]
 				}
 			}
-		}
+		},
+		"events": [
+			{ "time": 0.3333, "name": "Jump" }
+		]
 	},
 	"attack": {
 		"slots": {

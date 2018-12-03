@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "eC7A3uK+F6ArPIBpr3C7/NgF+mI", "spine": "3.7.42-beta", "width": 192.24, "height": 306.58, "images": "", "audio": "" },
+"skeleton": { "hash": "Sx8m4RB9j0TuUA95JPiMT+bRtcI", "spine": "3.7.42-beta", "width": 192.24, "height": 306.58, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "arm", "parent": "root", "length": 38.36, "rotation": -118.04, "x": -32.15, "y": 131.08 },
@@ -115,6 +115,9 @@
 			"paladin sobr": { "x": 8.54, "y": 2.24, "rotation": -89.44, "width": 89, "height": 44 }
 		}
 	}
+},
+"events": {
+	"Jump": {}
 },
 "animations": {
 	"Hit": {
@@ -563,7 +566,10 @@
 					]
 				}
 			}
-		}
+		},
+		"events": [
+			{ "time": 0.3333, "name": "Jump" }
+		]
 	},
 	"death": {
 		"slots": {

@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "rE1Kq8h6A1SJuhFyGvDHQQpxdHc", "spine": "3.7.42-beta", "width": 211.96, "height": 299.74, "images": "./barbarian png/", "audio": "" },
+"skeleton": { "hash": "FeBcJhwfsxfoqzoJ6hfvzKB3w4E", "spine": "3.7.42-beta", "width": 211.96, "height": 299.74, "images": "./barbarian png/", "audio": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "mid", "parent": "root", "x": 0.97, "y": 80.66 },
@@ -103,6 +103,9 @@
 			}
 		}
 	}
+},
+"events": {
+	"Jump": {}
 },
 "animations": {
 	"Hit": {
@@ -560,7 +563,10 @@
 					]
 				}
 			}
-		}
+		},
+		"events": [
+			{ "time": 0.3333, "name": "Jump" }
+		]
 	},
 	"ataack": {
 		"bones": {
