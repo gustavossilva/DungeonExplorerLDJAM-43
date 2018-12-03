@@ -606,8 +606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0796716fc887c4cb483ad19433e386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuMusic: {fileID: 8300000, guid: bd9c14f4a95b4104daad4d240742749a, type: 3}
-  dungeonMusic: {fileID: 8300000, guid: 2188caaf9c4d8e04eae7d44a88853313, type: 3}
+  menuMusic: {fileID: 8300000, guid: 781a0b0ad859e4840a04b51744a63962, type: 3}
+  dungeonMusic: {fileID: 8300000, guid: 8772ba84f517de2438ecb54b63f044c7, type: 3}
 --- !u!82 &137454313
 AudioSource:
   m_ObjectHideFlags: 0
