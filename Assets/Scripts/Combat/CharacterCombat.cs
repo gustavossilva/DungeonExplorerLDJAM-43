@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterStats))]
 public class CharacterCombat : MonoBehaviour {
 
-	CharacterStats charStats;
+	public CharacterStats charStats;
 	public Slot slot;
 
 	public enum Char{

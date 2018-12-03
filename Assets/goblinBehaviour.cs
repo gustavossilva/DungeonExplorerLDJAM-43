@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Spine.Unity;
 using UnityEngine;
 public class goblinBehaviour : MonoBehaviour {
 
@@ -8,15 +9,24 @@ public class goblinBehaviour : MonoBehaviour {
 	public float cooldown = 0.35f;
 	private float movementCooldown;
 	private GridMovement _gridMovement;
+	private SkeletonAnimation goblinSkeleton;
 
 	[SerializeField] private List<StartPosition> nextPosition = new List<StartPosition> ();
 	private int positionIndex = 0;
 
+	public AnimationReferenceAsset jump;
+	public AnimationReferenceAsset idle;
+
 	int jumpTimes = 0;
 	private int _startPosition;
+	private void Awake () {
+		goblinSkeleton = GetComponent<SkeletonAnimation> ();
+		_gridMovement = GetComponent<GridMovement> ();
+	}
+
 	// Use this for initialization
 	void Start () {
-		_gridMovement = GetComponent<GridMovement> ();
+		
 		//Inicia o goblin com uma das posições finais possíveis(isso irá diferenciar cada possível goblin)
 		switch (startPosition) {
 			case StartPosition.TOP_LEFT: //horário
@@ -28,7 +38,7 @@ public class goblinBehaviour : MonoBehaviour {
 				break;
 			case StartPosition.TOP_RIGHT: //antihorario
 				this.transform.position = topRight.position;
-				nextPosition.Add (StartPosition.TOP_LEFT);
+				nextPosition.Add (StartPosition.TOP_LEFT); 
 				nextPosition.Add (StartPosition.BOTTOM_LEFT);
 				nextPosition.Add (StartPosition.BOTTOM_RIGHT);
 				nextPosition.Add (StartPosition.TOP_RIGHT);
@@ -39,12 +49,20 @@ public class goblinBehaviour : MonoBehaviour {
 		}
 		movementCooldown = cooldown;
 		Player.Instance.moved += Move;
+		goblinSkeleton.AnimationState.SetAnimation(0,idle,true); 
+		goblinSkeleton.AnimationState.Event += MoveAfterAnimation;
+	}
+
+	private void MoveAfterAnimation (Spine.TrackEntry track, Spine.Event e) {
+		// When the animation passes through the energy event, starts showing the energy text
+		if (string.Equals ("Jump", e.Data.Name, System.StringComparison.Ordinal)){
+			GoblinMovement (startPosition);
+		}
 	}
 
 	// Update is called once per frame
 	void Move () {
-		GoblinMovement (startPosition);
-		movementCooldown = cooldown;
+		goblinSkeleton.AnimationState.SetAnimation(1,jump,false);
 	}
 
 	private void GoblinMovement (StartPosition movementType) {

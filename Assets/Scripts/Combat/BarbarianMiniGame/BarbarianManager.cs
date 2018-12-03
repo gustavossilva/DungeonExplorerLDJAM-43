@@ -24,11 +24,15 @@ public class BarbarianManager : Singleton<BarbarianManager> {
 			if(canAttack)
 			{
 				BattleManager.Instance.barbarian.animations.PlayAttackAnimation();
+				BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
+				//BattleManager.CheckMonsterLife();
 				BattleManager.Instance.ChangeCharacter(BattleManager.Instance.barbarian, BattleManager.Instance.barbarian.animations.attackTime);
 			}
 			else
 			{
 				BattleManager.Instance.barbarian.animations.PlayHitAniamtion();
+				BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
+				//BattleManager.CheckMonsterLife();
 				BattleManager.Instance.ChangeCharacter(BattleManager.Instance.barbarian, BattleManager.Instance.barbarian.animations.hitTime);
 			}
 				isPlaying = false;

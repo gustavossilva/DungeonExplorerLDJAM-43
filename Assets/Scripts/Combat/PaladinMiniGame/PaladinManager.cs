@@ -6,7 +6,7 @@ public class PaladinManager : Singleton<PaladinManager> {
 
 
 	public GameObject axe1,axe2,axe3,axe4,axe5,axe6;
-	public Vector2 axeInitPos = new Vector2(0.2123f,0);
+	public float axeInitialX = 0.2123f;
 	public Transform topLimit, bottomLimit;
 	public bool isPlaying;
 	public bool missAxe = false;
@@ -19,25 +19,16 @@ public class PaladinManager : Singleton<PaladinManager> {
 
 	protected override void OnEnable() {
 		base.OnEnable();
-		axe1.transform.position = axeInitPos;
-		axe2.transform.position = axeInitPos;
-		axe3.transform.position = axeInitPos;
-		axe4.transform.position = axeInitPos;
-		axe5.transform.position = axeInitPos;
-		axe6.transform.position = axeInitPos;
 		isPlaying = true;
-	}
-
-	private void Start() {
 		StartCoroutine(PlayGame());
-	}
+	}	
 
 	private void Update() {
 		if(!isPlaying)
 			return;
 		if(missAxe)
 		{
-			StopCoroutine(PlayGame());
+			StopAllCoroutines();
 			axe1.SetActive(false);
 			axe2.SetActive(false);
 			axe3.SetActive(false);
@@ -48,6 +39,7 @@ public class PaladinManager : Singleton<PaladinManager> {
 			missAxe = false;
 			remainDefenses = 6;
 			BattleManager.Instance.paladin.animations.PlayHitAniamtion();
+			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.hitTime);
 			//Enemy Attack Animation
 			//Receive Damage
@@ -63,6 +55,8 @@ public class PaladinManager : Singleton<PaladinManager> {
 			missAxe = false;
 			remainDefenses = 6;
 			BattleManager.Instance.paladin.animations.PlayAttackAnimation();
+			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
+			//BattleManager.CheckMonsterLife();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.paladin, BattleManager.Instance.paladin.animations.attackTime);
 			//Enemy Hit Animation
 			//Do Damage
@@ -71,12 +65,12 @@ public class PaladinManager : Singleton<PaladinManager> {
 
 	IEnumerator PlayGame() {
 		WaitForSeconds wait = new WaitForSeconds(0.7f);
-		axe1.transform.position = new Vector2(axe1.transform.position.x,Random.Range(bottomLimit.position.y,topLimit.position.y));
-		axe2.transform.position = new Vector2(axe2.transform.position.x,Random.Range(bottomLimit.position.y,topLimit.position.y));
-		axe3.transform.position = new Vector2(axe3.transform.position.x,Random.Range(bottomLimit.position.y,topLimit.position.y));
-		axe4.transform.position = new Vector2(axe4.transform.position.x,Random.Range(bottomLimit.position.y,topLimit.position.y));
-		axe5.transform.position = new Vector2(axe5.transform.position.x,Random.Range(bottomLimit.position.y,topLimit.position.y));
-		axe6.transform.position = new Vector2(axe6.transform.position.x,Random.Range(bottomLimit.position.y,topLimit.position.y));
+		axe1.transform.localPosition = new Vector2(axeInitialX,Random.Range(bottomLimit.position.y,topLimit.position.y));
+		axe2.transform.localPosition = new Vector2(axeInitialX,Random.Range(bottomLimit.position.y,topLimit.position.y));
+		axe3.transform.localPosition = new Vector2(axeInitialX,Random.Range(bottomLimit.position.y,topLimit.position.y));
+		axe4.transform.localPosition = new Vector2(axeInitialX,Random.Range(bottomLimit.position.y,topLimit.position.y));
+		axe5.transform.localPosition = new Vector2(axeInitialX,Random.Range(bottomLimit.position.y,topLimit.position.y));
+		axe6.transform.localPosition = new Vector2(axeInitialX,Random.Range(bottomLimit.position.y,topLimit.position.y));
 		yield return new WaitForSeconds(1.4f);
 		axe1.SetActive(true);
 		yield return wait;

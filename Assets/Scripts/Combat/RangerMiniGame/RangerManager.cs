@@ -26,6 +26,7 @@ public class RangerManager : Singleton<RangerManager> {
 			winner = false;
 			loser = false;	
 			BattleManager.Instance.ranger.animations.PlayAttackAnimation();
+			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.ranger, BattleManager.Instance.ranger.animations.attackTime);
 		}
 		if(loser && isPlaying)
@@ -34,6 +35,7 @@ public class RangerManager : Singleton<RangerManager> {
 			winner = false;
 			loser = false;
 			BattleManager.Instance.ranger.animations.PlayHitAniamtion();
+			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.ranger, BattleManager.Instance.ranger.animations.hitTime);
 		}
 	}
