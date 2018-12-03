@@ -24964,11 +24964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1806919007415014, guid: 8c69e2d3595a9b547970fcbf6289f1f8, type: 2}
-  slotPaladino: {fileID: 0}
-  slotRanger: {fileID: 0}
-  slotClerigo: {fileID: 0}
-  slotWizard: {fileID: 0}
-  slotBarbaro: {fileID: 0}
+  slotPaladino: {fileID: 1167645911}
+  slotRanger: {fileID: 1152868676}
+  slotClerigo: {fileID: 1132675863}
+  slotWizard: {fileID: 2122468967}
+  slotBarbaro: {fileID: 966139333}
   slots:
   - {fileID: 641268897}
   - {fileID: 1790023163}
