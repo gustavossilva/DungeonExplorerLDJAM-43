@@ -8,6 +8,16 @@ public class CharacterCombat : MonoBehaviour {
 	CharacterStats charStats;
 	public Slot slot;
 
+	public enum Char{
+		CHAR_A,
+		CHAR_B,
+		CHAR_C,
+		CHAR_D,
+		MAIN_CHAR
+	}
+
+	public Char character;
+
 	void Awake () {
 		charStats = GetComponent<CharacterStats>();
 		PartyManager.Instance.AddCharacter(this);
@@ -15,21 +25,39 @@ public class CharacterCombat : MonoBehaviour {
 
 	void Start(){
 		// Take the item from the slot first!!!
+		switch(character){
+			case Char.CHAR_A:
+				slot = InventoryManager.Instance.slotCharA;
+				break;
+			case Char.CHAR_B:
+				slot = InventoryManager.Instance.slotCharB;
+				break;
+			case Char.CHAR_C:
+				slot = InventoryManager.Instance.slotCharC;
+				break;
+			case Char.CHAR_D:
+				slot = InventoryManager.Instance.slotCharD;
+				break;
+			case Char.MAIN_CHAR:
+				slot = InventoryManager.Instance.slotMainChar;
+				break;
+		}
 
-		// UseItemOnStart();
+		// use item
+		UseItemOnStart();
 	}
 
-	public void Attack (CharacterStats target)
-	{
-		//Do attack Animation
-		target.TakeDamage(charStats.damage.GetValue());
-	}
+	// public void Attack (CharacterStats target)
+	// {
+	// 	//Do attack Animation
+	// 	target.TakeDamage(charStats.damage.GetValue());
+	// }
 
-	public void Heal (CharacterStats target)
-	{
-		//Do heal animation
-		target.TakeHeal(charStats.damage.GetValue());
-	}
+	// public void Heal (CharacterStats target)
+	// {
+	// 	//Do heal animation
+	// 	target.TakeHeal(charStats.damage.GetValue());
+	// }
 
 	public void UseItemOnStart(){
 		if(!slot.IsEmpty()){
@@ -49,35 +77,12 @@ public class CharacterCombat : MonoBehaviour {
 					// This will iterate through all the CharacterCombat scripts and called the Heal below
 					PartyManager.Instance.HealParty(15);
 					break;
-			}
-		}
-	}
-
-	public void UseItemOnAttack(){
-		if(!slot.IsEmpty()){
-			switch(slot.itemUI.effect){
 				case Effect.CRITICO:
-					// This will take the sum of the damage and double it.
-					// Example: your base damage is 2, you receive 5 from the AUMENTA_DANO effect from other char
-					// and then you have the CRITICO effect, which will double your damage 5 + 2 + (5 + 2) = 14
-					float value = Random.value;
-					if(value > 0.5)
-						charStats.damage.AddModifier(charStats.damage.GetValue());
-					else{
-						// If there are 2 damage modifiers, it means the last is the critic x2
-						// then remove it
-						if(charStats.damage.numberOfModifiers == 2){
-							charStats.damage.RemoveAtIndex(2);
-						}
-					}
+					charStats.damage.critical = true;
 					break;
-				
-				// TODO: Effect.NAO_RECEBE_DANO
 			}
 		}
-		
 	}
-
 	public void IncreaseDamage(float modifier){
 		charStats.damage.AddModifier(modifier);
 	}
