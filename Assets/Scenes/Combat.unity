@@ -800,6 +800,7 @@ GameObject:
   - component: {fileID: 303577821}
   - component: {fileID: 303577820}
   - component: {fileID: 303577823}
+  - component: {fileID: 303577824}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -916,6 +917,26 @@ MonoBehaviour:
   testAttack: 0
   testHit: 0
   testDeath: 0
+--- !u!114 &303577824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 303577818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 100
+    critical: 0
+  damage:
+    baseValue: 10
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
 --- !u!1 &344829473
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +949,7 @@ GameObject:
   - component: {fileID: 344829477}
   - component: {fileID: 344829476}
   - component: {fileID: 344829475}
+  - component: {fileID: 344829479}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -1044,6 +1066,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 344829473}
   m_Mesh: {fileID: 0}
+--- !u!114 &344829479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344829473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 50
+    critical: 0
+  damage:
+    baseValue: 5
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
 --- !u!1 &368131729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 368131730}
+  - component: {fileID: 368131731}
   m_Layer: 0
   m_Name: Party
   m_TagString: Untagged
@@ -1077,6 +1120,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &368131731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 368131729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 100
+    critical: 0
+  damage:
+    baseValue: 10
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
 --- !u!1 &403656068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,6 +2084,7 @@ GameObject:
   - component: {fileID: 907801295}
   - component: {fileID: 907801294}
   - component: {fileID: 907801293}
+  - component: {fileID: 907801297}
   m_Layer: 0
   m_Name: Goburin
   m_TagString: Untagged
@@ -2137,6 +2201,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 907801291}
   m_Mesh: {fileID: 0}
+--- !u!114 &907801297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907801291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 80
+    critical: 0
+  damage:
+    baseValue: 7
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
 --- !u!1 &950266824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,35 +2300,35 @@ MonoBehaviour:
     isBattling: 0
     transform: {fileID: 628320789}
     animations: {fileID: 628320793}
-    stats: {fileID: 0}
+    stats: {fileID: 368131731}
   paladin:
     hero: {fileID: 1584945402}
     isAlive: 0
     isBattling: 0
     transform: {fileID: 1584945403}
     animations: {fileID: 1584945407}
-    stats: {fileID: 0}
+    stats: {fileID: 368131731}
   ranger:
     hero: {fileID: 862018073}
     isAlive: 0
     isBattling: 0
     transform: {fileID: 862018074}
     animations: {fileID: 862018078}
-    stats: {fileID: 0}
+    stats: {fileID: 368131731}
   cleric:
     hero: {fileID: 1378281647}
     isAlive: 0
     isBattling: 0
     transform: {fileID: 1378281648}
     animations: {fileID: 1378281652}
-    stats: {fileID: 0}
+    stats: {fileID: 368131731}
   wizard:
     hero: {fileID: 1543875652}
     isAlive: 0
     isBattling: 0
     transform: {fileID: 1543875653}
     animations: {fileID: 1543875657}
-    stats: {fileID: 0}
+    stats: {fileID: 368131731}
   clericSlider: {fileID: 1869506663}
   slideSpeed: 5
   skeleton:
@@ -2266,6 +2350,11 @@ MonoBehaviour:
     monster: {fileID: 344829473}
     health: 0
     animations: {fileID: 344829475}
+    stats: {fileID: 0}
+  activeMonster:
+    monster: {fileID: 0}
+    health: 0
+    animations: {fileID: 0}
     stats: {fileID: 0}
   battlePos: {fileID: 596904649}
   initialPosition: {fileID: 1886939072}
@@ -3452,6 +3541,7 @@ GameObject:
   - component: {fileID: 1641865301}
   - component: {fileID: 1641865300}
   - component: {fileID: 1641865303}
+  - component: {fileID: 1641865304}
   m_Layer: 0
   m_Name: Trund
   m_TagString: Untagged
@@ -3568,6 +3658,26 @@ MonoBehaviour:
   testAttack: 0
   testHit: 0
   testDeath: 0
+--- !u!114 &1641865304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1641865298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c77b46b6318463448821914a30d3dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth:
+    baseValue: 150
+    critical: 0
+  damage:
+    baseValue: 15
+    critical: 0
+  armor:
+    baseValue: 0
+    critical: 0
 --- !u!1 &1699825209
 GameObject:
   m_ObjectHideFlags: 0
