@@ -12,43 +12,42 @@ public class GridMovement : MonoBehaviour {
 	///<summary>
 	/// Move the player by the given amount
 	///</summary>
-	public string MoveBy(Vector3 amount){
+	public string MoveBy (Vector3 amount) {
 		// movement step is the hop length
 		Vector2 finalPos = transform.position + (amount * movementStep);
 		RaycastHit2D hit;
 
 		// Verifica se ha algo
-		if(!HasParede(finalPos, out hit)){
-			if(!coroutineIsRunning)
-				StartCoroutine(Move(finalPos));
+		if (!HasParede (finalPos, out hit)) {
+			if (!coroutineIsRunning)
+				StartCoroutine (Move (finalPos));
 			return string.Empty;
 		}
 
 		return hit.transform.tag;
 	}
 
-	bool HasParede(Vector3 pos, out RaycastHit2D hit){
-		hit = Physics2D.Raycast(transform.position, (pos - transform.position).normalized, movementStep + 0.01f, _layerMask);
+	bool HasParede (Vector3 pos, out RaycastHit2D hit) {
+		hit = Physics2D.Raycast (transform.position, (pos - transform.position).normalized, movementStep + 0.01f, _layerMask);
 		return hit.collider != null;
 	}
 
-	IEnumerator Move(Vector2 final){
+	IEnumerator Move (Vector2 final) {
 		coroutineIsRunning = true;
 		// TODO: Do animation
-		if(hasAnimation != null)
-			hasAnimation(); 
-		
+		if (hasAnimation != null)
+			hasAnimation ();
+		if (this.transform.CompareTag ("Player"))
+			PartyManager.Instance.positionPreBattle.position = final;
 		// Change transform position
-		while(!MathUtil.IsApproximate(transform.position, final, .1f)){
+		while (!MathUtil.IsApproximate (transform.position, final, .1f)) {
 			// transform.position = Vector3.Lerp(transform.position, final, Time.deltaTime * 5f);
-			transform.position = Vector3.MoveTowards(transform.position, final, 5f * Time.deltaTime);
+			transform.position = Vector3.MoveTowards (transform.position, final, 5f * Time.deltaTime);
 			yield return null;
 		}
-
 		transform.position = final;
 
 		coroutineIsRunning = false;
-
 
 	}
 }

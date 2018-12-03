@@ -27,7 +27,7 @@ public class PartyManager : Singleton<PartyManager> {
 	}
 
 	public void StartBattle(Transform oldPos, string monsterId){
-		positionPreBattle = oldPos ;
+		// positionPreBattle = oldPos ;
 		this.monsterId = monsterId;
 		SceneManager.LoadScene("Combat");
 	}

@@ -81,10 +81,10 @@ public class BattleManager : Singleton<BattleManager> {
 		activeMonster.monster.SetActive(true);
 
 		barbarian.isAlive = true;
-paladin.isAlive = true;
-ranger.isAlive = true;
-cleric.isAlive = true;
-wizard.isAlive = true;
+		paladin.isAlive = true;
+		ranger.isAlive = true;
+		cleric.isAlive = true;
+		wizard.isAlive = true;
 	}
 
 	public void Battle()
