@@ -788,6 +788,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a23acc27698b4248a1368f48b1daed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 2121959169}
+  actualTime: 0
+  maxTime: 7
   isPlaying: 0
   winner: 0
   loser: 0
@@ -1813,9 +1816,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 449068510}
-  - component: {fileID: 449068511}
   - component: {fileID: 449068513}
   - component: {fileID: 449068512}
+  - component: {fileID: 449068511}
   m_Layer: 0
   m_Name: ClericMiniGameScreen
   m_TagString: Enemy
@@ -1851,6 +1854,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c030268074785cc418aa9d2819a54ce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 2121959169}
+  actualTime: 0
+  maxTime: 5
   healthBar: {fileID: 1869506663}
   isPlaying: 0
 --- !u!61 &449068512
@@ -2678,8 +2684,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791413105}
-  - component: {fileID: 791413106}
   - component: {fileID: 791413107}
+  - component: {fileID: 791413106}
   m_Layer: 0
   m_Name: WizardMiniGameScreen
   m_TagString: Enemy
@@ -2715,6 +2721,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5bcbc8cfeacc424d8c19d380cfd4f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 2121959169}
+  actualTime: 0
+  maxTime: 5
   isPlaying: 0
   winner: 0
   loser: 0
@@ -7577,7 +7586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2063519610
 Transform:
   m_ObjectHideFlags: 0
@@ -7607,6 +7616,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f95a61d8078e649b07820c8946a17f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 2121959169}
+  actualTime: 0
+  maxTime: 5
   isPlaying: 0
 --- !u!61 &2063519612
 BoxCollider2D:
@@ -7797,7 +7809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2121959168
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7813,8 +7825,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 450.6, y: 145.1}
-  m_SizeDelta: {x: 62.2, y: 47.3}
+  m_AnchoredPosition: {x: 452.5, y: 145.1}
+  m_SizeDelta: {x: 66.1, y: 47.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121959169
 MonoBehaviour:
@@ -7862,10 +7874,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 31.34
-  m_fontSizeBase: 31.34
+  m_fontSize: 42.3
+  m_fontSizeBase: 40
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
