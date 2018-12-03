@@ -61,10 +61,31 @@ public class PartyManager : Singleton<PartyManager> {
 		clericCharacter.UseItemOnStart();
 	}
 
+	protected override void OnEnable() {
+		{
+			base.OnEnable();
+			SceneManager.sceneLoaded += OnLevelFinishedLoading;
+		}
+	}
+	protected override void OnDisable() {
+		{
+			base.OnDisable();
+			SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+		}
+	}
+
 	public void EndBattle(){
 		SceneManager.LoadScene("GameScene");
-		party.transform.position = positionPreBattle.position;
-		MonsterManager.Instance.EndBattle(true,monsterId);
+	}
+
+	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+	{
+			if(scene.name == "GameScene")
+			{
+				party = GameObject.Find("Player");
+				party.transform.position = positionPreBattle.position;
+				MonsterManager.Instance.EndBattle(true,monsterId);
+			}
 	}
 
 	// public void AddCharacter(CharacterCombat character){
