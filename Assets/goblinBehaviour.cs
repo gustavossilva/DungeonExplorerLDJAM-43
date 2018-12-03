@@ -16,6 +16,7 @@ public class goblinBehaviour : MonoBehaviour {
 
 	public AnimationReferenceAsset jump;
 	public AnimationReferenceAsset idle;
+	public string id;
 
 	int jumpTimes = 0;
 	private int _startPosition;
@@ -26,7 +27,11 @@ public class goblinBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		if (!MonsterManager.Instance.monstersInGame.ContainsKey (id))
+			MonsterManager.Instance.monstersInGame.Add (id, true);
+		else {
+			gameObject.SetActive (MonsterManager.Instance.monstersInGame[id]);
+		}
 		//Inicia o goblin com uma das posições finais possíveis(isso irá diferenciar cada possível goblin)
 		switch (startPosition) {
 			case StartPosition.TOP_LEFT: //horário
@@ -106,7 +111,7 @@ public class goblinBehaviour : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.CompareTag ("Player")) {
 			MonsterManager.Instance.monsterName = "Goburin";
-			MonsterManager.Instance.StartBattle (other.transform);
+			MonsterManager.Instance.StartBattle (other.transform,id);
 		}
 	}
 }

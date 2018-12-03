@@ -16,12 +16,19 @@ public class SlimeBehaviour : MonoBehaviour {
 	public AnimationReferenceAsset idle;
 
 	[SerializeField] private Vector3 _startPosition;
+
+	public string id;
 	// Use this for initialization
 	private void Awake () {
 		slimeSkeleton = GetComponent<SkeletonAnimation> ();
 		_gridMovement = GetComponent<GridMovement> ();
 	}
 	void Start () {
+		if(!MonsterManager.Instance.monstersInGame.ContainsKey(id))
+			MonsterManager.Instance.monstersInGame.Add(id,true);
+		else{
+			gameObject.SetActive(MonsterManager.Instance.monstersInGame[id]);
+		}
 		movementCooldown = cooldown;
 		_startPosition = this.transform.position;
 		if (upFirst) {
@@ -65,7 +72,7 @@ public class SlimeBehaviour : MonoBehaviour {
 	{
 		if(other.CompareTag("Player")){
 			MonsterManager.Instance.monsterName = "Slime";
-			MonsterManager.Instance.StartBattle(other.transform);
+			MonsterManager.Instance.StartBattle(other.transform,id);
 		}
 	}
 
