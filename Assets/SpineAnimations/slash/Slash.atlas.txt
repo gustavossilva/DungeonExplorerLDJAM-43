@@ -1,0 +1,34 @@
+
+Slash.png
+size: 4096,4096
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+SLASH1-01
+  rotate: false
+  xy: 2409, 2792
+  size: 593, 1298
+  orig: 2201, 3035
+  offset: 739, 685
+  index: -1
+SLASH2-01
+  rotate: false
+  xy: 1409, 2327
+  size: 998, 1763
+  orig: 2201, 3035
+  offset: 613, 598
+  index: -1
+SLASH3-01
+  rotate: false
+  xy: 2, 2
+  size: 1167, 1989
+  orig: 2201, 3035
+  offset: 535, 511
+  index: -1
+SLASH4-01
+  rotate: false
+  xy: 2, 1993
+  size: 1405, 2097
+  orig: 2201, 3035
+  offset: 414, 475
+  index: -1
