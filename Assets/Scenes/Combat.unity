@@ -8416,7 +8416,7 @@ MonoBehaviour:
   left: {fileID: 1091280328}
   right: {fileID: 950266825}
   pullForce: 1.7
-  clickForce: 50
+  clickForce: 30
   direction: 
 --- !u!58 &1911950134
 CircleCollider2D:
