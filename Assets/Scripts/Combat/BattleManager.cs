@@ -30,7 +30,6 @@ public class BattleManager : Singleton<BattleManager> {
 	}
 
 	private void Start() {
-		 
 		if(PartyManager.Instance.heroesAlive[0]){
 			barbarian.isAlive = true;
 			barbarian.hero.SetActive(true);
@@ -108,12 +107,6 @@ public class BattleManager : Singleton<BattleManager> {
 		}
 		// activeMonster = skeleton;
 		activeMonster.monster.SetActive(true);
-
-		barbarian.isAlive = true;
-		paladin.isAlive = true;
-		ranger.isAlive = true;
-		cleric.isAlive = true;
-		wizard.isAlive = true;
 	}
 
 	public void TurnOffGames()

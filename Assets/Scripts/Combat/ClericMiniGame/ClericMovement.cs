@@ -19,8 +19,6 @@ public class ClericMovement : MonoBehaviour {
 	private void OnEnable() {
 		initialPos = new Vector2(0,-0.647f);
 		transform.position = initialPos;
-		Debug.Log(initialPos);
-		Debug.Log(transform.position);
 	}
 
 	private void Update() {

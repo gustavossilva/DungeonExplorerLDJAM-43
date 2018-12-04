@@ -47,12 +47,10 @@ public class WizardMovement : MonoBehaviour {
 			if(onTarget)
 			{
 				WizardManager.Instance.winner = true;
-				Debug.Log("Venceu");
 			}
 			else
 			{
 				WizardManager.Instance.loser = true;
-				Debug.Log("Perdeu");
 			}
 		}
 	}

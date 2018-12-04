@@ -62,7 +62,6 @@ public class PartyManager : Singleton<PartyManager> {
 				if(item)
 					count++;
 		}
-		Debug.Log(count);
 		if(count == 1)
 		{
 			GameOver();
