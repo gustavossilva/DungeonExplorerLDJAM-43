@@ -7,6 +7,7 @@ public class MusicHolder : Singleton<MusicHolder> {
 
 	public AudioClip menuMusic;
 	public AudioClip dungeonMusic;
+	public AudioClip combatMusic;
 
 	private AudioClip currentAudioClip;
 
@@ -23,6 +24,8 @@ public class MusicHolder : Singleton<MusicHolder> {
 			PlayMusic(menuMusic, 0.5f);
 		}else if(scene.name == "GameScene"){
 			PlayMusic(dungeonMusic, 0.2f);
+		}else if(scene.name == "Combat"){
+			PlayMusic(combatMusic, 0.3f);
 		}
 	}
 

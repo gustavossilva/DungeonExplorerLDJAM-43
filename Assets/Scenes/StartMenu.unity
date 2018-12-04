@@ -612,6 +612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuMusic: {fileID: 8300000, guid: 781a0b0ad859e4840a04b51744a63962, type: 3}
   dungeonMusic: {fileID: 8300000, guid: 8772ba84f517de2438ecb54b63f044c7, type: 3}
+  combatMusic: {fileID: 8300000, guid: d2b33203852a6f64eacd6eea3ba0fea7, type: 3}
 --- !u!82 &137454313
 AudioSource:
   m_ObjectHideFlags: 0
@@ -876,7 +877,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.19544323, g: 0.20748784, b: 0.2264151, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
