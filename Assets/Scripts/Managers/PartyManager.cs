@@ -25,7 +25,6 @@ public class PartyManager : Singleton<PartyManager> {
 	public Vector3 positionPreBattle;
 
 	private bool startGameLoading = true;
-	private bool sacrifice = false;
 
 	public string monsterId;
 
@@ -57,7 +56,6 @@ public class PartyManager : Singleton<PartyManager> {
 
 	public void Sacrifice()
 	{
-		sacrifice = true;
 		int count = 0;
 		foreach (bool item in heroesAlive)
 		{
