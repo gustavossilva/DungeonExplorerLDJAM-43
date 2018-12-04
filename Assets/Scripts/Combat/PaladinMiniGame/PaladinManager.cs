@@ -45,6 +45,7 @@ public class PaladinManager : Singleton<PaladinManager> {
 
 			BattleManager.Instance.paladin.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
+			BattleManager.Instance.monsterSlash.DoSlash();
 			BattleManager.Instance.paladin.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
 			InventoryManager.Instance.ChangeHealth(Character.PALADIN, BattleManager.Instance.paladin.stats.currentHealth);
 			BattleManager.Instance.CheckStats();
@@ -67,6 +68,7 @@ public class PaladinManager : Singleton<PaladinManager> {
 			remainDefenses = 6;
 			BattleManager.Instance.paladin.animations.PlayAttackAnimation();
 			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
+			BattleManager.Instance.playerSlash.DoSlash();
 			BattleManager.Instance.activeMonster.stats.TakeDamage(BattleManager.Instance.paladin.stats.damage.GetValue());
 			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.UpdateEnemyHealthBar();

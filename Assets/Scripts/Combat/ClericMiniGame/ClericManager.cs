@@ -70,6 +70,7 @@ public class ClericManager : Singleton<ClericManager> {
 			BattleManager.Instance.cleric.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
 			InventoryManager.Instance.ChangeHealth(Character.CLERIC, BattleManager.Instance.cleric.stats.currentHealth);
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
+			BattleManager.Instance.monsterSlash.DoSlash();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.cleric, BattleManager.Instance.cleric.animations.hitTime);
 			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.UpdatePartyHealthBars();

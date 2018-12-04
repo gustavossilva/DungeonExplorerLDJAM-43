@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "S8LLgcKgljloqTHuypNXs4QH02A", "spine": "3.7.42-beta", "width": 0, "height": 0, "images": "C:/Users/victo/Desktop/LDJAM 43#/Projeto/misc/slash png", "audio": "" },
+"skeleton": { "hash": "xv8mnlWbjxOs2yjuDCSkkkx4ZG0", "spine": "3.7.42-beta", "width": 0, "height": 0, "images": "./slash png/", "audio": "" },
 "bones": [
 	{ "name": "root" }
 ],
@@ -39,31 +39,31 @@
 			"SLASH1-01": {
 				"attachment": [
 					{ "time": 0.1, "name": "SLASH1-01" },
-					{ "time": 0.1333, "name": null }
+					{ "time": 0.1333, "name": null },
+					{ "time": 0.3, "name": "SLASH1-01" },
+					{ "time": 0.3333, "name": null }
 				]
 			},
 			"SLASH2-01": {
 				"attachment": [
 					{ "time": 0.1333, "name": "SLASH2-01" },
-					{ "time": 0.1667, "name": null }
+					{ "time": 0.1667, "name": null },
+					{ "time": 0.2667, "name": "SLASH2-01" },
+					{ "time": 0.3, "name": null }
 				]
 			},
 			"SLASH3-01": {
 				"attachment": [
 					{ "time": 0.1667, "name": "SLASH3-01" },
-					{ "time": 0.2, "name": null }
+					{ "time": 0.2, "name": null },
+					{ "time": 0.2333, "name": "SLASH3-01" },
+					{ "time": 0.2667, "name": null }
 				]
 			},
 			"SLASH4-01": {
 				"attachment": [
-					{ "time": 0.2, "name": "SLASH4-01" }
-				]
-			}
-		},
-		"bones": {
-			"root": {
-				"translate": [
-					{ "time": 0.2, "x": 0, "y": 2.38 }
+					{ "time": 0.2, "name": "SLASH4-01" },
+					{ "time": 0.2333, "name": null }
 				]
 			}
 		}

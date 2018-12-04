@@ -40,6 +40,7 @@ public class RangerManager : Singleton<RangerManager> {
 			loser = false;	
 			BattleManager.Instance.ranger.animations.PlayAttackAnimation();
 			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
+			BattleManager.Instance.playerSlash.DoSlash();
 			BattleManager.Instance.activeMonster.stats.TakeDamage(BattleManager.Instance.ranger.stats.damage.GetValue());
 			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.UpdateEnemyHealthBar();
@@ -67,6 +68,7 @@ public class RangerManager : Singleton<RangerManager> {
 			loser = false;
 			BattleManager.Instance.ranger.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
+			BattleManager.Instance.monsterSlash.DoSlash();
 			BattleManager.Instance.ranger.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
 			InventoryManager.Instance.ChangeHealth(Character.RANGER, BattleManager.Instance.ranger.stats.currentHealth);
 			BattleManager.Instance.CheckStats();

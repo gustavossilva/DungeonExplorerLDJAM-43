@@ -39,6 +39,7 @@ public class WizardManager : Singleton<WizardManager> {
 			loser = false;
 			BattleManager.Instance.wizard.animations.PlayAttackAnimation();
 			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
+			BattleManager.Instance.playerSlash.DoSlash();
 			BattleManager.Instance.activeMonster.stats.TakeDamage(BattleManager.Instance.wizard.stats.damage.GetValue());
 			BattleManager.Instance.CheckStats();
 			BattleManager.Instance.UpdateEnemyHealthBar();
@@ -65,6 +66,7 @@ public class WizardManager : Singleton<WizardManager> {
 			loser = false;
 			BattleManager.Instance.wizard.animations.PlayHitAniamtion();
 			BattleManager.Instance.activeMonster.animations.PlayAttackAnimation();
+			BattleManager.Instance.monsterSlash.DoSlash();
 			BattleManager.Instance.wizard.stats.TakeDamage(BattleManager.Instance.activeMonster.stats.damage.GetValue());
 			InventoryManager.Instance.ChangeHealth(Character.WIZARD, BattleManager.Instance.wizard.stats.currentHealth);
 			BattleManager.Instance.CheckStats();

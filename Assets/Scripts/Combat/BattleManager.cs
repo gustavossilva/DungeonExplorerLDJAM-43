@@ -8,6 +8,7 @@ public class BattleManager : Singleton<BattleManager> {
 
 
 	public GameObject barbGame, pallyGame, rangerGame, clericGame, wizardGame;
+	public Slash monsterSlash,playerSlash;
 	public Hero barbarian, paladin, ranger, cleric, wizard;
 	public Slider clericSlider;
 	public Slider enemyHealthBar, barbarianHealthBar, paladinHealthBar, rangerHealthBar, clericHealthBar, wizardHealthBar;
