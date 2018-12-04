@@ -1465,7 +1465,7 @@ MonoBehaviour:
     baseValue: 100
     critical: 0
   damage:
-    baseValue: 15
+    baseValue: 20
     critical: 0
   armor:
     baseValue: 0
@@ -1780,7 +1780,7 @@ MonoBehaviour:
     baseValue: 50
     critical: 0
   damage:
-    baseValue: 5
+    baseValue: 10
     critical: 0
   armor:
     baseValue: 0
@@ -3922,7 +3922,7 @@ MonoBehaviour:
     baseValue: 80
     critical: 0
   damage:
-    baseValue: 10
+    baseValue: 15
     critical: 0
   armor:
     baseValue: 0
@@ -4592,10 +4592,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 300
+    baseValue: 500
     critical: 0
   damage:
-    baseValue: 20
+    baseValue: 30
     critical: 0
   armor:
     baseValue: 0
@@ -6784,10 +6784,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 150
+    baseValue: 200
     critical: 0
   damage:
-    baseValue: 70
+    baseValue: 20
     critical: 0
   armor:
     baseValue: 0
