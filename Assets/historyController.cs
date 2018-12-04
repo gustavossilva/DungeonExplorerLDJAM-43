@@ -21,8 +21,8 @@ public class historyController : MonoBehaviour {
 	/// </summary>
 	void Start () {
 		history = new List<string> ();
-		history.Add ("O fantasma pegou geral");
-		history.Add ("Todo mundo caiu e se fodeu");
+		history.Add ("Suddenly, a misterious wraith appears in front of the heroes, and start talking in a violent manner: \"Youuuu, foolish heroes! Those who only seek glory and gold, I shall challenge you in my realm.\"");
+		history.Add ("Todo mundo caiu e se fodeu"); 
 	}
 	// Use this for initialization
 	// Update is called once per frame
