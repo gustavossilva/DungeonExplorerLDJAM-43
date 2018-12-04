@@ -10,6 +10,7 @@ public class AxeBehaviour : MonoBehaviour {
 	public bool doDamage = true;
 	private void OnEnable() {
 		targetPosition = new Vector2(rightLimit.position.x,transform.position.y);
+		doDamage = true;
 	}
 	
 	// Update is called once per frame

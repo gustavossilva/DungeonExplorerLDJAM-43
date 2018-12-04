@@ -22,5 +22,9 @@ public class UndestroyableCanvas : Singleton<UndestroyableCanvas> {
 			gameObject.SetActive(false);
 		else
 			gameObject.SetActive(true);
+		if(scene.name == "GameOver" || scene.name == "FinalScene")
+		{
+			Destroy(gameObject);
+		}
 	}
 }
