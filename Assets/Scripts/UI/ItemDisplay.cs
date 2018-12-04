@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using TMPro;
 public class ItemDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
 	UIDragAndRelease _dragAndDrop;
@@ -23,7 +23,7 @@ public class ItemDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 	public float timeHover = 1.5f;
 	public GameObject descriptionImage;
 	private bool _messageShown = false;
-	private Text text;
+	private TextMeshProUGUI text;
 
 	// Use this for initialization
 	void Awake () {
@@ -32,7 +32,7 @@ public class ItemDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 		_rectTranform = GetComponent<RectTransform>();
 		image = GetComponent<Image>();
 
-		text = descriptionImage.GetComponentInChildren<Text>();
+		text = descriptionImage.GetComponentInChildren<TextMeshProUGUI>();
 
 		_dragAndDrop.released += OnReleased;
 		_dragAndDrop.clicked += OnClicked;

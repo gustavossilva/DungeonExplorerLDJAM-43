@@ -45,7 +45,7 @@ public class InventoryManager : Singleton<InventoryManager> {
 			if(slots[i].transform.childCount == 0){
 				GameObject itemGO = Instantiate(prefab, slots[i].transform);
 				slots[i].itemUI = itemGO.GetComponent<ItemDisplay>();
-				slots[i].itemUI.effect = item._effect;
+				slots[i].itemUI.effect = item._effect; 
 				slots[i].itemUI.image.sprite = item._spriteUI;
 				slots[i].itemUI.description = item._description;
 				itemsQuantity++;
