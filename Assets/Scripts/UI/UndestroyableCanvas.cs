@@ -18,7 +18,7 @@ public class UndestroyableCanvas : Singleton<UndestroyableCanvas> {
 		GetComponent<PointerOverUI>()._eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 
 		// Disable the inventory canvas when you are in combat
-		if(scene.name == "Combat")
+		if(scene.name == "Combat" || scene.name == "GameOver" || scene.name == "FinalScene")
 			gameObject.SetActive(false);
 		else
 			gameObject.SetActive(true);
