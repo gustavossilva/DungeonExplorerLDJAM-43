@@ -10,6 +10,8 @@ public class BattleMonsterAnimation : MonoBehaviour {
 	public float iddleTime, jumpTime, attackTime, hitTime, deathTime;
 	private SkeletonAnimation _skeletonAnimation;
 	public bool testJump, testAttack, testHit, testDeath;
+	public AudioClip clip;
+
 	void Start () {
 		_skeletonAnimation = GetComponent<SkeletonAnimation>();
 		_skeletonAnimation.AnimationState.SetAnimation(0,iddle,true);
@@ -45,6 +47,7 @@ public class BattleMonsterAnimation : MonoBehaviour {
 		_skeletonAnimation.AnimationState.SetAnimation(0,attack,false);
 		_skeletonAnimation.AnimationState.AddEmptyAnimation(0,0.2f,attackTime);
 		_skeletonAnimation.AnimationState.AddAnimation(0,iddle,true,0.1f);
+		GetComponent<AudioSource>().PlayOneShot(clip, 1f);
 		testAttack = false;
 	}
 
