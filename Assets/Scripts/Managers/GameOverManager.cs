@@ -51,7 +51,7 @@ public class GameOverManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.anyKeyDown && gameOverComplete)
+		if(Input.GetKeyDown(KeyCode.Space) && gameOverComplete)
 		{
 			StopAllCoroutines();
 			SceneManager.LoadScene("StartMenu");
