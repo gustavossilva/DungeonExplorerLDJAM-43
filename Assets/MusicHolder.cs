@@ -14,12 +14,13 @@ public class MusicHolder : Singleton<MusicHolder> {
 	protected override void Awake(){
 		base.IsPersistentBetweenScenes = true;
 		base.Awake();
-
-
-		SceneManager.sceneLoaded += OnSceneLoaded;
 	}
-
-	private void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+	
+	private void Start() {
+		SceneManager.sceneLoaded += OnSceneLoadedMusic;
+	}
+	
+	private void OnSceneLoadedMusic(Scene scene, LoadSceneMode mode){
 		if(scene.name == "StartMenu"){
 			PlayMusic(menuMusic, 0.5f);
 		}else if(scene.name == "GameScene"){
@@ -39,6 +40,19 @@ public class MusicHolder : Singleton<MusicHolder> {
 			source.volume = volume;
 			source.Play();
 		}
+	}
+
+	protected override void OnEnable() {
+		SceneManager.sceneLoaded += OnSceneLoadedMusic;
+		base.OnEnable();
+	}
+	protected override void OnDisable() {
+		SceneManager.sceneLoaded -= OnSceneLoadedMusic;
+		base.OnDisable();
+	}
+	protected override void OnDestroy() {
+		SceneManager.sceneLoaded -= OnSceneLoadedMusic;
+		base.OnDestroy();
 	}
 
 }

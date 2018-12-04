@@ -27,6 +27,7 @@ public class Player : Singleton<Player> {
 	protected override void  Awake(){
 		base.IsPersistentBetweenScenes = false;
 		base.Awake();
+		
 
 		skeleton = GetComponentInChildren<SkeletonAnimation>();
 		switch(SelectedCharacter.Instance.selectedCharName){
@@ -50,6 +51,7 @@ public class Player : Singleton<Player> {
 
 	// Use this for initialization
 	void Start () {
+		PartyManager.Instance.party = transform.gameObject;
 		_gridMovement = GetComponent<GridMovement>();
 		movementCooldown = cooldown;
 		canMove = true;

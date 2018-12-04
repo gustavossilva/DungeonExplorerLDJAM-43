@@ -24,7 +24,7 @@ public class PartyManager : Singleton<PartyManager> {
 
 	public Vector3 positionPreBattle;
 
-	private bool startGameLoading = true;
+	public bool startGameLoading = true;
 
 	public string monsterId;
 
@@ -107,38 +107,39 @@ public class PartyManager : Singleton<PartyManager> {
 	}
 
 	protected override void OnEnable() {
-		{
-			base.OnEnable();
-			SceneManager.sceneLoaded += OnLevelFinishedLoading;
-		}
+		Debug.Log("Registrado!");
+		SceneManager.sceneLoaded += OnLevelFinishedLoading;
+		base.OnEnable();
 	}
 	protected override void OnDisable() {
-		{
-			base.OnDisable();
-			SceneManager.sceneLoaded -= OnLevelFinishedLoading;
-		}
+		SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+		base.OnDisable();
 	}
 
 	public void EndBattle(){
 		SceneManager.LoadScene("GameScene");
 	}
 
-	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+	public void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
 	{
-		if(!startGameLoading){
-			if(scene.name == "GameScene")
+			if(scene.name == "GameScene" && !firstBattle)
 			{
+				Debug.Log("Entrou");
 				party = GameObject.Find("Player");
 				party.transform.position = positionPreBattle;
 				MonsterManager.Instance.EndBattle(true,monsterId);
 			}
-		}
-		startGameLoading = false;
 	}
 
 	public void GameOver()
 	{
 		SceneManager.LoadScene("GameOver");
+	}
+
+	protected override void OnDestroy() {
+		base.OnDestroy();
+		SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+		startGameLoading = true;
 	}
 
 	// public void AddCharacter(CharacterCombat character){
