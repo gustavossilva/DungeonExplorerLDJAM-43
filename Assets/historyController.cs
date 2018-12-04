@@ -13,16 +13,13 @@ public class historyController : MonoBehaviour {
 	public TextMeshProUGUI historyText;
 	private int actualScene = -1;
 
-	private List<string> history;
+	public List<GameObject> history;
 
 	/// <summary>
 	/// Start is called on the frame when a script is enabled just before
 	/// any of the Update methods is called the first time.
 	/// </summary>
 	void Start () {
-		history = new List<string> ();
-		history.Add ("Suddenly, a misterious wraith appears in front of the heroes, and start talking in a violent manner: \"Youuuu, foolish heroes! Those who only seek glory and gold, I shall challenge you in my realm.\"");
-		history.Add ("Todo mundo caiu e se fodeu"); 
 	}
 	// Use this for initialization
 	// Update is called once per frame
@@ -33,7 +30,8 @@ public class historyController : MonoBehaviour {
 				SceneManager.LoadSceneAsync ("SelectChar", LoadSceneMode.Single);
 			} else {
 				animations[actualScene].SetTrigger ("SceneChange");
-				historyText.text = history[actualScene];
+				history[actualScene].SetActive(false);
+				history[actualScene+1].SetActive(true); 
 			}
 		}
 
