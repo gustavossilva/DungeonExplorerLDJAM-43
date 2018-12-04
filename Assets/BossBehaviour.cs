@@ -10,6 +10,7 @@ public class BossBehaviour : MonoBehaviour {
 	public AnimationReferenceAsset idle;
 
 	public GameObject openPortal;
+	public GameObject closeWall;
 	
 	// Use this for initialization
 	void Start () {
@@ -17,7 +18,8 @@ public class BossBehaviour : MonoBehaviour {
 			MonsterManager.Instance.monstersInGame.Add (id, true);
 		else {
 			gameObject.SetActive (MonsterManager.Instance.monstersInGame[id]);
-			openPortal.SetActive(true);
+			openPortal.SetActive(!MonsterManager.Instance.monstersInGame[id]);
+			closeWall.SetActive(!MonsterManager.Instance.monstersInGame[id]); 
 		}
 		bossSkeleton = GetComponent<SkeletonAnimation> ();
 		bossSkeleton.AnimationState.SetAnimation (0, idle, true);
