@@ -43,6 +43,11 @@ public class ClericManager : Singleton<ClericManager> {
 			BattleManager.Instance.cleric.animations.PlayAttackAnimation();
 			PartyManager.Instance.HealParty(BattleManager.Instance.cleric.stats.damage.GetValue());
 			BattleManager.Instance.UpdatePartyHealthBars();
+			BattleManager.Instance.activeMonster.animations.PlayHitAniamtion();
+			BattleManager.Instance.playerSlash.DoSlash();
+			BattleManager.Instance.activeMonster.stats.TakeDamage(BattleManager.Instance.cleric.stats.damage.GetValue() * 3);
+			BattleManager.Instance.CheckStats();
+			BattleManager.Instance.UpdateEnemyHealthBar();
 			BattleManager.Instance.ChangeCharacter(BattleManager.Instance.cleric, BattleManager.Instance.cleric.animations.attackTime);
 			healthBar.value = 50;
 			healthBar.gameObject.SetActive(false);

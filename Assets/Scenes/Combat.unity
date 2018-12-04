@@ -229,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightLimit: {fileID: 1068406354}
   targetPosition: {x: 0, y: 0}
-  speed: 15
+  speed: 11
   doDamage: 1
 --- !u!61 &21065596
 BoxCollider2D:
@@ -282,8 +282,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36362838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.599, y: 0.075, z: 0}
-  m_LocalScale: {x: 0.0894288, y: 0.0894288, z: 0}
+  m_LocalPosition: {x: 4.5642, y: 0.0402, z: 0}
+  m_LocalScale: {x: 0.10101877, y: 0.10101877, z: 0}
   m_Children: []
   m_Father: {fileID: 1783733280}
   m_RootOrder: 3
@@ -1107,7 +1107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightLimit: {fileID: 1068406354}
   targetPosition: {x: 0, y: 0}
-  speed: 15
+  speed: 11
   doDamage: 1
 --- !u!61 &197497136
 BoxCollider2D:
@@ -4451,7 +4451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftLimit: {fileID: 2141912879}
   rightLimit: {fileID: 137733641}
-  speed: 25
+  speed: 17
   target: {fileID: 0}
   mouseUP: 0
   onTarget: 0
@@ -6131,7 +6131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightLimit: {fileID: 1068406354}
   targetPosition: {x: 0, y: 0}
-  speed: 15
+  speed: 11
   doDamage: 1
 --- !u!61 &1522327668
 BoxCollider2D:
@@ -7001,7 +7001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftLimit: {fileID: 905647920}
   rightLimit: {fileID: 299326095}
-  speed: 13
+  speed: 11
   target: {fileID: 0}
 --- !u!50 &1699825212
 Rigidbody2D:
@@ -7236,7 +7236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightLimit: {fileID: 1068406354}
   targetPosition: {x: 0, y: 0}
-  speed: 15
+  speed: 11
   doDamage: 1
 --- !u!61 &1723282688
 BoxCollider2D:
@@ -7725,7 +7725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightLimit: {fileID: 1068406354}
   targetPosition: {x: 0, y: 0}
-  speed: 15
+  speed: 11
   doDamage: 1
 --- !u!61 &1782994124
 BoxCollider2D:
@@ -8068,7 +8068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightLimit: {fileID: 1068406354}
   targetPosition: {x: 0, y: 0}
-  speed: 15
+  speed: 11
   doDamage: 1
 --- !u!61 &1795299601
 BoxCollider2D:
@@ -8416,7 +8416,7 @@ MonoBehaviour:
   left: {fileID: 1091280328}
   right: {fileID: 950266825}
   pullForce: 1.7
-  clickForce: 30
+  clickForce: 25
   direction: 
 --- !u!58 &1911950134
 CircleCollider2D:
@@ -8597,7 +8597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posController: {fileID: 1956023246}
-  speed: 3
+  speed: 2.4
 --- !u!50 &2042340973
 Rigidbody2D:
   serializedVersion: 4
