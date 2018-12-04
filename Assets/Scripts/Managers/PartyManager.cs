@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PartyManager : Singleton<PartyManager> {
 
@@ -24,8 +25,11 @@ public class PartyManager : Singleton<PartyManager> {
 	public Vector3 positionPreBattle;
 
 	private bool startGameLoading = true;
+	private bool sacrifice = false;
 
 	public string monsterId;
+
+	private bool firstBattle = true;
 	protected override void Awake() {
 		IsPersistentBetweenScenes = true;
 		base.Awake();
@@ -51,16 +55,58 @@ public class PartyManager : Singleton<PartyManager> {
 		wizardCharacter.charStats = wizardStats;
 	}
 
+	public void Sacrifice()
+	{
+		sacrifice = true;
+		int count = 0;
+		foreach (bool item in heroesAlive)
+		{
+				if(item)
+					count++;
+		}
+		Debug.Log(count);
+		if(count == 1)
+		{
+			GameOver();
+			return;
+		}
+		if(firstBattle){
+			GhostManager.Instance.ActiveFreeGhost();
+			Time.timeScale = 0;
+		}else{
+			GhostManager.Instance.ActivePayGhost();
+			Time.timeScale = 0;
+			int mainIndex = -1;
+			if(SelectedCharacter.Instance.selectedCharName == "Barbarian")
+				mainIndex = 0;
+			if(SelectedCharacter.Instance.selectedCharName == "Paladin")
+				mainIndex = 1;
+			if(SelectedCharacter.Instance.selectedCharName == "Ranger")
+				mainIndex = 2;
+			if(SelectedCharacter.Instance.selectedCharName == "Cleric")
+				mainIndex = 3;
+			if(SelectedCharacter.Instance.selectedCharName == "Wizard")
+				mainIndex = 4;
+			int sacrificeIndex = Random.Range(0,5);
+			while(sacrificeIndex == mainIndex || !heroesAlive[sacrificeIndex])
+			{
+				sacrificeIndex = Random.Range(0,5);
+			}
+			heroesAlive[sacrificeIndex] = false;
+		}
+	}
+
 	public void StartBattle(Transform oldPos, string monsterId){
 		// positionPreBattle = oldPos ;
 		this.monsterId = monsterId;
-		SceneManager.LoadScene("Combat");
-
 		barbaroCharacter.UseItemOnStart();
 		rangerCharacter.UseItemOnStart();
 		paladinoCharacter.UseItemOnStart();
 		wizardCharacter.UseItemOnStart();
 		clericCharacter.UseItemOnStart();
+		Sacrifice();
+		if(firstBattle)
+			firstBattle = false;
 	}
 
 	protected override void OnEnable() {

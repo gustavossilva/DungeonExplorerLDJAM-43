@@ -1,0 +1,72 @@
+{
+"skeleton": { "hash": "S8LLgcKgljloqTHuypNXs4QH02A", "spine": "3.7.42-beta", "width": 0, "height": 0, "images": "C:/Users/victo/Desktop/LDJAM 43#/Projeto/misc/slash png", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "SLASH1-01", "bone": "root" },
+	{ "name": "SLASH2-01", "bone": "root" },
+	{ "name": "SLASH3-01", "bone": "root" },
+	{ "name": "SLASH4-01", "bone": "root" }
+],
+"skins": {
+	"default": {
+		"SLASH1-01": {
+			"SLASH1-01": { "x": 75.95, "y": 128.65, "scaleX": 0.349, "scaleY": 0.349, "width": 2201, "height": 3035 }
+		},
+		"SLASH2-01": {
+			"SLASH2-01": {
+				"x": 66.89,
+				"y": 159.14,
+				"scaleX": 0.349,
+				"scaleY": 0.349,
+				"rotation": -0.24,
+				"width": 2201,
+				"height": 3035
+			}
+		},
+		"SLASH3-01": {
+			"SLASH3-01": { "x": 85.84, "y": 185.51, "scaleX": 0.349, "scaleY": 0.349, "width": 2201, "height": 3035 }
+		},
+		"SLASH4-01": {
+			"SLASH4-01": { "x": 90.78, "y": 197.04, "scaleX": 0.349, "scaleY": 0.349, "width": 2201, "height": 3035 }
+		}
+	}
+},
+"animations": {
+	"Slash": {
+		"slots": {
+			"SLASH1-01": {
+				"attachment": [
+					{ "time": 0.1, "name": "SLASH1-01" },
+					{ "time": 0.1333, "name": null }
+				]
+			},
+			"SLASH2-01": {
+				"attachment": [
+					{ "time": 0.1333, "name": "SLASH2-01" },
+					{ "time": 0.1667, "name": null }
+				]
+			},
+			"SLASH3-01": {
+				"attachment": [
+					{ "time": 0.1667, "name": "SLASH3-01" },
+					{ "time": 0.2, "name": null }
+				]
+			},
+			"SLASH4-01": {
+				"attachment": [
+					{ "time": 0.2, "name": "SLASH4-01" }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"translate": [
+					{ "time": 0.2, "x": 0, "y": 2.38 }
+				]
+			}
+		}
+	}
+}
+}
