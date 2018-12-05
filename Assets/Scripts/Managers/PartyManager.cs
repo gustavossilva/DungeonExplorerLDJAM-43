@@ -71,7 +71,7 @@ public class PartyManager : Singleton<PartyManager> {
 			GhostManager.Instance.ActiveFreeGhost();
 			Time.timeScale = 0;
 		}else{
-			GhostManager.Instance.ActivePayGhost();
+			
 			Time.timeScale = 0;
 			int mainIndex = -1;
 			if(SelectedCharacter.Instance.selectedCharName == "Barbarian")
@@ -90,6 +90,19 @@ public class PartyManager : Singleton<PartyManager> {
 				sacrificeIndex = Random.Range(0,5);
 			}
 			heroesAlive[sacrificeIndex] = false;
+			if(sacrificeIndex == 0){
+				barbaroCharacter.charStats.currentHealth = 0f;
+			}else if(sacrificeIndex == 1){
+				paladinoCharacter.charStats.currentHealth = 0f;
+			}else if(sacrificeIndex == 2){
+				rangerCharacter.charStats.currentHealth = 0f;
+			}else if(sacrificeIndex == 3){
+				clericCharacter.charStats.currentHealth = 0f;
+			}else if(sacrificeIndex == 4){
+				wizardCharacter.charStats.currentHealth = 0f;
+			}
+
+			GhostManager.Instance.ActivePayGhost(sacrificeIndex);
 		}
 	}
 

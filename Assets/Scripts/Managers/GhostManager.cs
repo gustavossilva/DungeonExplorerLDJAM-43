@@ -10,6 +10,7 @@ public class GhostManager : Singleton<GhostManager> {
 	public GameObject free;
 	public GameObject pay;
 
+	private string[] characterNames = new string[]{"Barbarian", "Paladin", "Ranger", "Cleric", "Wizard"};
 	protected override void Awake() {
 		IsPersistentBetweenScenes = false;
 		base.Awake();
@@ -22,9 +23,10 @@ public class GhostManager : Singleton<GhostManager> {
 		free.SetActive(true);
 	}
 
-	public void ActivePayGhost(){
+	public void ActivePayGhost(int index){
 		ghostUI.SetActive(true);
 		textHandler.SetActive(true);
+		pay.GetComponent<TMPro.TextMeshProUGUI>().text = "A life for a life, you shall pay! Sacrifice your <size=50><style=\"Title\">" + characterNames[index] + "</style></size> in order to play!";
 		pay.SetActive(true);
 	}
 
